@@ -1,0 +1,870 @@
+{
+  "_note": "Recipe for the continuous map of Europe and its approaches. Distances are km on the map; stroke sizes are pixels. Geography comes from the Natural Earth layers under authoring/geodata; what is interpreted (land cover, the ridge lines of ranges Natural Earth does not outline, hydrography as of the period) is written here and described in design/art/maps.md.",
+  "region": "../../design/maps/europe.json",
+  "geodata": "natural-earth-50m",
+  "seed": 1805,
+  "smooth": 1,
+  "hydrography": {
+    "_note": "Shown as of about 1800. Twentieth-century reservoirs are left out (the river's centre line through them is kept, restoring its course); canals cut after the period are left out; the IJsselmeer is open sea and its polders are water again, as the Zuiderzee was. 'flooded' are hand-drawn outlines of land reclaimed since, approximate to a few km. 'straits' are hand-placed centre lines along narrow straits, cut to a minimum drawn width so that crossings stay visible; they follow the channels already in the data.",
+    "omit_lakes": ["Rybinsk Reservoir", "Kremenchuk Reservoir", "Kakhovka Reservoir", "Samara Reservoir", "Lake Tharthar", "Razzaza Lake", "Lake Habbaniyah", "Akkajaure"],
+    "open_to_sea": ["IJsselmeer"],
+    "omit_rivers": ["Suez Canal", "Ismailiya Canal", "Gharraf Canal", "Ferenc Csatorna"],
+    "river_width": {
+      "1": 3.8,
+      "2": 3.6,
+      "3": 3.3,
+      "4": 2.8,
+      "5": 2.3,
+      "6": 1.8
+    },
+    "river_width_other": 1.4,
+    "river_taper": 0.5,
+    "river_reach": 700,
+    "river_casing": 1.3,
+    "river_ink": "map_river",
+    "river_water": "map_river_water",
+    "lake": "map_lake",
+    "lake_deep": "map_lake_deep",
+    "lake_depth": 12,
+    "lake_shore": 0.9,
+    "lake_shore_alpha": 0.85,
+    "river_alpha": 0.85,
+    "strait_min_px": 3.4,
+    "straits": [
+      {
+        "name": "Strait of Bonifacio",
+        "width": 9,
+        "line": [[8.95, 41.33], [9.45, 41.3]]
+      },
+      {
+        "name": "Strait of Messina",
+        "width": 7,
+        "line": [[15.7, 38.33], [15.62, 38.23], [15.58, 38.1], [15.55, 37.95]]
+      },
+      {
+        "name": "Bosporus",
+        "width": 6,
+        "line": [[29.13, 41.25], [29.07, 41.12], [29.0, 41.0]]
+      },
+      {
+        "name": "Dardanelles",
+        "width": 6,
+        "line": [[26.15, 40.0], [26.38, 40.12], [26.42, 40.22], [26.62, 40.37], [26.8, 40.47]]
+      },
+      {
+        "name": "Strait of Kerch",
+        "width": 8,
+        "line": [[36.6, 45.45], [36.55, 45.3], [36.5, 45.15]]
+      },
+      {
+        "name": "The Sound",
+        "width": 7,
+        "line": [[12.55, 56.2], [12.65, 56.04], [12.72, 55.9], [12.82, 55.68], [12.8, 55.45]]
+      },
+      {
+        "name": "Mouth of the Zuiderzee",
+        "width": 9,
+        "line": [[5.0, 52.93], [5.2, 53.0], [5.42, 53.08]]
+      }
+    ],
+    "flooded": [
+      {
+        "name": "Flevoland polders (reclaimed 1950-68)",
+        "ring": [[5.14, 52.38], [5.2, 52.31], [5.42, 52.27], [5.52, 52.27], [5.6, 52.32], [5.78, 52.42], [5.87, 52.5], [5.86, 52.56], [5.78, 52.6], [5.66, 52.62], [5.52, 52.59], [5.36, 52.52]]
+      },
+      {
+        "name": "Noordoostpolder (reclaimed 1942)",
+        "ring": [[5.6, 52.6], [5.58, 52.72], [5.63, 52.84], [5.8, 52.86], [5.95, 52.8], [5.95, 52.66], [5.85, 52.6], [5.72, 52.58]]
+      },
+      {
+        "name": "Wieringermeer (reclaimed 1930)",
+        "ring": [[4.93, 52.76], [4.95, 52.9], [5.1, 52.93], [5.17, 52.85], [5.12, 52.74]]
+      }
+    ]
+  },
+  "sea": {
+    "colour": "map_sea",
+    "deep": "map_deep",
+    "shallow": "map_shelf",
+    "ink": "map_sea_ink",
+    "shelf": 26,
+    "deep_at": 520,
+    "swell_cell": 180,
+    "swell": 0.05,
+    "storm_cell": 520,
+    "storm": 0.07,
+    "lining_start": 4.2,
+    "lining_gap": 5.2,
+    "lining_growth": 1.28,
+    "lining_fade": 0.86,
+    "lining_count": 9,
+    "lining_ink": 0.5,
+    "ruling_gap": 13,
+    "ruling_ink": 0.16,
+    "ruling_run": 240,
+    "shallow_strength": 0.85
+  },
+  "coast": {
+    "inland_reach": 160,
+    "rim": 12,
+    "rim_colour": "land_rim",
+    "rim_strength": 0.38,
+    "ink": "map_ink",
+    "line": 1.15,
+    "alpha": 0.92,
+    "shade_offset": 0.55,
+    "shade_alpha": 0.5
+  },
+  "graticule": {
+    "step": 5,
+    "width": 0.8,
+    "alpha": 0.2,
+    "ink": "map_sea_ink"
+  },
+  "land": {
+    "pool_cell": 55,
+    "pool": 0.07,
+    "drift_cell": 380,
+    "drift": 0.05,
+    "wood_floor": "wood_floor",
+    "wood_floor_strength": 0.5,
+    "rock": "land_rock",
+    "snow": "land_snow",
+    "light": "land_light",
+    "light_strength": 0.5,
+    "shadow": "land_shadow",
+    "shadow_strength": 1.15,
+    "upland": "land_upland",
+    "upland_strength": 0.5,
+    "rock_strength": 0.85,
+    "shadow_limit": 0.82,
+    "patch_cell": 13,
+    "patch": 0.07
+  },
+  "relief": {
+    "_note": "Heights are 0..1 for drawing, not metres. 'ranges' name Natural Earth range outlines; 'spines' are ridge lines placed by hand from general geographic knowledge for ranges the 1:50m data does not outline. Spine positions are approximate (tens of km) and are art, not survey.",
+    "light": [-1, -1, 1.25],
+    "exaggeration": 17,
+    "crest_cell": 40,
+    "warp": 14,
+    "octaves": 4,
+    "sharpness": 0.9,
+    "floor": 0.34,
+    "rolling": 0.09,
+    "rolling_cell": 70,
+    "valley": 16,
+    "valley_floor": 0.4,
+    "shore": 9,
+    "woods_band": [0.1, 0.3],
+    "ranges": [
+      {
+        "region": "ALPS",
+        "height": 1.0,
+        "rise": 55
+      },
+      {
+        "region": "CAUCASUS MTS.",
+        "height": 1.0,
+        "rise": 45
+      },
+      {
+        "region": "PYRENEES",
+        "height": 0.82,
+        "rise": 32
+      },
+      {
+        "region": "CARPATHIAN MOUNTAINS",
+        "height": 0.7,
+        "rise": 45
+      },
+      {
+        "region": "APPENNINI",
+        "height": 0.74,
+        "rise": 22
+      },
+      {
+        "region": "Dinaric Alps",
+        "height": 0.64,
+        "rise": 42
+      },
+      {
+        "region": "Balkan Mts.",
+        "height": 0.56,
+        "rise": 28
+      },
+      {
+        "region": "KJØLEN MOUNTAINS",
+        "height": 0.72,
+        "rise": 60
+      },
+      {
+        "region": "ATLAS MOUNTAINS",
+        "height": 0.55,
+        "rise": 55
+      },
+      {
+        "region": "HAUT ATLAS",
+        "height": 0.88,
+        "rise": 38
+      },
+      {
+        "region": "ATLAS SAHARIEN",
+        "height": 0.46,
+        "rise": 38
+      },
+      {
+        "region": "Anti Atlas",
+        "height": 0.5,
+        "rise": 32
+      },
+      {
+        "region": "PONTIC MOUNTAINS",
+        "height": 0.66,
+        "rise": 34
+      },
+      {
+        "region": "Lesser Caucasus",
+        "height": 0.72,
+        "rise": 42
+      },
+      {
+        "region": "ELBURZ MTS.",
+        "height": 0.86,
+        "rise": 34
+      },
+      {
+        "region": "ZAGROS MOUNTAINS",
+        "height": 0.76,
+        "rise": 60
+      },
+      {
+        "region": "URAL MOUNTAINS",
+        "height": 0.4,
+        "rise": 50
+      },
+      {
+        "region": "Cord. Cantábrica",
+        "height": 0.62,
+        "rise": 24
+      },
+      {
+        "region": "S. Nevada",
+        "height": 0.7,
+        "rise": 24
+      },
+      {
+        "region": "Sierra Morena",
+        "height": 0.34,
+        "rise": 28
+      },
+      {
+        "region": "CENTRAL RUSSIAN UPLAND",
+        "height": 0.07,
+        "rise": 60
+      }
+    ],
+    "spines": [
+      {
+        "name": "Massif Central",
+        "height": 0.46,
+        "half_width": 95,
+        "line": [[2.3, 45.9], [2.9, 45.2], [3.5, 44.5], [3.8, 44.1]]
+      },
+      {
+        "name": "Vosges",
+        "height": 0.3,
+        "half_width": 26,
+        "line": [[7.25, 48.8], [7.05, 48.0]]
+      },
+      {
+        "name": "Jura",
+        "height": 0.32,
+        "half_width": 26,
+        "line": [[5.7, 46.1], [6.3, 46.8], [7.2, 47.35]]
+      },
+      {
+        "name": "Black Forest",
+        "height": 0.3,
+        "half_width": 26,
+        "line": [[8.25, 48.75], [8.05, 47.85]]
+      },
+      {
+        "name": "Swabian and Franconian Jura",
+        "height": 0.18,
+        "half_width": 30,
+        "line": [[8.9, 48.1], [10.0, 48.6], [11.3, 49.0], [11.5, 49.8]]
+      },
+      {
+        "name": "Rhenish uplands and Ardennes",
+        "height": 0.2,
+        "half_width": 48,
+        "line": [[4.9, 50.0], [6.2, 50.3], [7.4, 50.3], [8.3, 50.6]]
+      },
+      {
+        "name": "Harz",
+        "height": 0.26,
+        "half_width": 22,
+        "line": [[10.2, 51.8], [11.2, 51.65]]
+      },
+      {
+        "name": "Thuringian Forest",
+        "height": 0.24,
+        "half_width": 22,
+        "line": [[10.3, 50.9], [11.3, 50.4]]
+      },
+      {
+        "name": "Ore Mountains",
+        "height": 0.3,
+        "half_width": 24,
+        "line": [[12.3, 50.3], [13.8, 50.7]]
+      },
+      {
+        "name": "Sudetes",
+        "height": 0.36,
+        "half_width": 26,
+        "line": [[14.8, 50.9], [15.7, 50.75], [16.8, 50.2], [17.4, 50.1]]
+      },
+      {
+        "name": "Bohemian Forest",
+        "height": 0.3,
+        "half_width": 26,
+        "line": [[12.4, 49.8], [13.2, 49.2], [14.0, 48.7]]
+      },
+      {
+        "name": "Bohemian-Moravian heights",
+        "height": 0.14,
+        "half_width": 34,
+        "line": [[15.0, 49.3], [16.3, 49.6]]
+      },
+      {
+        "name": "Grampians",
+        "height": 0.42,
+        "half_width": 42,
+        "line": [[-5.5, 56.6], [-4.7, 56.9], [-3.5, 57.1]]
+      },
+      {
+        "name": "North-west Highlands",
+        "height": 0.4,
+        "half_width": 30,
+        "line": [[-5.4, 57.2], [-5.0, 58.2]]
+      },
+      {
+        "name": "Southern Uplands",
+        "height": 0.2,
+        "half_width": 28,
+        "line": [[-4.5, 55.3], [-2.8, 55.45]]
+      },
+      {
+        "name": "Pennines",
+        "height": 0.22,
+        "half_width": 24,
+        "line": [[-2.35, 54.7], [-2.1, 53.9], [-1.85, 53.3]]
+      },
+      {
+        "name": "Lake District",
+        "height": 0.24,
+        "half_width": 18,
+        "line": [[-3.1, 54.5]]
+      },
+      {
+        "name": "Cambrian Mountains",
+        "height": 0.26,
+        "half_width": 28,
+        "line": [[-3.9, 53.05], [-3.7, 52.4], [-3.5, 51.9]]
+      },
+      {
+        "name": "Kerry",
+        "height": 0.2,
+        "half_width": 26,
+        "line": [[-9.9, 52.0], [-9.2, 51.9]]
+      },
+      {
+        "name": "Wicklow",
+        "height": 0.17,
+        "half_width": 20,
+        "line": [[-6.4, 53.0]]
+      },
+      {
+        "name": "Connemara and Mayo",
+        "height": 0.17,
+        "half_width": 24,
+        "line": [[-9.6, 53.5], [-9.5, 54.0]]
+      },
+      {
+        "name": "Donegal",
+        "height": 0.17,
+        "half_width": 22,
+        "line": [[-8.1, 54.9]]
+      },
+      {
+        "name": "Sistema Central",
+        "height": 0.52,
+        "half_width": 30,
+        "line": [[-6.6, 40.3], [-5.2, 40.3], [-4.0, 40.8], [-3.2, 41.1]]
+      },
+      {
+        "name": "Sistema Ibérico",
+        "height": 0.46,
+        "half_width": 34,
+        "line": [[-3.3, 42.2], [-2.2, 41.6], [-1.5, 40.6], [-0.8, 40.1]]
+      },
+      {
+        "name": "Montes de Toledo",
+        "height": 0.2,
+        "half_width": 24,
+        "line": [[-5.2, 39.5], [-4.2, 39.5]]
+      },
+      {
+        "name": "Meseta",
+        "height": 0.1,
+        "half_width": 190,
+        "line": [[-5.6, 41.6], [-3.6, 39.6]]
+      },
+      {
+        "name": "Prebetic ranges",
+        "height": 0.26,
+        "half_width": 26,
+        "line": [[-3.0, 37.9], [-1.8, 38.3], [-0.5, 38.6]]
+      },
+      {
+        "name": "Galician massif",
+        "height": 0.26,
+        "half_width": 34,
+        "line": [[-7.2, 42.7], [-6.8, 42.1], [-7.6, 41.8]]
+      },
+      {
+        "name": "Serra da Estrela",
+        "height": 0.28,
+        "half_width": 24,
+        "line": [[-7.9, 40.2], [-7.4, 40.4]]
+      },
+      {
+        "name": "Catalan coastal range",
+        "height": 0.18,
+        "half_width": 18,
+        "line": [[1.2, 41.3], [2.4, 41.8]]
+      },
+      {
+        "name": "Calabrian Apennines",
+        "height": 0.34,
+        "half_width": 22,
+        "line": [[16.2, 39.9], [16.5, 39.25], [16.25, 38.55], [15.95, 38.15]]
+      },
+      {
+        "name": "Northern Sicily",
+        "height": 0.3,
+        "half_width": 22,
+        "line": [[13.5, 37.9], [14.2, 37.85], [14.9, 37.95]]
+      },
+      {
+        "name": "Etna",
+        "height": 0.62,
+        "half_width": 20,
+        "line": [[15.0, 37.75]]
+      },
+      {
+        "name": "Gennargentu",
+        "height": 0.3,
+        "half_width": 28,
+        "line": [[9.4, 40.6], [9.3, 39.7]]
+      },
+      {
+        "name": "Corsican ridge",
+        "height": 0.44,
+        "half_width": 22,
+        "line": [[8.85, 42.6], [9.1, 42.2], [9.2, 41.7]]
+      },
+      {
+        "name": "Pindus",
+        "height": 0.56,
+        "half_width": 34,
+        "line": [[20.4, 41.0], [20.9, 40.3], [21.3, 39.6], [21.8, 38.9], [22.2, 38.5]]
+      },
+      {
+        "name": "Olympus",
+        "height": 0.5,
+        "half_width": 16,
+        "line": [[22.35, 40.08]]
+      },
+      {
+        "name": "Peloponnese",
+        "height": 0.42,
+        "half_width": 30,
+        "line": [[22.2, 38.0], [22.3, 37.4], [22.35, 36.9]]
+      },
+      {
+        "name": "Rila and Rhodope",
+        "height": 0.54,
+        "half_width": 36,
+        "line": [[23.3, 42.1], [24.3, 41.7], [25.3, 41.5]]
+      },
+      {
+        "name": "Šar and the Accursed Mountains",
+        "height": 0.46,
+        "half_width": 30,
+        "line": [[19.7, 42.5], [20.8, 42.0]]
+      },
+      {
+        "name": "Crete",
+        "height": 0.4,
+        "half_width": 16,
+        "line": [[23.9, 35.3], [24.8, 35.22], [25.5, 35.1]]
+      },
+      {
+        "name": "Apuseni",
+        "height": 0.24,
+        "half_width": 38,
+        "line": [[22.8, 46.5]]
+      },
+      {
+        "name": "Taurus",
+        "height": 0.66,
+        "half_width": 40,
+        "line": [[29.5, 36.8], [30.8, 37.3], [32.5, 36.9], [34.3, 37.3], [35.6, 37.9], [37.0, 38.2], [38.8, 38.3], [41.0, 38.4], [43.3, 37.8]]
+      },
+      {
+        "name": "Western Anatolian ranges",
+        "height": 0.26,
+        "half_width": 30,
+        "line": [[27.8, 38.3], [29.2, 38.5]]
+      },
+      {
+        "name": "Mysian ranges",
+        "height": 0.26,
+        "half_width": 30,
+        "line": [[28.0, 39.6], [29.4, 39.9]]
+      },
+      {
+        "name": "Western Pontic ranges",
+        "height": 0.34,
+        "half_width": 30,
+        "line": [[30.5, 40.9], [32.5, 41.3], [34.0, 41.4]]
+      },
+      {
+        "name": "Anatolian plateau",
+        "height": 0.14,
+        "half_width": 200,
+        "line": [[30.5, 39.0], [34.0, 39.0], [38.0, 39.3], [42.0, 39.5]]
+      },
+      {
+        "name": "Armenian highland",
+        "height": 0.46,
+        "half_width": 46,
+        "line": [[41.5, 39.6], [43.0, 39.6]]
+      },
+      {
+        "name": "Ararat",
+        "height": 0.9,
+        "half_width": 22,
+        "line": [[44.3, 39.7]]
+      },
+      {
+        "name": "Kurdish Zagros",
+        "height": 0.5,
+        "half_width": 44,
+        "line": [[44.3, 37.2], [45.5, 36.0], [46.5, 34.8]]
+      },
+      {
+        "name": "Persian plateau",
+        "height": 0.12,
+        "half_width": 220,
+        "line": [[47.0, 37.0], [50.0, 34.5], [52.5, 33.0]]
+      },
+      {
+        "name": "Lebanon",
+        "height": 0.42,
+        "half_width": 16,
+        "line": [[35.7, 33.6], [36.1, 34.3]]
+      },
+      {
+        "name": "Anti-Lebanon",
+        "height": 0.36,
+        "half_width": 16,
+        "line": [[36.05, 33.45], [36.55, 34.05]]
+      },
+      {
+        "name": "Amanus",
+        "height": 0.3,
+        "half_width": 16,
+        "line": [[36.3, 36.4], [36.2, 36.95]]
+      },
+      {
+        "name": "Judaean hills",
+        "height": 0.14,
+        "half_width": 18,
+        "line": [[35.1, 31.5], [35.3, 32.3]]
+      },
+      {
+        "name": "Sinai massif",
+        "height": 0.4,
+        "half_width": 40,
+        "line": [[33.9, 28.6]]
+      },
+      {
+        "name": "Crimean Mountains",
+        "height": 0.26,
+        "half_width": 16,
+        "line": [[33.7, 44.5], [34.4, 44.65], [35.0, 44.85]]
+      },
+      {
+        "name": "Khibiny",
+        "height": 0.22,
+        "half_width": 30,
+        "line": [[33.7, 67.7]]
+      },
+      {
+        "name": "Valdai Hills",
+        "height": 0.07,
+        "half_width": 90,
+        "line": [[32.3, 56.6], [34.0, 57.8]]
+      },
+      {
+        "name": "Volga Upland",
+        "height": 0.07,
+        "half_width": 70,
+        "line": [[46.0, 53.3], [45.3, 51.0]]
+      },
+      {
+        "name": "Donets Ridge",
+        "height": 0.07,
+        "half_width": 60,
+        "line": [[37.6, 48.3], [39.5, 48.1]]
+      },
+      {
+        "name": "Podolian Upland",
+        "height": 0.07,
+        "half_width": 80,
+        "line": [[25.5, 49.5], [28.0, 48.9]]
+      },
+      {
+        "name": "Jebel Akhdar",
+        "height": 0.16,
+        "half_width": 26,
+        "line": [[20.8, 32.4], [22.3, 32.7]]
+      },
+      {
+        "name": "Jebel Nafusa",
+        "height": 0.16,
+        "half_width": 26,
+        "line": [[10.8, 32.0], [12.8, 32.1]]
+      },
+      {
+        "name": "Icelandic highland",
+        "height": 0.4,
+        "half_width": 130,
+        "line": [[-19.6, 64.6], [-16.8, 64.7]]
+      },
+      {
+        "name": "Central Balkan uplands",
+        "height": 0.26,
+        "half_width": 95,
+        "line": [[20.8, 43.6], [21.5, 42.6], [22.0, 41.6]]
+      }
+    ],
+    "ragged": 0.3,
+    "ragged_cell": 90,
+    "gain": 0.45,
+    "upland": [0.04, 0.4],
+    "zones": {
+      "_note": "Height bands at the southern and northern latitude; between them they fall evenly, as tree, rock and snow lines do.",
+      "latitude": [36, 68],
+      "treeline": [[0.5, 0.66], [0.13, 0.25]],
+      "rock": [[0.5, 0.78], [0.2, 0.45]],
+      "snow": [[0.95, 1.03], [0.58, 0.68]]
+    },
+    "scarp": 0.13,
+    "scarp_cell": 55,
+    "basins": [
+      {
+        "name": "Transylvanian basin",
+        "depth": 0.8,
+        "half_width": 80,
+        "line": [[23.6, 46.7], [24.9, 46.1]]
+      }
+    ]
+  },
+  "cover": {
+    "_note": "Interpreted land cover of about 1800, not survey data. Each sample says what kind of ground lies around a point; ground is blended between samples by distance, then a few Natural Earth region outlines override it. Samples follow the broad vegetation belts (tundra, taiga, mixed and broadleaf forest, forest-steppe, steppe, semi-desert, Mediterranean, desert) with western Europe drawn more open than the east, as it was after centuries of clearing.",
+    "warp": 45,
+    "warp_cell": 160,
+    "soften": 55,
+    "power": 4,
+    "river_green": 7,
+    "river_colour": "land_oasis",
+    "grounds": {
+      "tundra": {
+        "colour": "land_tundra",
+        "woods": 0.03,
+        "fir": 1.0,
+        "sand": 0.12
+      },
+      "taiga": {
+        "colour": "land_taiga",
+        "woods": 0.86,
+        "fir": 0.85
+      },
+      "mixed": {
+        "colour": "land_mixed",
+        "woods": 0.6,
+        "fir": 0.45,
+        "tilled": 0.2
+      },
+      "temperate": {
+        "colour": "land_temperate",
+        "woods": 0.24,
+        "fir": 0.1,
+        "tilled": 0.5
+      },
+      "forest_steppe": {
+        "colour": "land_forest_steppe",
+        "woods": 0.13,
+        "fir": 0.0,
+        "grass": 0.28,
+        "tilled": 0.35
+      },
+      "steppe": {
+        "colour": "land_steppe",
+        "woods": 0.0,
+        "grass": 0.85,
+        "dry": 0.35
+      },
+      "semidesert": {
+        "colour": "land_semidesert",
+        "grass": 0.35,
+        "sand": 0.35,
+        "dry": 0.8
+      },
+      "mediterranean": {
+        "colour": "land_mediterranean",
+        "woods": 0.1,
+        "fir": 0.2,
+        "grass": 0.14,
+        "dry": 0.3,
+        "tilled": 0.3
+      },
+      "highland": {
+        "colour": "land_highland",
+        "woods": 0.04,
+        "fir": 0.3,
+        "grass": 0.5,
+        "dry": 0.5
+      },
+      "desert": {
+        "colour": "land_desert",
+        "sand": 1.0,
+        "dry": 1.0
+      },
+      "delta": {
+        "colour": "land_delta",
+        "marsh": 0.45,
+        "tilled": 0.7
+      },
+      "marsh": {
+        "colour": "land_marsh",
+        "marsh": 1.0,
+        "woods": 0.14,
+        "fir": 0.3
+      },
+      "reeds": {
+        "colour": "land_marsh",
+        "marsh": 1.0,
+        "tilled": 0.2
+      }
+    },
+    "regions": [
+      {
+        "class": "Desert",
+        "ground": "desert",
+        "strength": 0.92,
+        "feather": 35
+      },
+      {
+        "class": "Tundra",
+        "ground": "tundra",
+        "strength": 0.8,
+        "feather": 40
+      },
+      {
+        "class": "Delta",
+        "ground": "delta",
+        "strength": 0.95,
+        "feather": 8
+      }
+    ],
+    "samples": [[25, 70.3, "tundra"], [29, 69.8, "tundra"], [33, 69, "tundra"], [37, 67.8, "tundra"], [41, 67.3, "tundra"], [45, 67.8, "tundra"], [50, 67.5, "tundra"], [54, 67.5, "tundra"], [20, 69, "tundra"], [16, 68.5, "tundra"], [35, 68, "tundra"], [-19, 65, "tundra"], [-22, 65.5, "tundra"], [-16, 65.2, "tundra"], [-18, 64, "tundra"], [-7, 62, "tundra"], [-1.3, 60.3, "tundra"], [13, 63, "taiga"], [15, 65, "taiga"], [18, 64, "taiga"], [20, 66.5, "taiga"], [23, 67, "taiga"], [26, 66, "taiga"], [27, 64, "taiga"], [25, 62.5, "taiga"], [29, 62.5, "taiga"], [31, 64.5, "taiga"], [33, 66.5, "taiga"], [34, 63, "taiga"], [36, 65, "taiga"], [38, 63, "taiga"], [42, 64.5, "taiga"], [44, 62, "taiga"], [48, 64, "taiga"], [50, 62, "taiga"], [54, 63.5, "taiga"], [54, 60.5, "taiga"], [48, 60, "taiga"], [42, 60, "taiga"], [38, 60.5, "taiga"], [34, 60.8, "taiga"], [30, 60.8, "taiga"], [10, 61, "taiga"], [12, 60, "taiga"], [9, 59.5, "taiga"], [16, 61, "taiga"], [14.5, 60, "taiga"], [52, 58.5, "taiga"], [46, 58.5, "taiga"], [40, 58.5, "taiga"], [35, 58.8, "taiga"], [7, 61, "taiga"], [11, 63.5, "taiga"], [24, 58.5, "mixed"], [26, 57, "mixed"], [22, 56.5, "mixed"], [24, 55, "mixed"], [28, 55.5, "mixed"], [31, 57.5, "mixed"], [33, 56, "mixed"], [36, 56.5, "mixed"], [39, 56.5, "mixed"], [43, 57, "mixed"], [47, 56.8, "mixed"], [51, 56.5, "mixed"], [54, 56.5, "mixed"], [14, 57.5, "mixed"], [16, 59, "mixed"], [12.5, 58, "mixed"], [18, 59.5, "mixed"], [22.5, 60.5, "mixed"], [25, 60.5, "mixed"], [21, 54, "mixed"], [23, 53, "mixed"], [27, 53.8, "mixed"], [30, 54.5, "mixed"], [34, 54.5, "mixed"], [19.5, 54.2, "mixed"], [17, 53.8, "mixed"], [30, 51.2, "mixed"], [32.5, 52.5, "mixed"], [37, 54.8, "mixed"], [26, 52, "marsh"], [27.5, 52.1, "marsh"], [29, 52, "marsh"], [47, 31, "reeds"], [-8, 53, "temperate"], [-6.5, 54.5, "temperate"], [-9, 52, "temperate"], [-3, 52.3, "temperate"], [-1.5, 52.5, "temperate"], [-1, 54, "temperate"], [-4, 56, "temperate"], [-3, 57.5, "temperate"], [0.5, 51.5, "temperate"], [-4.5, 50.5, "temperate"], [2, 48.5, "temperate"], [-1, 48, "temperate"], [-3, 48.2, "temperate"], [0, 46.5, "temperate"], [4, 47.5, "temperate"], [2.5, 50, "temperate"], [5.5, 49, "temperate"], [1, 44.5, "temperate"], [-0.5, 44, "temperate"], [3, 45.5, "temperate"], [4.5, 51, "temperate"], [5.5, 52.5, "temperate"], [7, 51.5, "temperate"], [8.5, 52.8, "temperate"], [10, 53.5, "temperate"], [9.5, 50.5, "temperate"], [11, 49.5, "temperate"], [9, 48.5, "temperate"], [12, 48.5, "temperate"], [11.5, 51.5, "temperate"], [13.5, 52.5, "temperate"], [13, 54, "temperate"], [9.5, 55.5, "temperate"], [11.5, 55.4, "temperate"], [13.5, 56, "temperate"], [15, 53, "temperate"], [17, 52, "temperate"], [19, 52, "temperate"], [21, 51.8, "temperate"], [22.5, 51, "temperate"], [20, 50.2, "temperate"], [17, 51, "temperate"], [14.5, 50, "temperate"], [16, 49.2, "temperate"], [14.5, 48.2, "temperate"], [16.5, 48, "temperate"], [18, 48.8, "temperate"], [18, 46.5, "temperate"], [24, 46.5, "temperate"], [21, 44, "temperate"], [18, 44.2, "temperate"], [16, 45.6, "temperate"], [25, 43.3, "temperate"], [9.5, 45.3, "temperate"], [11.5, 45.2, "temperate"], [14.8, 46, "temperate"], [8, 47, "temperate"], [26, 50.5, "temperate"], [24, 49.6, "temperate"], [22.5, 48.3, "temperate"], [-8, 43, "temperate"], [-5.5, 43.2, "temperate"], [-3, 43.1, "temperate"], [-1.5, 43, "temperate"], [41.8, 42.3, "temperate"], [40, 43.8, "temperate"], [44.5, 42, "temperate"], [49.5, 37.2, "temperate"], [52.5, 36.6, "temperate"], [36, 41.3, "temperate"], [38.5, 40.9, "temperate"], [40.5, 41, "temperate"], [32, 41.2, "temperate"], [30, 41, "temperate"], [19.5, 47, "forest_steppe"], [21, 47.2, "forest_steppe"], [25.5, 44.4, "forest_steppe"], [27.5, 47, "forest_steppe"], [28.5, 48.8, "forest_steppe"], [31, 49.6, "forest_steppe"], [33.5, 50.2, "forest_steppe"], [36, 50.8, "forest_steppe"], [38.5, 51.8, "forest_steppe"], [41, 52.5, "forest_steppe"], [44, 53.3, "forest_steppe"], [47, 54, "forest_steppe"], [50, 54.6, "forest_steppe"], [53, 54.5, "forest_steppe"], [55.5, 55, "forest_steppe"], [46, 41.5, "forest_steppe"], [29.5, 47, "steppe"], [31.5, 47.3, "steppe"], [33.5, 47.2, "steppe"], [35.5, 47.8, "steppe"], [37.5, 48.3, "steppe"], [39.5, 48.8, "steppe"], [41.5, 49.5, "steppe"], [43.5, 50.3, "steppe"], [45.5, 51, "steppe"], [48, 51.8, "steppe"], [51, 52, "steppe"], [54, 52.2, "steppe"], [39, 46.5, "steppe"], [41, 46, "steppe"], [43, 46, "steppe"], [38.5, 45.3, "steppe"], [42.5, 44.8, "steppe"], [34.3, 45.6, "steppe"], [29, 45.8, "steppe"], [28.3, 44.2, "steppe"], [46, 48.5, "semidesert"], [47.5, 47, "semidesert"], [49.5, 48, "semidesert"], [52, 48.5, "semidesert"], [54.5, 48, "semidesert"], [46.5, 45, "semidesert"], [48.5, 40.2, "semidesert"], [52, 45, "semidesert"], [54, 44, "semidesert"], [37.5, 36.2, "semidesert"], [39.5, 36.4, "semidesert"], [41.5, 36.3, "semidesert"], [43.2, 36, "semidesert"], [38, 35, "semidesert"], [40.5, 35, "semidesert"], [36.6, 33.5, "semidesert"], [36, 32.3, "semidesert"], [44.5, 34.5, "semidesert"], [45.5, 33, "semidesert"], [49, 33, "semidesert"], [51.5, 33.5, "semidesert"], [13.2, 32.2, "semidesert"], [15.5, 31.6, "semidesert"], [19.5, 31, "semidesert"], [25, 31.5, "semidesert"], [28, 30.9, "semidesert"], [-8.5, 39.5, "mediterranean"], [-7.5, 38, "mediterranean"], [-8.2, 37.3, "mediterranean"], [-6, 37.4, "mediterranean"], [-4.5, 37.2, "mediterranean"], [-5.5, 39.3, "mediterranean"], [-3.5, 39.3, "mediterranean"], [-3.7, 40.6, "mediterranean"], [-2, 38.6, "mediterranean"], [-1, 38, "mediterranean"], [-0.5, 39.5, "mediterranean"], [-0.3, 41.5, "mediterranean"], [1.5, 41.6, "mediterranean"], [2.5, 42, "mediterranean"], [-5, 41.5, "mediterranean"], [-2.5, 42, "mediterranean"], [3.2, 43.5, "mediterranean"], [5, 43.6, "mediterranean"], [6.5, 43.6, "mediterranean"], [8.8, 44.4, "mediterranean"], [11, 43.3, "mediterranean"], [12.5, 42, "mediterranean"], [13.8, 42.5, "mediterranean"], [14.5, 41, "mediterranean"], [16, 41, "mediterranean"], [17.5, 40.6, "mediterranean"], [16.3, 39.2, "mediterranean"], [14, 37.6, "mediterranean"], [13, 37.8, "mediterranean"], [15, 37.3, "mediterranean"], [9, 40.2, "mediterranean"], [9, 39.3, "mediterranean"], [9.1, 42.2, "mediterranean"], [15.5, 44, "mediterranean"], [17, 43.2, "mediterranean"], [19, 42.2, "mediterranean"], [19.8, 41, "mediterranean"], [20, 39.7, "mediterranean"], [22, 39.5, "mediterranean"], [23.5, 38.3, "mediterranean"], [22.2, 37.4, "mediterranean"], [21.5, 38.5, "mediterranean"], [23.2, 40.7, "mediterranean"], [24.5, 41, "mediterranean"], [25, 35.2, "mediterranean"], [24.7, 37, "mediterranean"], [27.2, 36.2, "mediterranean"], [26.8, 41.6, "mediterranean"], [27.3, 38.5, "mediterranean"], [27.5, 39.8, "mediterranean"], [28.3, 37.2, "mediterranean"], [29.8, 36.6, "mediterranean"], [31, 37, "mediterranean"], [33.5, 36.3, "mediterranean"], [35.3, 37, "mediterranean"], [36.2, 36.4, "mediterranean"], [33, 35, "mediterranean"], [35.9, 35.4, "mediterranean"], [35.7, 34.2, "mediterranean"], [35.3, 33.2, "mediterranean"], [35, 32.2, "mediterranean"], [34.8, 31.6, "mediterranean"], [29, 40.5, "mediterranean"], [27, 40.3, "mediterranean"], [34.2, 44.6, "mediterranean"], [-6, 35.2, "mediterranean"], [-5.5, 34, "mediterranean"], [-7.5, 33.3, "mediterranean"], [-9, 31.8, "mediterranean"], [-3, 35, "mediterranean"], [-0.5, 35.6, "mediterranean"], [2, 36.4, "mediterranean"], [4.5, 36.5, "mediterranean"], [6.5, 36.7, "mediterranean"], [8.5, 36.6, "mediterranean"], [10, 36.4, "mediterranean"], [10.3, 35, "mediterranean"], [21.8, 32.7, "mediterranean"], [13.2, 32.85, "mediterranean"], [30.5, 39, "highland"], [32.5, 39.2, "highland"], [33.5, 38.2, "highland"], [34.8, 39.5, "highland"], [36.5, 39.6, "highland"], [38.5, 39.2, "highland"], [40.5, 39.8, "highland"], [42.5, 39.3, "highland"], [44.3, 40.3, "highland"], [46.2, 38.2, "highland"], [47.5, 36.2, "highland"], [49.5, 35.5, "highland"], [51, 35, "highland"], [45.5, 37, "highland"], [44, 38.8, "highland"], [37.5, 37.8, "highland"], [32, 37.8, "highland"], [47.5, 42.5, "highland"], [-4, 34, "highland"], [0, 34, "highland"], [3, 34.5, "highland"], [6, 35, "highland"], [-3, 33, "highland"], [-6, 31, "desert"], [-2, 31.5, "desert"], [2, 32, "desert"], [5, 32, "desert"], [9, 32, "desert"], [12, 30.5, "desert"], [15, 30, "desert"], [17, 30, "desert"], [19, 29.8, "desert"], [23, 30, "desert"], [26, 29.8, "desert"], [28, 29.3, "desert"], [30, 29, "desert"], [32.5, 29.8, "desert"], [33.8, 29.8, "desert"], [34.8, 30.5, "desert"], [36.5, 30.5, "desert"], [38.5, 31.5, "desert"], [40.5, 32.5, "desert"], [42.5, 31.5, "desert"], [44, 30.5, "desert"], [46.5, 29.5, "desert"], [48.5, 29, "desert"], [52, 31, "desert"], [10, 30, "desert"], [-9, 29.5, "desert"], [53.5, 34.5, "desert"], [55, 40, "desert"]]
+  },
+  "woods": {
+    "spacing": 2.9,
+    "fill": 0.9,
+    "size": 1.05,
+    "clump_cell": 42,
+    "slope_bonus": 0.5,
+    "shadow": "wood_shadow",
+    "shadow_alpha": 0.5,
+    "leaf": "wood_leaf",
+    "leaf_light": "wood_leaf_light",
+    "fir": "wood_fir",
+    "fir_light": "wood_fir_light",
+    "light_alpha": 0.75,
+    "clump_edge": 0.2,
+    "clump_spread": 0.13,
+    "clump_octaves": 6,
+    "clump_gain": 0.56,
+    "mass_cell": 170,
+    "mass_weight": 0.55
+  },
+  "hachure": {
+    "spacing": 2.4,
+    "from": 0.08,
+    "full": 0.55,
+    "length": [2.6, 7.0],
+    "classes": 5,
+    "ink": "map_ink",
+    "alpha": [0.4, 0.88],
+    "width": [0.5, 1.05],
+    "lit_weight": 0.45
+  },
+  "marks": {
+    "grass": {
+      "spacing": 5,
+      "length": 2.6,
+      "width": 0.55,
+      "ink": "field_ink",
+      "alpha": 0.42
+    },
+    "sand": {
+      "spacing": 4.2,
+      "size": 0.5,
+      "ink": "field_ink",
+      "alpha": 0.38,
+      "dune_spacing": 15,
+      "dune": 3.2,
+      "dune_alpha": 0.4,
+      "dune_width": 0.6
+    },
+    "marsh": {
+      "spacing": 4.5,
+      "length": 3.4,
+      "width": 0.7,
+      "water": "map_river",
+      "alpha": 0.5,
+      "reed": 1.8,
+      "reed_alpha": 0.5,
+      "reed_width": 0.5,
+      "ink": "grass_ink"
+    },
+    "tilled": {
+      "spacing": 3.4,
+      "size": 0.45,
+      "ink": "field_ink",
+      "alpha": 0.3
+    }
+  },
+  "finish": {
+    "grain": 0.035,
+    "mottle_cell": 90,
+    "mottle": 0.025,
+    "saturation": 0.9,
+    "gamma": 1.06
+  }
+}

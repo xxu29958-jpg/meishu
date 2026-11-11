@@ -31,9 +31,19 @@ Still to push in later batches: relief shading for mountains, weather, battle-wo
 - Ground textures repeat on the hex lattice, so pieces can overlap their neighbours freely.
 - Land pieces are larger than the hex and end in a feathered, wandering edge.
 - Coasts are under-layers whose unions form one organic shoreline.
-- Strategic maps (Europe, Americas, world) will be painted as continuous cartography from geographic data and delivered in chunks; the terrain kit composes what sits on them and serves battle maps.
+- Strategic maps (Europe, Americas, world) are painted as continuous cartography from geographic data and delivered in chunks; the terrain kit composes what sits on them and serves battle maps.
 
 Recipe, formats and the plan for the world map: `design/art/maps.md`.
+
+### The Europe map (2026-11-11)
+
+- **Geography is data; the rest is declared interpretation.** Coasts, lakes, rivers and major range outlines come from Natural Earth 1:50m (public domain; Owner approved the download). Land cover, minor ranges, the form of relief and period hydrography are the author's reading, each written in the recipe and listed in the batch README. No elevation data was used: relief is drawn.
+- **Projection: Lambert azimuthal equal-area, centred 50°N 20°E.** A hex covers the same ground anywhere; shapes stay within about 4% of true across the window. Equirectangular, used for the world map, would stretch Scandinavia to twice its width.
+- **The map shows about 1800, not today.** Reservoirs and canals made after 1815 are left out; the Zuiderzee is open sea.
+- **Crossings are kept visible.** Narrow straits are cut to a minimum drawn width. This is cartographic exaggeration and is listed strait by strait in the recipe.
+- **The sea carries the tone.** Storm-dark deep water, a pale shelf, engraved lining. Land is kept mid-toned so units, towns and territory washes read on top of it.
+- **No graticule on land, no lettering, no compass rose.** A faint graticule on water only gives the chart its period feel without competing with overlays.
+- **Raw data stays out of the repository.** Derived layers live under `authoring/geodata/` with the source pinned by commit and hash.
 
 ## Units
 
@@ -68,4 +78,6 @@ Research and adjustments by unit: `design/art/units.md`.
 1. **Attachment points.** Muzzle, flag mast and similar points need a place in the manifest. Proposal for a v2: optional `points: {"muzzle": [x, y], ...}` per asset in frame pixels, with optional per-frame overrides. Compatible: v1 readers ignore it if the schema allows the field; it needs a `contract_version` bump because v1 rejects unknown fields.
 2. **Layered map drawing.** The coast recipe needs all coast layers drawn before any land piece. Can the renderer draw terrain in passes?
 3. **Frame sizes beyond the recommended canvases.** Land pieces are 176×198 and coast aprons 240×270 so they can overlap neighbours. Display sizes keep the 8:9 ratio.
-4. **Region chunks.** ASSET-SPEC describes 516×516 chunks for regional maps but no id or placement convention. Proposal in `design/art/maps.md`.
+4. **Region chunks.** ASSET-SPEC describes 516×516 chunks for regional maps but no id, placement or projection convention. `atlas-europe-01` uses `maps.region.<region>.z<level>.r<row>c<column>`, centre anchor, and the record `design/maps/europe.json`. Is that acceptable, and where should the game read the projection from? The manifest and theme schemas have no field for it.
+5. **Levels of detail.** One batch holds 30 chunks. Sharp zoom-in needs level 1 (120 chunks, four batches). How many map pixels can the game afford to ship, and will it convert chunks to a compressed texture format?
+6. **Hex scale** for Europe: 120 km or 60 km per hex column. Options and costs in `design/maps/europe.json`; the Owner decides.

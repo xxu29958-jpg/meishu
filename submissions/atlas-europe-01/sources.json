@@ -1,0 +1,17 @@
+{
+  "contract_version": 1,
+  "sources": [
+    {
+      "id": "atlas.claude.europe-map",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it. Coastlines, lakes, rivers and range outlines derive from Natural Earth 5.1.2 (1:50m), which is in the public domain.",
+      "description": "Continuous map of Europe and its approaches, painted by authoring/shared/painters/atlas.py from the recipe authoring/atlas-europe-01/europe.json and the region record design/maps/europe.json. Geography from the Natural Earth layers under authoring/geodata/natural-earth-50m (derived from the pinned release recorded in its SOURCE.json; download approved by the Owner on 2026-11-11). Interpreted by the author and recorded in the recipe: land cover of about 1800, ridge lines for ranges the 1:50m data does not outline, hydrography as of the period (modern reservoirs and post-1815 canals left out, the Zuiderzee restored), and minimum drawn widths for narrow straits. Relief is drawn, not surveyed: no elevation data was used. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5); no image-generation model and no external image was used as input. No vector master: the editable source is the recipe and the painter. Rebuild with: python authoring/build.py authoring/atlas-europe-01.",
+      "references": [
+        "https://www.naturalearthdata.com/about/terms-of-use/",
+        "https://github.com/nvkelso/natural-earth-vector/tree/f1890d9f152c896d250a77557a5751a93d494776/geojson"
+      ],
+      "editable_files": []
+    }
+  ]
+}

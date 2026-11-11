@@ -1,0 +1,291 @@
+{
+  "contract_version": 1,
+  "canvas_size": [
+    3072,
+    2560
+  ],
+  "origin": [
+    0,
+    0
+  ],
+  "hex": {
+    "step": [
+      64,
+      54
+    ],
+    "odd_row_offset": 32
+  },
+  "tiles": [],
+  "items": [
+    {
+      "asset": "maps.region.europe.z0.r0c0",
+      "clip": "still",
+      "position": [
+        256.0,
+        256.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r0c1",
+      "clip": "still",
+      "position": [
+        768.0,
+        256.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r0c2",
+      "clip": "still",
+      "position": [
+        1280.0,
+        256.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r0c3",
+      "clip": "still",
+      "position": [
+        1792.0,
+        256.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r0c4",
+      "clip": "still",
+      "position": [
+        2304.0,
+        256.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r0c5",
+      "clip": "still",
+      "position": [
+        2816.0,
+        256.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r1c0",
+      "clip": "still",
+      "position": [
+        256.0,
+        768.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r1c1",
+      "clip": "still",
+      "position": [
+        768.0,
+        768.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r1c2",
+      "clip": "still",
+      "position": [
+        1280.0,
+        768.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r1c3",
+      "clip": "still",
+      "position": [
+        1792.0,
+        768.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r1c4",
+      "clip": "still",
+      "position": [
+        2304.0,
+        768.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r1c5",
+      "clip": "still",
+      "position": [
+        2816.0,
+        768.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r2c0",
+      "clip": "still",
+      "position": [
+        256.0,
+        1280.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r2c1",
+      "clip": "still",
+      "position": [
+        768.0,
+        1280.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r2c2",
+      "clip": "still",
+      "position": [
+        1280.0,
+        1280.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r2c3",
+      "clip": "still",
+      "position": [
+        1792.0,
+        1280.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r2c4",
+      "clip": "still",
+      "position": [
+        2304.0,
+        1280.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r2c5",
+      "clip": "still",
+      "position": [
+        2816.0,
+        1280.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r3c0",
+      "clip": "still",
+      "position": [
+        256.0,
+        1792.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r3c1",
+      "clip": "still",
+      "position": [
+        768.0,
+        1792.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r3c2",
+      "clip": "still",
+      "position": [
+        1280.0,
+        1792.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r3c3",
+      "clip": "still",
+      "position": [
+        1792.0,
+        1792.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r3c4",
+      "clip": "still",
+      "position": [
+        2304.0,
+        1792.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r3c5",
+      "clip": "still",
+      "position": [
+        2816.0,
+        1792.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r4c0",
+      "clip": "still",
+      "position": [
+        256.0,
+        2304.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r4c1",
+      "clip": "still",
+      "position": [
+        768.0,
+        2304.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r4c2",
+      "clip": "still",
+      "position": [
+        1280.0,
+        2304.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r4c3",
+      "clip": "still",
+      "position": [
+        1792.0,
+        2304.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r4c4",
+      "clip": "still",
+      "position": [
+        2304.0,
+        2304.0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.region.europe.z0.r4c5",
+      "clip": "still",
+      "position": [
+        2816.0,
+        2304.0
+      ],
+      "scale": 1
+    }
+  ]
+}

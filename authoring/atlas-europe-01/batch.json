@@ -1,0 +1,25 @@
+{
+  "batch": "atlas-europe-01",
+  "output": "submissions/atlas-europe-01",
+  "palette": "palette.json",
+  "seed": 1805,
+  "theme_id": "campaign-atlas.europe-map",
+  "theme": "theme.json",
+  "sources": "sources.json",
+  "preview": "preview.json",
+  "assets": [
+    {
+      "id": "maps.region.europe.z0",
+      "category": "maps",
+      "format": "region-chunk",
+      "painter": "atlas",
+      "parts": true,
+      "source_id": "atlas.claude.europe-map",
+      "params": {
+        "recipe": "europe.json",
+        "level": 0
+      },
+      "editable": false
+    }
+  ]
+}

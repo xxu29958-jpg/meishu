@@ -4,7 +4,7 @@ The one record of what the assignment covers, what is delivered, and what is lef
 
 Legend: **done** = delivered in a validated batch · **part** = started, list says what exists · **none** = not started.
 
-Last updated with batch `campaign-atlas-01`.
+Last updated with batch `atlas-europe-01`.
 
 ## A. Interface
 
@@ -37,8 +37,9 @@ Last updated with batch `campaign-atlas-01`.
 | Water, coast | done | Open sea, shallows, three coast layers |
 | Plain, forest | done | Plain, tilled plain, mixed forest |
 | Rivers, mountains, snow, desert, wetland, roads | none | |
-| Regional composition | part | One demonstration coast scene. No real geography yet |
-| Europe map | none | Needs geographic data (decision pending) |
+| Regional composition | part | One demonstration coast scene with the terrain kit |
+| Map painter and geography layers | done | `authoring/shared/painters/atlas.py`; Natural Earth 1:50m layers under `authoring/geodata/` |
+| Europe map | part | Level 0 (overview, 3072×2560, 30 chunks) in `atlas-europe-01`. Remaining: level 1 for close zoom (4 batches); more rivers (needs 1:10m data); hex scale decision; per-hex terrain table |
 | Americas map | none | |
 | World map (4096×2048, chunked) | none | |
 | Political overlays | none | Style described in theme; no assets |
@@ -107,5 +108,5 @@ Last updated with batch `campaign-atlas-01`.
 | Item | State |
 | --- | --- |
 | Authoring kit, build, review tools | done |
-| Tests for authoring code and design records | done (60 checks) |
+| Tests for authoring code, map painter and design records | done (78 checks) |
 | Second, materially different batch for acceptance | none |

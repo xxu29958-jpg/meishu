@@ -21,6 +21,13 @@ python tools/validate.py submissions/campaign-atlas-01/manifest.json
 python -m unittest discover -s validation
 ```
 
+The Europe map is a batch like any other; its preview scene comes from the region record:
+
+```sh
+python authoring/build.py authoring/atlas-europe-01
+python authoring/scene.py authoring/atlas-europe-01/scenes/europe.json submissions/atlas-europe-01/preview.json
+```
+
 `--only <id-prefix>` rebuilds part of a batch. The build writes PNGs, the vector masters in `sources/` and `manifest.json`. It never writes `theme.json` or `sources.json`: those are declarations, kept by hand.
 
 Rebuilding gives the same pixels on the same library versions. PNG bytes, and so hashes, can differ between zlib builds; `seal.py` records the bytes actually committed.
@@ -45,8 +52,9 @@ authoring/
   review.py           headless contact sheets and scenes
   shared/
     formats.json      canvas formats from ASSET-SPEC
-    kit/              raster, draw, palette, sheet, anim, rig, hexgrid, compose, maplayout
-    painters/         terrain, buildings, figure, infantry, cavalry, effects, flags, ui, illustration
+    kit/              raster, draw, palette, sheet, anim, rig, hexgrid, compose, maplayout, geo, field
+    painters/         terrain, buildings, figure, infantry, cavalry, effects, flags, ui, illustration, atlas
+  geodata/            public-domain geography layers and the tool that derives them (see its README)
   <batch>/
     batch.json        the asset list: id, painter, format, parameters, source
     palette.json      every colour, by role
@@ -65,7 +73,13 @@ authoring/
 | An effect's timing or layers | `<batch>/effects.json` |
 | An avatar's crop | `<batch>/portraits/<name>/character.json` |
 | A screen's layout or its sample text | `design/ui/flows/`, `design/ui/data/` |
+| What a regional map shows: ranges, land cover, period hydrography, straits, every stroke | `<batch>/<region>.json` (the recipe) |
+| A regional map's projection, window, levels | `design/maps/<region>.json` |
 | Add a commander | New `portraits/<name>/` with `illustration.py` and `character.json`, two asset entries |
 | Add a kind of artwork | New module in `shared/painters/`, one line in `shared/painters/__init__.py` |
 
-Shared code never names an asset, a nation or a person. If a change seems to need that, it belongs in data.
+Shared code never names an asset, a nation, a person or a place. If a change seems to need that, it belongs in data.
+
+## Painted maps
+
+`shared/painters/atlas.py` paints a regional map for a `Frame` (a pixel window on a projection, `shared/kit/geo.py`). A batch entry with `"parts": true` returns many pieces from one painting; each becomes its own asset, `<id>.r<row>c<column>`. To look at part of a map without building the batch, call `atlas.render(frame.window(left, top, width, height), recipe, palette)`: any window paints the same ground it would in the whole picture. A palette may `extend` another so maps share ink, paper and sea with the terrain kit.
