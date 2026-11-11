@@ -1,0 +1,1840 @@
+{
+  "contract_version": 1,
+  "canvas_size": [
+    640,
+    400
+  ],
+  "origin": [
+    56,
+    50
+  ],
+  "hex": {
+    "step": [
+      64,
+      54
+    ],
+    "odd_row_offset": 32
+  },
+  "tiles": [
+    {
+      "row": 0,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 3,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 4,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 5,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    }
+  ],
+  "items": [
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        192,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        256,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        320,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        384,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        448,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        512,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        160,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        224,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        288,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        352,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        416,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        480,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        544,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        192,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        256,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        320,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        384,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        448,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        512,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        224,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        288,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        352,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        416,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        480,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        544,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        64,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        256,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        320,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        384,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        448,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        512,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        352,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        416,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        480,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        544,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        384,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        448,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        512,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        192,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        256,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        320,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        384,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        448,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        512,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        160,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        224,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        288,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        352,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        416,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        480,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        544,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        192,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        256,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        320,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        384,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        448,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        512,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        224,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        288,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        352,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        416,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        480,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        544,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        64,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        256,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        320,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        384,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        448,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        512,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        352,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        416,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        480,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        544,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        384,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        448,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        512,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        192,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        256,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        320,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        384,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        448,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        512,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        160,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        224,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        288,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        352,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        416,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        480,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        544,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        192,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        256,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        320,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        384,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        448,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        512,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        224,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        288,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        352,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        416,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        480,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        544,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        64,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        256,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        320,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        384,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        448,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        512,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        352,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        416,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        480,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        544,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        384,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        448,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        512,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        192,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        256,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        320,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        384,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        448,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        512,
+        0
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        160,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        224,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain.tilled",
+      "clip": "still",
+      "position": [
+        288,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        352,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        416,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        480,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        544,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        192,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        256,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        320,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        384,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        448,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        512,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        224,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain.tilled",
+      "clip": "still",
+      "position": [
+        288,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        352,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        416,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        480,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        544,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        64,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        256,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        320,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        384,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        448,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        512,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        352,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        416,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        480,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain.tilled",
+      "clip": "still",
+      "position": [
+        544,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        384,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        448,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        512,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "buildings.city.l1",
+      "clip": "still",
+      "position": [
+        224,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "buildings.capital.l1",
+      "clip": "still",
+      "position": [
+        384,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "units.infantry.line",
+      "clip": "move",
+      "position": [
+        256,
+        108
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "effects.hit.spark",
+      "clip": "play",
+      "position": [
+        426,
+        144
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "buildings.port.l1",
+      "clip": "still",
+      "position": [
+        224,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "units.france.grenadier",
+      "clip": "attack",
+      "position": [
+        352,
+        162
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "units.cavalry.light",
+      "clip": "move",
+      "position": [
+        320,
+        216
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "buildings.city.l1",
+      "clip": "damaged",
+      "position": [
+        480,
+        270
+      ],
+      "scale": 1
+    }
+  ]
+}

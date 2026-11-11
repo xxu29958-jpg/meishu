@@ -1,0 +1,134 @@
+{
+  "_note": "French looks for September 1805. Colour values are palette roles. Research basis and the adjustments made for legibility are in design/art/units.md.",
+  "defaults": {
+    "skin": "skin",
+    "hair": "hair_dark",
+    "stock": "stock_black",
+    "buttons": "brass",
+    "shoes": "leather_black",
+    "belts": "belt_white",
+    "cartridge_box": "leather_black",
+    "pack": "calfskin",
+    "roll": "greatcoat",
+    "musket": {
+      "length": 48,
+      "bayonet": 8,
+      "bands": [
+        28,
+        36,
+        40
+      ],
+      "wood": "gunstock",
+      "furniture": "brass"
+    }
+  },
+  "looks": {
+    "line-fusilier": {
+      "coat": "fr_blue",
+      "collar": "fr_red",
+      "cuff": "fr_red",
+      "lapel": "cloth_white",
+      "piping": "fr_red",
+      "turnback": "cloth_white",
+      "waistcoat": "cloth_white",
+      "breeches": "cloth_white",
+      "gaiters": "gaiter_black",
+      "crossbelts": 1,
+      "shoulder": {
+        "type": "strap",
+        "colour": "fr_blue",
+        "piping": "fr_red"
+      },
+      "headgear": {
+        "type": "bicorne",
+        "felt": "hat_black",
+        "cockade": [
+          "cockade_white",
+          "fr_red",
+          "cockade_blue"
+        ],
+        "lace": "aurore",
+        "pompon": "company_sky"
+      }
+    },
+    "guard-grenadier": {
+      "coat": "fr_blue",
+      "collar": "fr_blue",
+      "cuff": "fr_red",
+      "lapel": "cloth_white",
+      "piping": "fr_red",
+      "turnback": "fr_red",
+      "waistcoat": "cloth_white",
+      "breeches": "cloth_white",
+      "gaiters": "gaiter_black",
+      "crossbelts": 2,
+      "sidearm": "briquet",
+      "moustache": true,
+      "shoulder": {
+        "type": "epaulette",
+        "colour": "fr_red"
+      },
+      "headgear": {
+        "type": "bearskin",
+        "fur": "bearskin",
+        "plate": "brass",
+        "cords": "cloth_white",
+        "plume": "fr_red",
+        "height": 21.5
+      }
+    },
+    "chasseur-a-cheval": {
+      "coat": "ch_green",
+      "collar": "fr_red",
+      "cuff": "fr_red",
+      "chest": "braid",
+      "braid": "cloth_white",
+      "tails": false,
+      "breeches": "ch_green",
+      "gaiters": "boot_black",
+      "gaiter_height": 0.02,
+      "crossbelts": 1,
+      "pack": null,
+      "roll": null,
+      "cartridge_box": null,
+      "buttons": "pewter",
+      "shoulder": {
+        "type": "none"
+      },
+      "headgear": {
+        "type": "shako",
+        "felt": "hat_black",
+        "plate": "pewter",
+        "cockade": [
+          "cockade_white",
+          "fr_red",
+          "cockade_blue"
+        ],
+        "pompon": "fr_red",
+        "cords": "cloth_white",
+        "height": 12
+      },
+      "horse": {
+        "body": "horse_bay",
+        "shade": "horse_bay_shade",
+        "light": "horse_bay_light",
+        "points": "horse_points",
+        "mane": "horse_points",
+        "hoof": "hoof",
+        "blaze": "cloth_white",
+        "tack": "leather_black"
+      },
+      "saddlery": {
+        "cloth": "sheepskin",
+        "edge": "fr_red",
+        "valise": "ch_green",
+        "valise_end": "fr_red"
+      },
+      "sabre_length": 30,
+      "build": {
+        "scale": 0.95,
+        "rider_scale": 0.85
+      }
+    }
+  }
+}

@@ -1,0 +1,749 @@
+{
+  "_note": "Western European settlement plans, c.1800: plastered townhouses under clay tile, stone church with slate spire, slate-roofed palace and gilt-ribbed dome for the capital. Units are ground-plan units (1 unit = 1 frame px along the plan axes). Each part may declare the damage it shows on the damaged frame. No ownership flags are drawn; see design/ART-DECISIONS.md.",
+  "plans": {
+    "city.l1": {
+      "scale": 1.3,
+      "parts": [
+        {
+          "type": "ground",
+          "radius": [
+            41,
+            16.5
+          ],
+          "colour": "earth",
+          "seed": 4
+        },
+        {
+          "type": "house",
+          "at": [
+            -6,
+            -26
+          ],
+          "size": [
+            10,
+            7,
+            9
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            10,
+            -21
+          ],
+          "size": [
+            9,
+            8,
+            8
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "damage": "burnt"
+        },
+        {
+          "type": "tower",
+          "at": [
+            -14,
+            -15
+          ],
+          "size": [
+            6,
+            25
+          ],
+          "cap": "spire",
+          "rise": 19,
+          "wall": "stone",
+          "roof_colour": "slate",
+          "openings": [
+            0.42,
+            0.68
+          ],
+          "damage": "broken"
+        },
+        {
+          "type": "house",
+          "at": [
+            -8,
+            -14
+          ],
+          "size": [
+            16,
+            8,
+            12
+          ],
+          "roof": 7,
+          "ridge": "x",
+          "wall": "stone",
+          "roof_colour": "slate",
+          "bays": 4,
+          "chimney": false
+        },
+        {
+          "type": "house",
+          "at": [
+            -25,
+            -6
+          ],
+          "size": [
+            10,
+            8,
+            9
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            10,
+            -7
+          ],
+          "size": [
+            10,
+            9,
+            10
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            -22,
+            6
+          ],
+          "size": [
+            9,
+            9,
+            8
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "damage": "roofless"
+        },
+        {
+          "type": "house",
+          "at": [
+            -9,
+            10
+          ],
+          "size": [
+            12,
+            8,
+            10
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2,
+          "door": true
+        },
+        {
+          "type": "house",
+          "at": [
+            7,
+            8
+          ],
+          "size": [
+            9,
+            10,
+            9
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2,
+          "damage": "burnt"
+        },
+        {
+          "type": "house",
+          "at": [
+            17,
+            15
+          ],
+          "size": [
+            7,
+            7,
+            7
+          ],
+          "roof": 5,
+          "ridge": "x"
+        },
+        {
+          "type": "trees",
+          "at": [
+            [
+              -29,
+              16,
+              11
+            ],
+            [
+              25,
+              3,
+              11
+            ]
+          ],
+          "damage": "burnt"
+        },
+        {
+          "type": "trees",
+          "at": [
+            [
+              1,
+              25,
+              10
+            ]
+          ]
+        },
+        {
+          "type": "smoke",
+          "at": [
+            -18,
+            10,
+            7
+          ],
+          "size": 3.6,
+          "puffs": 5,
+          "order": 900
+        },
+        {
+          "type": "smoke",
+          "at": [
+            12,
+            -17,
+            10
+          ],
+          "size": 3.0,
+          "puffs": 4,
+          "seed": 5,
+          "order": 901
+        }
+      ]
+    },
+    "capital.l1": {
+      "parts": [
+        {
+          "type": "ground",
+          "radius": [
+            54,
+            18.5
+          ],
+          "colour": "earth",
+          "seed": 9
+        },
+        {
+          "type": "tower",
+          "at": [
+            26,
+            -33
+          ],
+          "size": [
+            6,
+            10
+          ],
+          "cap": "battlement",
+          "wall": "stone"
+        },
+        {
+          "type": "house",
+          "at": [
+            -19,
+            -30
+          ],
+          "size": [
+            38,
+            9,
+            13
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "wall": "stone",
+          "roof_colour": "slate",
+          "floors": 2,
+          "bays": 10,
+          "chimney": false,
+          "damage": "burnt"
+        },
+        {
+          "type": "house",
+          "at": [
+            -7,
+            -23
+          ],
+          "size": [
+            14,
+            8,
+            15
+          ],
+          "roof": 4,
+          "ridge": "y",
+          "wall": "stone",
+          "roof_colour": "slate",
+          "floors": 2,
+          "bays": 3,
+          "chimney": false,
+          "door": true
+        },
+        {
+          "type": "dome",
+          "at": [
+            0,
+            -18
+          ],
+          "radius": 7.2,
+          "drum": 6,
+          "base": 18,
+          "colour": "slate",
+          "damage": "broken",
+          "order": -9
+        },
+        {
+          "type": "house",
+          "at": [
+            -29,
+            -17
+          ],
+          "size": [
+            9,
+            9,
+            10
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2
+        },
+        {
+          "type": "tower",
+          "at": [
+            20,
+            -10
+          ],
+          "size": [
+            5,
+            23
+          ],
+          "cap": "spire",
+          "rise": 17,
+          "wall": "stone",
+          "roof_colour": "slate",
+          "openings": [
+            0.45,
+            0.7
+          ]
+        },
+        {
+          "type": "house",
+          "at": [
+            14,
+            -7
+          ],
+          "size": [
+            8,
+            13,
+            11
+          ],
+          "roof": 7,
+          "ridge": "y",
+          "wall": "stone",
+          "roof_colour": "slate",
+          "chimney": false
+        },
+        {
+          "type": "house",
+          "at": [
+            -28,
+            -3
+          ],
+          "size": [
+            10,
+            9,
+            10
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2,
+          "damage": "roofless"
+        },
+        {
+          "type": "house",
+          "at": [
+            -15,
+            -6
+          ],
+          "size": [
+            9,
+            8,
+            9
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            -13,
+            5
+          ],
+          "size": [
+            10,
+            9,
+            11
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            2,
+            3
+          ],
+          "size": [
+            11,
+            8,
+            11
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2,
+          "damage": "burnt"
+        },
+        {
+          "type": "house",
+          "at": [
+            18,
+            4
+          ],
+          "size": [
+            8,
+            9,
+            10
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            -26,
+            13
+          ],
+          "size": [
+            10,
+            9,
+            10
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            -10,
+            17
+          ],
+          "size": [
+            10,
+            8,
+            10
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2
+        },
+        {
+          "type": "house",
+          "at": [
+            5,
+            17
+          ],
+          "size": [
+            11,
+            8,
+            10
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "floors": 2,
+          "door": true
+        },
+        {
+          "type": "house",
+          "at": [
+            19,
+            16
+          ],
+          "size": [
+            7,
+            9,
+            9
+          ],
+          "roof": 5,
+          "ridge": "y",
+          "damage": "roofless"
+        },
+        {
+          "type": "wall",
+          "path": [
+            [
+              -33,
+              30
+            ],
+            [
+              30,
+              30
+            ]
+          ],
+          "height": 5,
+          "wall": "stone",
+          "gate": 0,
+          "damage": "breach",
+          "breach_at": 0,
+          "order": 800
+        },
+        {
+          "type": "wall",
+          "path": [
+            [
+              30,
+              30
+            ],
+            [
+              30,
+              -30
+            ]
+          ],
+          "height": 5,
+          "wall": "stone",
+          "order": 801
+        },
+        {
+          "type": "tower",
+          "at": [
+            -36,
+            26
+          ],
+          "size": [
+            6,
+            10
+          ],
+          "cap": "battlement",
+          "wall": "stone",
+          "order": 802
+        },
+        {
+          "type": "tower",
+          "at": [
+            26,
+            26
+          ],
+          "size": [
+            6,
+            10
+          ],
+          "cap": "battlement",
+          "wall": "stone",
+          "damage": "broken",
+          "order": 803
+        },
+        {
+          "type": "smoke",
+          "at": [
+            -22,
+            2,
+            8
+          ],
+          "size": 4.0,
+          "puffs": 6,
+          "order": 900
+        },
+        {
+          "type": "smoke",
+          "at": [
+            2,
+            -22,
+            22
+          ],
+          "size": 3.6,
+          "puffs": 5,
+          "seed": 3,
+          "order": 901
+        },
+        {
+          "type": "smoke",
+          "at": [
+            22,
+            20,
+            6
+          ],
+          "size": 3.0,
+          "puffs": 4,
+          "seed": 8,
+          "order": 902
+        }
+      ],
+      "scale": 1.03
+    },
+    "port.l1": {
+      "scale": 1.1,
+      "parts": [
+        {
+          "type": "ground",
+          "radius": [
+            44,
+            17.5
+          ],
+          "colour": "quay",
+          "seed": 2
+        },
+        {
+          "type": "basin",
+          "rect": [
+            -6,
+            -2,
+            31,
+            29
+          ],
+          "seed": 3,
+          "ripples": 14
+        },
+        {
+          "type": "house",
+          "at": [
+            -29,
+            -23
+          ],
+          "size": [
+            20,
+            9,
+            10
+          ],
+          "roof": 6,
+          "ridge": "x",
+          "wall": "plaster",
+          "bays": 6,
+          "floors": 2,
+          "chimney": false,
+          "damage": "roofless"
+        },
+        {
+          "type": "house",
+          "at": [
+            -6,
+            -25
+          ],
+          "size": [
+            10,
+            9,
+            9
+          ],
+          "roof": 6,
+          "ridge": "y",
+          "floors": 2,
+          "damage": "burnt"
+        },
+        {
+          "type": "tower",
+          "at": [
+            18,
+            -21
+          ],
+          "size": [
+            6,
+            22
+          ],
+          "cap": "lantern",
+          "rise": 10,
+          "wall": "plaster",
+          "roof_colour": "tile",
+          "openings": [
+            0.3,
+            0.58
+          ]
+        },
+        {
+          "type": "house",
+          "at": [
+            -35,
+            -6
+          ],
+          "size": [
+            9,
+            8,
+            8
+          ],
+          "roof": 5,
+          "ridge": "y"
+        },
+        {
+          "type": "crane",
+          "at": [
+            -19,
+            6
+          ],
+          "damage": "ruin"
+        },
+        {
+          "type": "crates",
+          "at": [
+            -24,
+            17
+          ],
+          "count": 5,
+          "seed": 5
+        },
+        {
+          "type": "crates",
+          "at": [
+            8,
+            -9
+          ],
+          "count": 4,
+          "seed": 8
+        },
+        {
+          "type": "ship",
+          "at": [
+            1,
+            14
+          ],
+          "length": 26,
+          "beam": 6.4,
+          "masts": 24,
+          "damage": "wreck",
+          "order": 500
+        },
+        {
+          "type": "smoke",
+          "at": [
+            -19,
+            -18,
+            8
+          ],
+          "size": 3.8,
+          "puffs": 5,
+          "order": 900
+        },
+        {
+          "type": "smoke",
+          "at": [
+            12,
+            14,
+            4
+          ],
+          "size": 3.0,
+          "puffs": 4,
+          "seed": 6,
+          "order": 901
+        }
+      ]
+    }
+  }
+}

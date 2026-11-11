@@ -1,0 +1,14 @@
+{
+  "_note": "Effect recipes. Times are fractions of the clip (0..1). Duration = frames / fps; retime here. Layers draw in order.",
+  "effects": {
+    "hit-spark": {
+      "frames": 9, "fps": 15,
+      "layers": [
+        {"type": "smoke", "start": 0.1, "end": 1.0, "count": 6, "spread": 19, "size": 9, "rise": 11, "strength": 0.9},
+        {"type": "debris", "start": 0.05, "end": 0.9, "count": 9, "reach": 30, "gravity": 44},
+        {"type": "sparks", "start": 0.04, "end": 0.78, "count": 11, "reach": 44, "gravity": 18},
+        {"type": "burst", "start": 0.0, "end": 0.42, "radius": 31, "spikes": 11}
+      ]
+    }
+  }
+}

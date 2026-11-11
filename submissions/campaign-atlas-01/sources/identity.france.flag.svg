@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96px" height="64px" viewBox="0 0 96 64">
+<defs>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 5 5 L 35 5 L 35 59 L 5 59 Z M 5 5 "/>
+</clipPath>
+<clipPath id="clip-1">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<clipPath id="clip-2">
+<path clip-rule="nonzero" d="M 33 5 L 63 5 L 63 59 L 33 59 Z M 33 5 "/>
+</clipPath>
+<clipPath id="clip-3">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<clipPath id="clip-4">
+<path clip-rule="nonzero" d="M 62 5 L 91 5 L 91 59 L 62 59 Z M 62 5 "/>
+</clipPath>
+<clipPath id="clip-5">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<clipPath id="clip-6">
+<path clip-rule="nonzero" d="M 11 5 L 24 5 L 24 59 L 11 59 Z M 11 5 "/>
+</clipPath>
+<clipPath id="clip-7">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-0" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(6.02, 0, 0, 48.6, 17.04, 32)">
+<stop offset="0" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.2"/>
+<stop offset="0.65" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.11"/>
+<stop offset="1" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-8">
+<path clip-rule="nonzero" d="M 22 5 L 33 5 L 33 59 L 22 59 Z M 22 5 "/>
+</clipPath>
+<clipPath id="clip-9">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-1" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(5.16, 0, 0, 48.6, 27.36, 32)">
+<stop offset="0" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.16"/>
+<stop offset="0.65" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.088"/>
+<stop offset="1" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-10">
+<path clip-rule="nonzero" d="M 33 5 L 46 5 L 46 59 L 33 59 Z M 33 5 "/>
+</clipPath>
+<clipPath id="clip-11">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-2" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(6.02, 0, 0, 48.6, 39.4, 32)">
+<stop offset="0" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.2"/>
+<stop offset="0.65" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.11"/>
+<stop offset="1" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-12">
+<path clip-rule="nonzero" d="M 44 5 L 55 5 L 55 59 L 44 59 Z M 44 5 "/>
+</clipPath>
+<clipPath id="clip-13">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-3" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(5.16, 0, 0, 48.6, 49.72, 32)">
+<stop offset="0" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.16"/>
+<stop offset="0.65" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.088"/>
+<stop offset="1" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-14">
+<path clip-rule="nonzero" d="M 55 5 L 68 5 L 68 59 L 55 59 Z M 55 5 "/>
+</clipPath>
+<clipPath id="clip-15">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-4" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(6.02, 0, 0, 48.6, 61.76, 32)">
+<stop offset="0" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.2"/>
+<stop offset="0.65" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.11"/>
+<stop offset="1" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-16">
+<path clip-rule="nonzero" d="M 66 5 L 78 5 L 78 59 L 66 59 Z M 66 5 "/>
+</clipPath>
+<clipPath id="clip-17">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-5" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(5.16, 0, 0, 48.6, 72.08, 32)">
+<stop offset="0" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.16"/>
+<stop offset="0.65" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.088"/>
+<stop offset="1" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-18">
+<path clip-rule="nonzero" d="M 78 5 L 91 5 L 91 59 L 78 59 Z M 78 5 "/>
+</clipPath>
+<clipPath id="clip-19">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-6" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(6.02, 0, 0, 48.6, 84.12, 32)">
+<stop offset="0" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.2"/>
+<stop offset="0.65" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.11"/>
+<stop offset="1" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-20">
+<path clip-rule="nonzero" d="M 89 5 L 91 5 L 91 59 L 89 59 Z M 89 5 "/>
+</clipPath>
+<clipPath id="clip-21">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+<radialGradient id="radial-pattern-7" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(5.16, 0, 0, 48.6, 94.44, 32)">
+<stop offset="0" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.16"/>
+<stop offset="0.65" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0.088"/>
+<stop offset="1" stop-color="rgb(94.509804%, 90.196078%, 80%)" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip-22">
+<path clip-rule="nonzero" d="M 5 5 L 9 5 L 9 59 L 5 59 Z M 5 5 "/>
+</clipPath>
+<clipPath id="clip-23">
+<path clip-rule="nonzero" d="M 89.5 5 C 90.328125 5 91 5.671875 91 6.5 L 91 57.5 C 91 58.328125 90.328125 59 89.5 59 L 6.5 59 C 5.671875 59 5 58.328125 5 57.5 L 5 6.5 C 5 5.671875 5.671875 5 6.5 5 Z M 89.5 5 "/>
+</clipPath>
+</defs>
+<path fill-rule="nonzero" fill="rgb(13.72549%, 9.803922%, 7.843137%)" fill-opacity="0.35" d="M 91 7 C 91.828125 7 92.5 7.671875 92.5 8.5 L 92.5 59.5 C 92.5 60.328125 91.828125 61 91 61 L 8 61 C 7.171875 61 6.5 60.328125 6.5 59.5 L 6.5 8.5 C 6.5 7.671875 7.171875 7 8 7 Z M 91 7 "/>
+<g clip-path="url(#clip-0)">
+<g clip-path="url(#clip-1)">
+<path fill-rule="nonzero" fill="rgb(14.509804%, 25.098039%, 49.803922%)" fill-opacity="1" d="M 5 5 L 34.167969 5 L 34.167969 59 L 5 59 Z M 5 5 "/>
+</g>
+</g>
+<g clip-path="url(#clip-2)">
+<g clip-path="url(#clip-3)">
+<path fill-rule="nonzero" fill="rgb(94.509804%, 92.54902%, 86.27451%)" fill-opacity="1" d="M 33.667969 5 L 62.835938 5 L 62.835938 59 L 33.667969 59 Z M 33.667969 5 "/>
+</g>
+</g>
+<g clip-path="url(#clip-4)">
+<g clip-path="url(#clip-5)">
+<path fill-rule="nonzero" fill="rgb(70.196078%, 15.686275%, 16.470588%)" fill-opacity="1" d="M 62.332031 5 L 91.5 5 L 91.5 59 L 62.332031 59 Z M 62.332031 5 "/>
+</g>
+</g>
+<g clip-path="url(#clip-6)">
+<g clip-path="url(#clip-7)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-0)" d="M 23.058594 32 C 23.058594 58.839844 20.363281 80.601562 17.039062 80.601562 C 13.714844 80.601562 11.019531 58.839844 11.019531 32 C 11.019531 5.160156 13.714844 -16.601562 17.039062 -16.601562 C 20.363281 -16.601562 23.058594 5.160156 23.058594 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-8)">
+<g clip-path="url(#clip-9)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-1)" d="M 32.519531 32 C 32.519531 58.839844 30.210938 80.601562 27.359375 80.601562 C 24.511719 80.601562 22.199219 58.839844 22.199219 32 C 22.199219 5.160156 24.511719 -16.601562 27.359375 -16.601562 C 30.210938 -16.601562 32.519531 5.160156 32.519531 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-10)">
+<g clip-path="url(#clip-11)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-2)" d="M 45.421875 32 C 45.421875 58.839844 42.726562 80.601562 39.398438 80.601562 C 36.074219 80.601562 33.378906 58.839844 33.378906 32 C 33.378906 5.160156 36.074219 -16.601562 39.398438 -16.601562 C 42.726562 -16.601562 45.421875 5.160156 45.421875 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-12)">
+<g clip-path="url(#clip-13)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-3)" d="M 54.878906 32 C 54.878906 58.839844 52.570312 80.601562 49.71875 80.601562 C 46.871094 80.601562 44.558594 58.839844 44.558594 32 C 44.558594 5.160156 46.871094 -16.601562 49.71875 -16.601562 C 52.570312 -16.601562 54.878906 5.160156 54.878906 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-14)">
+<g clip-path="url(#clip-15)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-4)" d="M 67.78125 32 C 67.78125 58.839844 65.085938 80.601562 61.761719 80.601562 C 58.433594 80.601562 55.738281 58.839844 55.738281 32 C 55.738281 5.160156 58.433594 -16.601562 61.761719 -16.601562 C 65.085938 -16.601562 67.78125 5.160156 67.78125 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-16)">
+<g clip-path="url(#clip-17)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-5)" d="M 77.238281 32 C 77.238281 58.839844 74.929688 80.601562 72.078125 80.601562 C 69.230469 80.601562 66.921875 58.839844 66.921875 32 C 66.921875 5.160156 69.230469 -16.601562 72.078125 -16.601562 C 74.929688 -16.601562 77.238281 5.160156 77.238281 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-18)">
+<g clip-path="url(#clip-19)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-6)" d="M 90.140625 32 C 90.140625 58.839844 87.445312 80.601562 84.121094 80.601562 C 80.796875 80.601562 78.101562 58.839844 78.101562 32 C 78.101562 5.160156 80.796875 -16.601562 84.121094 -16.601562 C 87.445312 -16.601562 90.140625 5.160156 90.140625 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-20)">
+<g clip-path="url(#clip-21)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-7)" d="M 99.601562 32 C 99.601562 58.839844 97.289062 80.601562 94.441406 80.601562 C 91.589844 80.601562 89.28125 58.839844 89.28125 32 C 89.28125 5.160156 91.589844 -16.601562 94.441406 -16.601562 C 97.289062 -16.601562 99.601562 5.160156 99.601562 32 "/>
+</g>
+</g>
+<g clip-path="url(#clip-22)">
+<g clip-path="url(#clip-23)">
+<path fill-rule="nonzero" fill="rgb(13.72549%, 9.803922%, 7.843137%)" fill-opacity="0.28" d="M 5 5 L 8.011719 5 L 8.011719 59 L 5 59 Z M 5 5 "/>
+</g>
+</g>
+<path fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(13.72549%, 9.803922%, 7.843137%)" stroke-opacity="1" stroke-miterlimit="10" d="M 84.5 0 C 85.328125 0 86 0.671875 86 1.5 L 86 52.5 C 86 53.328125 85.328125 54 84.5 54 L 1.5 54 C 0.671875 54 0 53.328125 0 52.5 L 0 1.5 C 0 0.671875 0.671875 0 1.5 0 Z M 84.5 0 " transform="matrix(1, 0, 0, 1, 5, 5)"/>
+</svg>

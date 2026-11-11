@@ -1,0 +1,6 @@
+{
+  "_note": "Flag records. Colours are palette roles. Proportions are fixed by the flag format (3:2).",
+  "flags": {
+    "france": {"layout": "vertical", "bands": ["flag_fr_blue", "flag_white", "flag_fr_red"]}
+  }
+}
