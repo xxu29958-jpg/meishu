@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "era": {
+      "type": "string",
+      "minLength": 1
+    },
+    "art_direction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "light_direction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "partial": {
+      "const": true
+    },
+    "map_regions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "europe",
+          "americas",
+          "global"
+        ]
+      },
+      "minItems": 1
+    },
+    "global_visual": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "global-visual.v1"
+        },
+        "start_year": {
+          "type": "integer",
+          "minimum": 1700,
+          "maximum": 1900
+        },
+        "projection": {
+          "const": "equirectangular"
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "flag_asset": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+              },
+              "map_color": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "specialty_units": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+                },
+                "minItems": 1
+              },
+              "historical_portraits": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+                },
+                "minItems": 1
+              },
+              "building_assets": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+                },
+                "minItems": 1
+              },
+              "faction_visual": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "flag_asset",
+              "map_color",
+              "specialty_units",
+              "historical_portraits",
+              "building_assets",
+              "faction_visual"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "relation_styles": {
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ally": {
+              "type": "string",
+              "minLength": 1
+            },
+            "neutral": {
+              "type": "string",
+              "minLength": 1
+            },
+            "opponent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "unknown": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "self",
+            "ally",
+            "neutral",
+            "opponent",
+            "unknown"
+          ],
+          "additionalProperties": false
+        },
+        "territory_style": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "start_year",
+        "projection",
+        "entities",
+        "relation_styles",
+        "territory_style"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "contract_version",
+    "id",
+    "title",
+    "era",
+    "art_direction",
+    "light_direction",
+    "partial",
+    "map_regions"
+  ],
+  "additionalProperties": false
+}

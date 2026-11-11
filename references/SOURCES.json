@@ -1,0 +1,21 @@
+{
+  "contract_version": 1,
+  "authorship": "项目自研接口、规格、制作工具、校验器和预览器；由 Codex 为本项目编写。无外部游戏文件输入。",
+  "samples": "由 tools/generate_samples.py 原创程序绘制，可复现全部 PNG；具体来源见 samples/sources.json。",
+  "references": [
+    {
+      "id": "geography.natural-earth",
+      "url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "purpose": "全球底图后续制作的数据路线；此包不包含下载数据",
+      "license": "Natural Earth 自述地图数据为 public domain",
+      "checked": "2026-11-11"
+    },
+    {
+      "id": "history.france-flag",
+      "url": "https://www.elysee.fr/en/french-presidency/the-french-flag",
+      "purpose": "三色旗历史与颜色顺序的事实依据；不复制网站图片或正文",
+      "license": "仅引用事实，PNG 由程序独立绘制",
+      "checked": "2026-11-11"
+    }
+  ]
+}

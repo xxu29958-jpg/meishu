@@ -1,0 +1,45 @@
+{
+  "contract_version": 1,
+  "id": "sample.geometry.v1",
+  "title": "原创几何接口样例（非美术方向）",
+  "era": "拿破仑时代",
+  "art_direction": "技术占位；成品风格由 Claude 自主创作",
+  "light_direction": "测试图无统一光照资格",
+  "partial": true,
+  "map_regions": [
+    "europe",
+    "americas",
+    "global"
+  ],
+  "global_visual": {
+    "id": "global-visual.v1",
+    "start_year": 1805,
+    "projection": "equirectangular",
+    "entities": [
+      {
+        "id": "historical.france",
+        "label": "France · 1805 · visual sample",
+        "flag_asset": "identity.france.flag",
+        "map_color": "#5577aa",
+        "specialty_units": [
+          "units.france.grenadier"
+        ],
+        "historical_portraits": [
+          "portraits.napoleon.bust"
+        ],
+        "building_assets": [
+          "buildings.regional.l1"
+        ],
+        "faction_visual": "独立标签与轮廓，最终由美术定义"
+      }
+    ],
+    "relation_styles": {
+      "self": "实线",
+      "ally": "双线",
+      "neutral": "点线",
+      "opponent": "斜线",
+      "unknown": "问号"
+    },
+    "territory_style": "透明覆盖；不烘焙政治边界"
+  }
+}

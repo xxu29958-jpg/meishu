@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meishu · 资源工作台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div><small>MEISHU / ART PRODUCTION</small><h1>原创资源工作台</h1>
+    <p>拿破仑时代 · 画风由 Claude 自主创作。这里的图像和页面只验证资源接口。</p></div>
+    <a href="../README.md">制作入口 ↗</a></header>
+  <main>
+    <form id="loader"><label for="manifest">批次清单</label><input id="manifest" value="samples/manifest.json" required>
+      <button type="submit">载入批次</button></form>
+    <p id="status" role="status">正在加载…</p>
+    <section class="toolbar" aria-label="预览控制">
+      <button id="play">暂停动画</button><button id="restart">重播</button>
+      <label><input type="checkbox" id="anchors" checked> 显示锚点</label>
+      <label><input type="checkbox" id="mirror"> 左向（可镜像资源）</label>
+      <label>时间 <input type="range" id="time" min="0" max="2000" value="0" step="20"> <output id="milliseconds">0 ms</output></label>
+    </section>
+    <section class="scene"><div><h2>中性地图与触控</h2><p>原创 4×3 测试排列。点击格子检查坐标，图像与点选共用同一变换。</p>
+      <label>缩放 <input type="range" id="zoom" min="0.6" max="1.6" value="1" step="0.1"></label>
+      <p id="selection" aria-live="polite">尚未选择地块</p><pre id="global"></pre></div>
+      <canvas id="map" width="640" height="340" aria-label="原创六角格测试场景"></canvas></section>
+    <div class="section-title"><h2>资源与动画</h2><p>每张卡可切换动作。UI 图不烘焙文字；正式数值由应用提供。</p></div>
+    <section id="gallery" aria-label="资源卡片"></section>
+  </main>
+  <footer>本项目自研预览器 · 无游戏数据和外部网络依赖 · 最终提交请运行 tools/validate.py</footer>
+  <script src="preview.js"></script>
+</body></html>
