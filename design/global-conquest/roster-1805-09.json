@@ -1,0 +1,651 @@
+{
+  "_note": "Worldwide roster proposed for scenario.1805-09 (1 September 1805). 'representation' says how each entity appears: playable (a campaign of its own); independent (on the map with its own government, run by the game, not offered as a campaign); dependent (bound to an overlord, may break away through events); associated (fights as an arm of another participant); regional-system (no single government; handled by the regional rules in README.md). 'tier' ranks playable campaigns by starting weight: major, medium, minor. Status is 'proposed' throughout; roster choices are the Owner's to approve. 'detail' marks entities with full records in nations-1805-09.json.",
+  "scenario": "scenario.1805-09",
+  "version": "0.1-proposal",
+  "selection_rules": [
+    "The entity existed and governed territory on the scenario date.",
+    "It could make war or peace on its own account, or its break from an overlord is a live question inside the window.",
+    "Its position gives a player decisions: neighbours worth fearing, somewhere to expand, something to protect.",
+    "Every inhabited region has at least one playable participant or a dependent with a written path to independence. South America has no independent government on this date, so it is carried by Spain's and Portugal's dependencies and gains playable participants in scenario.1810-09; that thinness is history, not omission.",
+    "Entities that differ only in name are merged or made dependent rather than listed for length."
+  ],
+  "entities": [
+    {
+      "id": "entity.france",
+      "name": "French Empire",
+      "region": "europe",
+      "form": "empire",
+      "capital": "Paris",
+      "representation": "playable",
+      "tier": "major",
+      "detail": true,
+      "note": "Napoleon I, Emperor since 1804 and King of Italy since 1805. The scenario's protagonist."
+    },
+    {
+      "id": "entity.italy",
+      "name": "Kingdom of Italy",
+      "region": "europe",
+      "form": "kingdom in personal union",
+      "capital": "Milan",
+      "representation": "dependent",
+      "overlord": "entity.france",
+      "note": "Viceroy Eugène de Beauharnais. Supplies troops; becomes separable only if France collapses."
+    },
+    {
+      "id": "entity.batavia",
+      "name": "Batavian Commonwealth",
+      "region": "europe",
+      "form": "client republic",
+      "capital": "The Hague",
+      "representation": "dependent",
+      "overlord": "entity.france",
+      "note": "Grand Pensionary Schimmelpenninck. Holds the Cape, Java and Guiana: France's only reach into the Indian Ocean."
+    },
+    {
+      "id": "entity.switzerland",
+      "name": "Swiss Confederation",
+      "region": "europe",
+      "form": "confederation under French mediation",
+      "capital": "Bern",
+      "representation": "dependent",
+      "overlord": "entity.france",
+      "note": "Neutral ground and a source of capitulated regiments."
+    },
+    {
+      "id": "entity.spain",
+      "name": "Kingdom of Spain",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Madrid",
+      "representation": "playable",
+      "tier": "major",
+      "note": "Charles IV and Godoy. France's ally, at war with Britain since December 1804. The largest overseas empire on the map and the weakest hold on it."
+    },
+    {
+      "id": "entity.portugal",
+      "name": "Kingdom of Portugal",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Lisbon",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Prince Regent João. Neutral, Britain's oldest ally, with Brazil larger than itself."
+    },
+    {
+      "id": "entity.britain",
+      "name": "United Kingdom",
+      "region": "europe",
+      "form": "constitutional monarchy",
+      "capital": "London",
+      "representation": "playable",
+      "tier": "major",
+      "detail": true,
+      "note": "George III, Pitt's second ministry. Paymaster of the coalition and master of the sea."
+    },
+    {
+      "id": "entity.east-india-company",
+      "name": "East India Company",
+      "region": "south-asia",
+      "form": "chartered company government",
+      "capital": "Calcutta",
+      "representation": "associated",
+      "overlord": "entity.britain",
+      "note": "Three presidencies with their own armies. Fights as Britain's Indian arm with its own recruitment pool and its own war with Holkar."
+    },
+    {
+      "id": "entity.austria",
+      "name": "Austrian Empire",
+      "region": "europe",
+      "form": "empire",
+      "capital": "Vienna",
+      "representation": "playable",
+      "tier": "major",
+      "note": "Francis, also the last Holy Roman Emperor. Joined the coalition on 9 August; Mack's army is moving on Bavaria."
+    },
+    {
+      "id": "entity.prussia",
+      "name": "Kingdom of Prussia",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Berlin",
+      "representation": "playable",
+      "tier": "major",
+      "note": "Frederick William III. Neutral, with the reputation of Frederick's army and an offer from each side."
+    },
+    {
+      "id": "entity.russia",
+      "name": "Russian Empire",
+      "region": "europe",
+      "form": "empire",
+      "capital": "Saint Petersburg",
+      "representation": "playable",
+      "tier": "major",
+      "detail": true,
+      "note": "Alexander I. Armies marching west under Kutuzov, a second war in the Caucasus, outposts in Alaska."
+    },
+    {
+      "id": "entity.sweden",
+      "name": "Kingdom of Sweden",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Stockholm",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Gustav IV Adolf. In the coalition, holding Finland and Pomerania, both exposed."
+    },
+    {
+      "id": "entity.denmark-norway",
+      "name": "Denmark-Norway",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Copenhagen",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Crown Prince Frederick, regent. Neutral with a fleet both sides want."
+    },
+    {
+      "id": "entity.bavaria",
+      "name": "Electorate of Bavaria",
+      "region": "europe",
+      "form": "electorate of the Holy Roman Empire",
+      "capital": "Munich",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Maximilian Joseph and Montgelas. Has just chosen France; the first battlefield of the war."
+    },
+    {
+      "id": "entity.german-states",
+      "name": "Lesser German states",
+      "region": "europe",
+      "form": "states of the Holy Roman Empire",
+      "capital": "Regensburg (Imperial Diet)",
+      "representation": "regional-system",
+      "note": "Württemberg, Baden, Saxony, Hesse and the rest. A bloc of small territories that align by event (Confederation of the Rhine) rather than acting singly."
+    },
+    {
+      "id": "entity.naples",
+      "name": "Kingdom of Naples and Sicily",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Naples",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Ferdinand IV and Maria Carolina. Secretly in the coalition with a French corps on its soil; Sicily is its refuge."
+    },
+    {
+      "id": "entity.papal-states",
+      "name": "Papal States",
+      "region": "europe",
+      "form": "elective theocracy",
+      "capital": "Rome",
+      "representation": "independent",
+      "note": "Pius VII. Neutral in law, under French pressure in fact; annexed in 1809 if nothing changes."
+    },
+    {
+      "id": "entity.sardinia",
+      "name": "Kingdom of Sardinia",
+      "region": "europe",
+      "form": "kingdom",
+      "capital": "Cagliari",
+      "representation": "independent",
+      "note": "Reduced to the island and kept alive by British subsidy and the British fleet."
+    },
+    {
+      "id": "entity.ottoman",
+      "name": "Ottoman Empire",
+      "region": "west-asia",
+      "form": "empire",
+      "capital": "Constantinople",
+      "representation": "playable",
+      "tier": "major",
+      "detail": true,
+      "note": "Selim III. Neutral, reforming, and losing its provinces to their own governors."
+    },
+    {
+      "id": "entity.egypt",
+      "name": "Eyalet of Egypt",
+      "region": "africa",
+      "form": "autonomous Ottoman province",
+      "capital": "Cairo",
+      "representation": "playable",
+      "tier": "medium",
+      "overlord": "entity.ottoman",
+      "note": "Muhammad Ali, wali since July 1805, against the Mamluk beys. Playable as a vassal that can outgrow its sultan."
+    },
+    {
+      "id": "entity.serbia",
+      "name": "Revolutionary Serbia",
+      "region": "europe",
+      "form": "insurgent government",
+      "capital": "Topola",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Karađorđe. In revolt since 1804 inside Ottoman territory; survival is the campaign."
+    },
+    {
+      "id": "entity.danubian-principalities",
+      "name": "Wallachia and Moldavia",
+      "region": "europe",
+      "form": "tributary principalities",
+      "capital": "Bucharest and Iași",
+      "representation": "dependent",
+      "overlord": "entity.ottoman",
+      "note": "The ground Russia and the Porte fight over from 1806."
+    },
+    {
+      "id": "entity.barbary",
+      "name": "Regencies of Algiers, Tunis and Tripoli",
+      "region": "africa",
+      "form": "autonomous Ottoman regencies",
+      "capital": "Algiers",
+      "representation": "playable",
+      "tier": "minor",
+      "overlord": "entity.ottoman",
+      "note": "One corsair participant based on Algiers with Tunis and Tripoli as provinces. Lives by raiding trade and by tribute."
+    },
+    {
+      "id": "entity.morocco",
+      "name": "Sultanate of Morocco",
+      "region": "africa",
+      "form": "sultanate",
+      "capital": "Fez",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Mawlay Sulayman. Independent of the Porte, facing Spain across the strait."
+    },
+    {
+      "id": "entity.persia",
+      "name": "Qajar Persia",
+      "region": "west-asia",
+      "form": "shahdom",
+      "capital": "Tehran",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Fath-Ali Shah and Crown Prince Abbas Mirza. At war with Russia since 1804 and looking for a European patron."
+    },
+    {
+      "id": "entity.diriyah",
+      "name": "Emirate of Diriyah",
+      "region": "west-asia",
+      "form": "emirate (first Saudi state)",
+      "capital": "Diriyah",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Saud ibn Abd al-Aziz. Holds Najd and is taking the Hejaz from the Sharif of Mecca."
+    },
+    {
+      "id": "entity.oman",
+      "name": "Sultanate of Muscat and Oman",
+      "region": "west-asia",
+      "form": "sultanate",
+      "capital": "Muscat",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Sayyid Said. A trading and naval power from the Gulf to Zanzibar."
+    },
+    {
+      "id": "entity.durrani",
+      "name": "Durrani Empire",
+      "region": "central-asia",
+      "form": "kingdom",
+      "capital": "Kabul",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Shah Shuja. The Afghan kingdom in dynastic civil war, with Persia and the Sikhs at its edges."
+    },
+    {
+      "id": "entity.central-asian-khanates",
+      "name": "Bukhara, Khiva and Kokand",
+      "region": "central-asia",
+      "form": "khanates and emirate",
+      "capital": "Bukhara",
+      "representation": "regional-system",
+      "note": "Caravan states beyond every great power's reach in this window."
+    },
+    {
+      "id": "entity.marathas",
+      "name": "Maratha Confederacy",
+      "region": "south-asia",
+      "form": "confederacy",
+      "capital": "Poona",
+      "representation": "playable",
+      "tier": "medium",
+      "detail": true,
+      "note": "Peshwa, Scindia, Bhonsle, Holkar and Gaekwad. Beaten in 1803, with Holkar still in the field. Played as the confederacy trying to act as one."
+    },
+    {
+      "id": "entity.sikh-empire",
+      "name": "Sikh Empire",
+      "region": "south-asia",
+      "form": "kingdom",
+      "capital": "Lahore",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Maharaja Ranjit Singh. Uniting the Punjab and building a European-drilled army."
+    },
+    {
+      "id": "entity.nepal",
+      "name": "Kingdom of Nepal",
+      "region": "south-asia",
+      "form": "kingdom",
+      "capital": "Kathmandu",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "The Gorkha state, expanding along the Himalaya toward the Sutlej."
+    },
+    {
+      "id": "entity.indian-princely-states",
+      "name": "Hyderabad, Awadh, Mysore and the subsidiary states",
+      "region": "south-asia",
+      "form": "states under subsidiary alliance",
+      "capital": "Hyderabad",
+      "representation": "dependent",
+      "overlord": "entity.east-india-company",
+      "note": "Allied on the Company's terms; a source of troops and of revolt."
+    },
+    {
+      "id": "entity.kandy",
+      "name": "Kingdom of Kandy",
+      "region": "south-asia",
+      "form": "kingdom",
+      "capital": "Kandy",
+      "representation": "independent",
+      "note": "Sri Vikrama Rajasinha. Independent in the interior of Ceylon after the war of 1803-05; a defended objective rather than a campaign. Annexed by Britain in 1815 if nothing changes."
+    },
+    {
+      "id": "entity.qing",
+      "name": "Qing Empire",
+      "region": "east-asia",
+      "form": "empire",
+      "capital": "Beijing",
+      "representation": "playable",
+      "tier": "major",
+      "detail": true,
+      "note": "The Jiaqing Emperor. The largest state on earth, at peace with Europe, at war with its own rebels and pirates."
+    },
+    {
+      "id": "entity.joseon",
+      "name": "Kingdom of Joseon",
+      "region": "east-asia",
+      "form": "kingdom, Qing tributary",
+      "capital": "Hanseong",
+      "representation": "dependent",
+      "overlord": "entity.qing",
+      "note": "King Sunjo's minority. Closed to the world; a tributary rather than a campaign."
+    },
+    {
+      "id": "entity.japan",
+      "name": "Tokugawa Shogunate",
+      "region": "east-asia",
+      "form": "shogunate",
+      "capital": "Edo",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Shogun Ienari. Secluded by policy; Rezanov's Russian embassy has just been turned away. A campaign about whether to stay closed."
+    },
+    {
+      "id": "entity.vietnam",
+      "name": "Empire of Việt Nam",
+      "region": "southeast-asia",
+      "form": "empire",
+      "capital": "Huế",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Gia Long, three years after uniting the country with French-trained officers and Vauban forts."
+    },
+    {
+      "id": "entity.siam",
+      "name": "Kingdom of Siam",
+      "region": "southeast-asia",
+      "form": "kingdom",
+      "capital": "Bangkok",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Rama I. Overlord of the Lao kingdoms and Cambodia, Burma's standing enemy."
+    },
+    {
+      "id": "entity.burma",
+      "name": "Kingdom of Burma",
+      "region": "southeast-asia",
+      "form": "kingdom",
+      "capital": "Amarapura",
+      "representation": "playable",
+      "tier": "medium",
+      "note": "Bodawpaya of the Konbaung. Expansionist toward Siam, Arakan and Assam."
+    },
+    {
+      "id": "entity.dutch-east-indies",
+      "name": "Batavian East Indies",
+      "region": "southeast-asia",
+      "form": "colonial government",
+      "capital": "Batavia",
+      "representation": "dependent",
+      "overlord": "entity.batavia",
+      "note": "Java and the spice islands, cut off from Europe by the British navy."
+    },
+    {
+      "id": "entity.malay-states",
+      "name": "Malay and island sultanates",
+      "region": "southeast-asia",
+      "form": "sultanates",
+      "capital": "Riau",
+      "representation": "regional-system",
+      "note": "Johor-Riau, Aceh, Brunei, Sulu: trade, piracy and local allies rather than governments to conquer."
+    },
+    {
+      "id": "entity.philippines",
+      "name": "Captaincy General of the Philippines",
+      "region": "southeast-asia",
+      "form": "colonial government",
+      "capital": "Manila",
+      "representation": "dependent",
+      "overlord": "entity.spain",
+      "note": "Linked to New Spain by the Manila galleon."
+    },
+    {
+      "id": "entity.united-states",
+      "name": "United States",
+      "region": "north-america",
+      "form": "federal republic",
+      "capital": "Washington",
+      "representation": "playable",
+      "tier": "medium",
+      "detail": true,
+      "note": "President Jefferson. Neutral, doubled in size by Louisiana, with almost no army."
+    },
+    {
+      "id": "entity.british-north-america",
+      "name": "British North America",
+      "region": "north-america",
+      "form": "colonial governments",
+      "capital": "Quebec",
+      "representation": "associated",
+      "overlord": "entity.britain",
+      "note": "The Canadas and the Maritimes. Britain's garrison theatre against the United States."
+    },
+    {
+      "id": "entity.new-spain",
+      "name": "Viceroyalty of New Spain",
+      "region": "north-america",
+      "form": "viceroyalty",
+      "capital": "Mexico",
+      "representation": "dependent",
+      "overlord": "entity.spain",
+      "note": "From California to Central America with Cuba and Florida attached. Breaks away through the Peninsular-crisis events."
+    },
+    {
+      "id": "entity.spanish-south-america",
+      "name": "Viceroyalties of New Granada, Peru and Río de la Plata",
+      "region": "south-america",
+      "form": "viceroyalties",
+      "capital": "Lima",
+      "representation": "dependent",
+      "overlord": "entity.spain",
+      "note": "Three dependencies on the map (Bogotá, Lima, Buenos Aires) recorded under one roster line; each can become a junta."
+    },
+    {
+      "id": "entity.brazil",
+      "name": "State of Brazil",
+      "region": "south-america",
+      "form": "viceroyalty",
+      "capital": "Rio de Janeiro",
+      "representation": "dependent",
+      "overlord": "entity.portugal",
+      "note": "Becomes the seat of the monarchy if Lisbon falls."
+    },
+    {
+      "id": "entity.haiti",
+      "name": "Empire of Haiti",
+      "region": "caribbean",
+      "form": "empire",
+      "capital": "Marchand (Dessalines)",
+      "representation": "playable",
+      "tier": "minor",
+      "detail": true,
+      "note": "Emperor Jacques I. The only state founded by a slave revolution, surrounded by powers that want it gone."
+    },
+    {
+      "id": "entity.caribbean-colonies",
+      "name": "European sugar colonies",
+      "region": "caribbean",
+      "form": "colonial governments",
+      "capital": "various",
+      "representation": "regional-system",
+      "note": "Jamaica, Cuba, Martinique, Guadeloupe and the smaller islands change hands as naval objectives of their owners."
+    },
+    {
+      "id": "entity.plains-nations",
+      "name": "Nations of the Plains and Southwest",
+      "region": "north-america",
+      "form": "indigenous nations",
+      "capital": "none",
+      "representation": "regional-system",
+      "note": "Comanche, Lakota, Apache and others. Mounted powers that control movement and trade across land no state yet governs."
+    },
+    {
+      "id": "entity.woodland-nations",
+      "name": "Nations of the Great Lakes and Southeast",
+      "region": "north-america",
+      "form": "indigenous nations and confederacies",
+      "capital": "none",
+      "representation": "regional-system",
+      "note": "Shawnee, Haudenosaunee, Muscogee, Cherokee and others. Become a playable confederacy by event (Tecumseh) in later scenarios; proposed as playable from 1810-09."
+    },
+    {
+      "id": "entity.mapuche",
+      "name": "Mapuche of Araucanía",
+      "region": "south-america",
+      "form": "indigenous nation",
+      "capital": "none",
+      "representation": "regional-system",
+      "note": "Independent south of the Bío-Bío by treaty with Spain."
+    },
+    {
+      "id": "entity.russian-america",
+      "name": "Russian America",
+      "region": "north-america",
+      "form": "chartered company colony",
+      "capital": "Novo-Arkhangelsk",
+      "representation": "associated",
+      "overlord": "entity.russia",
+      "note": "Baranov's fur posts, retaken from the Tlingit in 1804."
+    },
+    {
+      "id": "entity.sokoto",
+      "name": "Sokoto jihad",
+      "region": "africa",
+      "form": "revolutionary Islamic state in formation",
+      "capital": "Gudu (moving camp)",
+      "representation": "playable",
+      "tier": "minor",
+      "detail": true,
+      "note": "Usman dan Fodio against Gobir and the Hausa kingdoms. Starts as an army without a country."
+    },
+    {
+      "id": "entity.hausa-states",
+      "name": "Gobir and the Hausa kingdoms",
+      "region": "africa",
+      "form": "kingdoms",
+      "capital": "Alkalawa",
+      "representation": "independent",
+      "note": "Sokoto's opponents: independent kingdoms that fight the jihad one by one."
+    },
+    {
+      "id": "entity.asante",
+      "name": "Asante Empire",
+      "region": "africa",
+      "form": "kingdom",
+      "capital": "Kumasi",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Asantehene Osei Bonsu. Gold, muskets and a road to the coast forts, which it reaches in 1806-07."
+    },
+    {
+      "id": "entity.west-african-kingdoms",
+      "name": "Dahomey, Oyo, Benin and Bornu",
+      "region": "africa",
+      "form": "kingdoms",
+      "capital": "Abomey",
+      "representation": "regional-system",
+      "note": "Neighbours, rivals and trade partners of Asante and Sokoto."
+    },
+    {
+      "id": "entity.ethiopia",
+      "name": "Ethiopian Empire",
+      "region": "africa",
+      "form": "empire in the Era of the Princes",
+      "capital": "Gondar",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "A powerless emperor and rival regional lords. A campaign of reunification."
+    },
+    {
+      "id": "entity.cape-colony",
+      "name": "Cape Colony",
+      "region": "africa",
+      "form": "colonial government",
+      "capital": "Cape Town",
+      "representation": "dependent",
+      "overlord": "entity.batavia",
+      "note": "Governor Janssens. The halfway station to India; Britain's expedition is already at sea in late 1805."
+    },
+    {
+      "id": "entity.southern-african-chiefdoms",
+      "name": "Chiefdoms of south-eastern Africa",
+      "region": "africa",
+      "form": "chiefdoms",
+      "capital": "none",
+      "representation": "regional-system",
+      "note": "Mthethwa, Ndwandwe, Xhosa. The Zulu kingdom arises here after this window's midpoint."
+    },
+    {
+      "id": "entity.hawaii",
+      "name": "Kingdom of Hawaiʻi",
+      "region": "oceania",
+      "form": "kingdom",
+      "capital": "Honolulu",
+      "representation": "playable",
+      "tier": "minor",
+      "note": "Kamehameha I. All islands but Kauaʻi, with foreign ships and cannon. The Pacific's only campaign: finish the unification, then choose a patron or none."
+    },
+    {
+      "id": "entity.new-south-wales",
+      "name": "New South Wales",
+      "region": "oceania",
+      "form": "penal colony",
+      "capital": "Sydney",
+      "representation": "associated",
+      "overlord": "entity.britain",
+      "note": "A British naval station and little more."
+    },
+    {
+      "id": "entity.pacific-peoples",
+      "name": "Peoples of Oceania",
+      "region": "oceania",
+      "form": "chiefdoms and nations",
+      "capital": "none",
+      "representation": "regional-system",
+      "note": "Māori iwi, Tahiti under Pōmare II, Tonga, Aboriginal nations. Present as places with their own defenders, trade and consequences, not as conquest targets with governments."
+    }
+  ]
+}

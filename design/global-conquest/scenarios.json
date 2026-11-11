@@ -1,0 +1,97 @@
+{
+  "_note": "Proposed Global Conquest starting dates. Status 'proposed' until the Owner approves. Each date is chosen because the worldwide situation differs in kind, not only in Europe. 'first_complete' marks the scenario built out first; the others follow the same record shapes.",
+  "version": "0.1-proposal",
+  "window": {"from": "1798-01-01", "to": "1815-12-31"},
+  "recommendation": "Approve five dates, built in this order: 1805-09, 1798-07, 1812-06, 1810-09, 1815-03. If the scope must be cut, keep 1805-09, 1798-07 and 1812-06: they differ most from one another across every continent.",
+  "scenarios": [
+    {
+      "id": "scenario.1798-07",
+      "date": "1798-07-01",
+      "title": "The Army of the Orient",
+      "status": "proposed",
+      "build_order": 2,
+      "why_this_day": "Bonaparte's army lands at Alexandria on 1 July 1798. A month earlier France has no army in Africa; a month later its fleet is destroyed at Aboukir Bay (1 August). The day itself leaves both outcomes open.",
+      "world_state": [
+        "France is the Directory's republic with sister republics (Batavian, Helvetic, Cisalpine, Ligurian, Roman). Britain is its only major enemy; the Second Coalition has not formed.",
+        "Egypt is Mamluk-ruled under nominal Ottoman suzerainty. The Ottoman Empire is still neutral toward France and becomes its enemy because of the landing.",
+        "Tipu Sultan's Mysore is alive and seeking a French alliance; it falls in May 1799 if nothing changes. The Maratha Confederacy is intact and the East India Company is one power among several in India.",
+        "The Qianlong Emperor still holds real power behind Jiaqing; the White Lotus rebellion is at its height. Vietnam is divided between Tây Sơn and Nguyễn Ánh.",
+        "Saint-Domingue is nominally French and actually ruled by Toussaint Louverture. Louisiana is Spanish. The United States is in an undeclared naval war with France.",
+        "Spain is France's ally and holds the Americas from California to Chile. The Cape is in British hands (taken 1795)."
+      ],
+      "distinct_from_others": "The only start with a French army in Africa, a living Mysore, a divided Vietnam and no Empire."
+    },
+    {
+      "id": "scenario.1805-09",
+      "date": "1805-09-01",
+      "title": "The Third Coalition",
+      "status": "proposed",
+      "build_order": 1,
+      "first_complete": true,
+      "why_this_day": "The Grande Armée is breaking camp at Boulogne (orders of 26-29 August) and has not yet crossed the Rhine. Austria crosses the Inn on 8 September. Ulm, Trafalgar (21 October) and Austerlitz (2 December) are all still to be decided.",
+      "world_state": [
+        "The French Empire with dependent Italy, the Batavian Commonwealth and Switzerland faces Britain, Austria, Russia, Sweden and (secretly) Naples. Prussia is neutral and courted by both sides. Spain is France's ally and its fleet is in Cádiz with Villeneuve.",
+        "The Holy Roman Empire still exists. Bavaria has just allied with France (Bogenhausen, 25 August); Württemberg and Baden are about to.",
+        "The Ottoman Empire is neutral. Muhammad Ali has been wali of Egypt for weeks. Serbia has been in revolt since 1804. Russia is at war with Persia in the Caucasus.",
+        "In India the Company has broken Scindia and Bhonsle and is still fighting Holkar. Ranjit Singh rules at Lahore. The Qing have just put down the White Lotus; Gia Long has united Vietnam.",
+        "Haiti has been independent for twenty months under Emperor Jacques I, with a French garrison still in Santo Domingo. Louisiana is American. The United States has just made peace with Tripoli.",
+        "Usman dan Fodio's jihad against the Hausa states is in its second year. The Cape is Batavian and will be taken by Britain in January 1806 if nothing changes."
+      ],
+      "distinct_from_others": "The fullest board: every European great power is free to choose, and events outside Europe are in motion on every continent."
+    },
+    {
+      "id": "scenario.1810-09",
+      "date": "1810-09-16",
+      "title": "The World in Revolt",
+      "status": "proposed",
+      "build_order": 4,
+      "why_this_day": "The Grito de Dolores, 16 September 1810, starts the insurrection in New Spain. Juntas already govern in Caracas (April), Buenos Aires (May), Bogotá (July) and Santiago (18 September). The French Empire is at its greatest extent in the same weeks.",
+      "world_state": [
+        "France has annexed Holland (July 1810), Napoleon has married an Austrian archduchess, and Austria, Prussia and Russia are all nominal allies. Only Britain, Portugal and insurgent Spain fight on; Wellington is retiring on Torres Vedras.",
+        "Spanish America is breaking into juntas, royalist viceroyalties and insurgent armies. The Portuguese court rules from Rio de Janeiro.",
+        "Bernadotte has just been elected Crown Prince of Sweden. Russia is at war with the Ottomans and Persia and is leaving the Continental System.",
+        "Britain is about to take Mauritius (December 1810) and Java (1811). Kamehameha has just united Hawaiʻi. Haiti is divided between Christophe's State in the north and Pétion's Republic in the south.",
+        "The Sokoto Caliphate now exists. Muhammad Ali is preparing to destroy the Mamluks and march on the Hejaz."
+      ],
+      "distinct_from_others": "The start for the Americas: a dozen new participants appear, and the European order is a French peace waiting to break.",
+      "alternative": "1808-05-02 (Dos de Mayo) gives the Peninsular rising and Tilsit's Franco-Russian alliance but few new participants outside Europe. Recommended only if the Owner prefers a Spain-centred scenario."
+    },
+    {
+      "id": "scenario.1812-06",
+      "date": "1812-06-18",
+      "title": "Two Invasions",
+      "status": "proposed",
+      "build_order": 3,
+      "why_this_day": "The United States declares war on Britain on 18 June 1812; Napoleon crosses the Niemen on 24 June. Russia has made peace with the Ottomans three weeks earlier (Bucharest, 28 May), freeing its southern army.",
+      "world_state": [
+        "The largest army yet assembled stands on the Russian frontier with Austrian and Prussian contingents. Britain and Russia are about to become allies again. Wellington is advancing on Salamanca.",
+        "Britain fights in Spain, at sea and in North America at once. Tecumseh's confederacy is its ally on the Great Lakes.",
+        "Insurgent governments hold Buenos Aires, Santiago and parts of New Granada; Venezuela's First Republic is collapsing; Morelos is in the field in New Spain. Paraguay is independent.",
+        "Egypt is at war with the Saudi state in the Hejaz. Persia is still at war with Russia. Java is British.",
+        "The Qing face the Eight Trigrams rising the following year; Gurkha expansion is about to collide with the Company."
+      ],
+      "distinct_from_others": "Two continental wars begin within a week of each other, and every great power is over-committed."
+    },
+    {
+      "id": "scenario.1815-03",
+      "date": "1815-03-20",
+      "title": "The Hundred Days",
+      "status": "proposed",
+      "build_order": 5,
+      "why_this_day": "Napoleon enters the Tuileries on 20 March 1815. The Seventh Coalition is declared (13 March) but its armies are dispersed; Murat has just marched north from Naples (15 March).",
+      "world_state": [
+        "France stands alone inside its 1792 frontiers against all of Europe, with the Congress of Vienna's map newly drawn around it.",
+        "The War of 1812 is over (Ghent ratified February 1815). The United States turns on Algiers. Morillo's expedition is arriving to reconquer Spanish America; Bolívar is about to go into exile.",
+        "Britain has just annexed Kandy (March 1815) and is fighting Nepal. The Dutch are returning to Java. Serbia rises again in April.",
+        "Christophe's kingdom and Pétion's republic divide Haiti. The Kingdom of Brazil is proclaimed in December."
+      ],
+      "distinct_from_others": "A short, hard scenario: one overwhelming problem for France, and a post-war world in which the secondary powers have room to move.",
+      "scope_note": "Shorter campaign by design. Could ship later than the other four without leaving a gap in the window."
+    }
+  ],
+  "considered_and_set_aside": [
+    {"date": "1808-05-02", "reason": "Kept as the alternative to 1810-09; see that scenario."},
+    {"date": "1813-08-12", "reason": "Austria's entry into the Sixth Coalition. European only; the world outside Europe is as in 1812-06."},
+    {"date": "1801-02-09", "reason": "Lunéville. A lull: fewer open choices than 1798 or 1805."}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "_note": "Works the design records rest on. 'used_for' says what each supports. 'access' is honest about how it was used in this pass: 'read' means the page was read for this work; 'recalled' means standard reference knowledge written from memory and not re-checked against the text in this session. Recalled facts are the first candidates for verification before any record is approved.",
+  "sources": [
+    {"id": "source.wiki-third-coalition", "title": "War of the Third Coalition (Wikipedia)", "url": "https://en.wikipedia.org/wiki/War_of_the_Third_Coalition", "used_for": "Chronology and alignments of 1805", "access": "recalled"},
+    {"id": "source.wiki-uniforms-grande-armee", "title": "Uniforms of the Grande Armée (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Uniforms_of_La_Grande_Arm%C3%A9e", "used_for": "French dress details for delivered units", "access": "read"},
+    {"id": "source.chandler-campaigns", "title": "David G. Chandler, The Campaigns of Napoleon (1966)", "used_for": "French corps organisation and the campaign of 1805", "access": "recalled"},
+    {"id": "source.esdaile-napoleons-wars", "title": "Charles Esdaile, Napoleon's Wars: An International History (2007)", "used_for": "Diplomacy of the coalitions; Spain", "access": "recalled"},
+    {"id": "source.nafziger-imperial-bayonets", "title": "George Nafziger, Imperial Bayonets (1996)", "used_for": "Unit roles and tactics of the arms", "access": "recalled"},
+    {"id": "source.rodger-command-of-the-ocean", "title": "N. A. M. Rodger, The Command of the Ocean (2004)", "used_for": "British naval strength and blockade", "access": "recalled"},
+    {"id": "source.lieven-russia-against-napoleon", "title": "Dominic Lieven, Russia Against Napoleon (2009)", "used_for": "Russian army, Cossacks, logistics", "access": "recalled"},
+    {"id": "source.aksan-ottoman-wars", "title": "Virginia Aksan, Ottoman Wars 1700-1870 (2007)", "used_for": "Ottoman forces and provincial power", "access": "recalled"},
+    {"id": "source.shaw-between-old-and-new", "title": "Stanford Shaw, Between Old and New: The Ottoman Empire under Sultan Selim III (1971)", "used_for": "Nizam-ı Cedid reform", "access": "recalled"},
+    {"id": "source.elliott-manchu-way", "title": "Mark Elliott, The Manchu Way (2001)", "used_for": "Eight Banners", "access": "recalled"},
+    {"id": "source.cambridge-china-10", "title": "The Cambridge History of China, vol. 10 (1978)", "used_for": "Jiaqing reign, White Lotus, Green Standard", "access": "recalled"},
+    {"id": "source.murray-pirates", "title": "Dian Murray, Pirates of the South China Coast 1790-1810 (1987)", "used_for": "Pirate confederation and Qing coastal forces", "access": "recalled"},
+    {"id": "source.cooper-anglo-maratha", "title": "Randolf Cooper, The Anglo-Maratha Campaigns and the Contest for India (2003)", "used_for": "Maratha regular brigades and the war of 1803-05", "access": "recalled"},
+    {"id": "source.gordon-marathas", "title": "Stewart Gordon, The Marathas 1600-1818 (1993)", "used_for": "Confederacy structure, cavalry, Pindaris", "access": "recalled"},
+    {"id": "source.hickey-war-of-1812", "title": "Donald Hickey, The War of 1812: A Forgotten Conflict (1989)", "used_for": "United States forces and policy", "access": "recalled"},
+    {"id": "source.toll-six-frigates", "title": "Ian Toll, Six Frigates (2006)", "used_for": "The 1794 frigate programme", "access": "recalled"},
+    {"id": "source.dubois-avengers", "title": "Laurent Dubois, Avengers of the New World (2004)", "used_for": "Haitian revolution and the state of 1804-06", "access": "recalled"},
+    {"id": "source.girard-slaves-who-defeated-napoleon", "title": "Philippe Girard, The Slaves Who Defeated Napoleon (2011)", "used_for": "Armée indigène; Dessalines' rule", "access": "recalled"},
+    {"id": "source.last-sokoto-caliphate", "title": "Murray Last, The Sokoto Caliphate (1967)", "used_for": "Chronology and organisation of the jihad", "access": "recalled"},
+    {"id": "source.hiskett-sword-of-truth", "title": "Mervyn Hiskett, The Sword of Truth (1973)", "used_for": "Usman dan Fodio", "access": "recalled"}
+  ]
+}

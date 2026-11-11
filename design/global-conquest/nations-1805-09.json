@@ -1,0 +1,373 @@
+{
+  "_note": "Full design records for the representative slice of scenario.1805-09: nine participants across Europe, West Asia, East and South Asia, North America, the Caribbean and Africa. Each record separates what is historical ('history', with confidence), what is a balance proposal ('proposal', in the provisional vocabulary), and what exists as art ('visual', with status). Ratings are relative 1-5; see vocabulary.json. Nothing here is engine data; integration decides numbers.",
+  "scenario": "scenario.1805-09",
+  "version": "0.1-proposal",
+  "nations": [
+    {
+      "id": "entity.france",
+      "identity": {"name": "French Empire", "native_name": "Empire français", "form": "hereditary empire", "ruler": "Napoléon I (Emperor of the French, King of Italy)", "period": "Empire proclaimed 18 May 1804"},
+      "geography": {
+        "capital": "Paris",
+        "territory": "France to the Rhine with Belgium, the left bank, Piedmont and Liguria (annexed June 1805).",
+        "cities": ["Paris", "Lyon", "Strasbourg", "Brussels", "Turin", "Marseille", "Bordeaux"],
+        "ports": ["Brest", "Toulon", "Boulogne", "Antwerp", "Rochefort", "Genoa"],
+        "connections": ["Rhine crossings at Strasbourg and Mainz into Germany", "Alpine passes into Italy", "The Channel narrows at Boulogne", "Pyrenees closed by alliance with Spain"]
+      },
+      "relationships": [
+        {"with": "entity.britain", "relation": "war"}, {"with": "entity.austria", "relation": "war"}, {"with": "entity.russia", "relation": "war"},
+        {"with": "entity.sweden", "relation": "war"}, {"with": "entity.spain", "relation": "alliance"}, {"with": "entity.bavaria", "relation": "alliance"},
+        {"with": "entity.italy", "relation": "overlord-of"}, {"with": "entity.batavia", "relation": "overlord-of"}, {"with": "entity.switzerland", "relation": "overlord-of"},
+        {"with": "entity.prussia", "relation": "neutral"}, {"with": "entity.ottoman", "relation": "neutral"}
+      ],
+      "military": {
+        "starting_forces": "Seven corps of the Grande Armée on the Channel coast (about 190,000 with the Guard and cavalry reserve), Masséna's Army of Italy on the Adige, Saint-Cyr's corps in Apulia, garrisons, and the combined fleet blockaded in Cádiz.",
+        "commanders": ["Napoléon", "Davout", "Lannes", "Soult", "Ney", "Murat", "Masséna", "Bernadotte"],
+        "troop_families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+        "distinctive_units": ["unit.france.guard-grenadier", "unit.france.chasseur-a-cheval", "unit.france.cuirassier", "unit.france.horse-artillery"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 3, "manpower": 5, "industry": 4, "naval": 3, "technology": 4, "stability": 4},
+        "recruitment": "All European families. Conscription makes line infantry cheap and quick; cavalry horses are the bottleneck. Guard units need a victory count, not only money.",
+        "trait": {"name": "Corps d'armée", "effect": "Stacks under a marshal move one step farther and join a neighbouring battle on the turn it starts.", "tradeoff": "Corps live off the land: supply falls faster outside friendly or allied territory."},
+        "difficulty": "commanding",
+        "strengths": ["Best army on the map at the start", "Central position between enemies who are not yet united", "Dependents that add troops without upkeep"],
+        "weaknesses": ["Cannot reach Britain without winning at sea", "Every victory adds territory to hold and enemies to watch", "Treasury depends on indemnities from the defeated"],
+        "objectives": ["Break the coalition before Russia and Austria join hands", "Hold Paris and Milan", "Long game: force Britain to peace by sea or by closing the Continent"],
+        "strategies": ["Historical: wheel the army from the Channel to the Danube and destroy Austria before the Russians arrive.", "Naval gamble: reinforce Cádiz and Brest and fight for a Channel crossing.", "Southern: finish Naples first and secure the Mediterranean ports."]
+      },
+      "ai": {
+        "priorities": ["Concentrate against the nearest coalition army before a second can join it", "Never leave Paris or the Rhine crossings unguarded", "Keep Spain in the alliance"],
+        "examples": ["If Austrian and Russian stacks are within three moves of each other, attack the nearer one this turn rather than waiting to raise more troops.", "Offer peace to a beaten enemy when a new one declares war."]
+      },
+      "visual": {"flag": "identity.france.flag", "map_colour": "#2B4A8C", "portraits": ["portraits.napoleon.bust", "portraits.napoleon.avatar"],
+                 "units": ["units.infantry.line", "units.france.grenadier", "units.cavalry.light"], "buildings": ["buildings.city.l1", "buildings.capital.l1", "buildings.port.l1"],
+                 "architecture": "europe-west", "art_status": "delivered in campaign-atlas-01"},
+      "history": {"confidence": "high", "adjustments": ["Corps strengths are rounded.", "Liguria and Parma are treated as fully French on this date."],
+                  "sources": ["source.chandler-campaigns", "source.esdaile-napoleons-wars", "source.wiki-third-coalition"]}
+    },
+    {
+      "id": "entity.britain",
+      "identity": {"name": "United Kingdom of Great Britain and Ireland", "form": "constitutional monarchy", "ruler": "George III; William Pitt the Younger, prime minister", "period": "Union with Ireland 1801"},
+      "geography": {
+        "capital": "London",
+        "territory": "The British Isles; Gibraltar and Malta; Canada; Jamaica and the Windward islands; Ceylon's coast; New South Wales. Hanover is under French occupation.",
+        "cities": ["London", "Dublin", "Edinburgh", "Manchester"],
+        "ports": ["Portsmouth", "Plymouth", "Chatham", "Gibraltar", "Valletta", "Halifax", "Kingston", "Bombay"],
+        "connections": ["Channel and Western Approaches", "Strait of Gibraltar", "Malta and the central Mediterranean", "The Cape route to India (Cape Town is Batavian)"]
+      },
+      "relationships": [
+        {"with": "entity.france", "relation": "war"}, {"with": "entity.spain", "relation": "war"}, {"with": "entity.batavia", "relation": "war"},
+        {"with": "entity.russia", "relation": "alliance"}, {"with": "entity.austria", "relation": "alliance"}, {"with": "entity.sweden", "relation": "alliance"},
+        {"with": "entity.portugal", "relation": "protector-of"}, {"with": "entity.east-india-company", "relation": "overlord-of"}, {"with": "entity.united-states", "relation": "rivalry"}
+      ],
+      "military": {
+        "starting_forces": "The largest navy in the world (over a hundred ships of the line in commission) with Nelson off Cádiz and Cornwallis off Brest; a small regular army at home, in the Mediterranean and in garrisons; a large militia that cannot leave the islands.",
+        "commanders": ["Nelson", "Collingwood", "Cornwallis", "Moore", "Arthur Wellesley (returning from India)"],
+        "troop_families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+        "distinctive_units": ["unit.britain.ship-of-the-line", "unit.britain.rifles", "unit.britain.kings-german-legion"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 5, "manpower": 2, "industry": 5, "naval": 5, "technology": 4, "stability": 4},
+        "recruitment": "Ships are quick to build and crew; regular infantry is good and expensive and slow to replace. Militia is cheap and may only garrison home territory.",
+        "trait": {"name": "Paymaster of coalitions", "effect": "May pay a subsidy each turn to any power at war with Britain's enemy; subsidised powers recruit at reduced cost.", "tradeoff": "A subsidised ally that makes peace keeps the money."},
+        "difficulty": "balanced",
+        "strengths": ["Cannot be invaded while the fleet exists", "Money", "Can land a small army anywhere with a coast"],
+        "weaknesses": ["Army too small to decide a continental war alone", "Depends on allies who lose battles", "Trade is exposed on every sea"],
+        "objectives": ["Keep the fleet superior to France and Spain combined", "Keep at least one great power in the field against France", "Take the Cape and secure the route to India"],
+        "strategies": ["Historical: blockade, subsidise, and pick off colonies.", "Peninsular: commit the army to one coastal ally and supply it by sea.", "Eastern: let Europe wait and build the Indian empire."]
+      },
+      "ai": {
+        "priorities": ["Blockade enemy fleets in port rather than hunt them", "Subsidise whichever coalition member borders France", "Take isolated enemy colonies when escorts can be spared"],
+        "examples": ["If the combined enemy fleet in one port outnumbers the blockading squadron, reinforce the squadron before anything else.", "Never embark the last regular stack from Britain while an enemy army holds a Channel port."]
+      },
+      "visual": {"flag": "identity.britain.flag", "map_colour": "#B5332F", "portraits": ["portraits.nelson.bust", "portraits.wellington.bust"],
+                 "units": ["units.britain.line", "units.britain.rifles", "units.britain.ship-of-the-line"], "buildings": ["buildings.britain.city.l1"],
+                 "architecture": "europe-northwest (brick, slate, parish towers)", "art_status": "planned"},
+      "history": {"confidence": "high", "adjustments": ["The Company's armies are recorded under entity.east-india-company, not here."],
+                  "sources": ["source.rodger-command-of-the-ocean", "source.esdaile-napoleons-wars"]}
+    },
+    {
+      "id": "entity.russia",
+      "identity": {"name": "Russian Empire", "form": "autocratic empire", "ruler": "Alexander I", "period": "Reign from March 1801"},
+      "geography": {
+        "capital": "Saint Petersburg",
+        "territory": "From the Baltic and Poland's eastern partitions to the Pacific; Georgia (annexed 1801); posts in Alaska.",
+        "cities": ["Saint Petersburg", "Moscow", "Kiev", "Riga", "Vilna", "Tiflis"],
+        "ports": ["Kronstadt", "Reval", "Sevastopol", "Odessa", "Corfu (Septinsular protectorate)"],
+        "connections": ["The Niemen and Bug toward Prussia and Austria", "The Dniester toward the Principalities", "The Caucasus passes toward Persia", "The Turkish Straits, passable only by Ottoman leave"]
+      },
+      "relationships": [
+        {"with": "entity.france", "relation": "war"}, {"with": "entity.persia", "relation": "war"}, {"with": "entity.britain", "relation": "alliance"},
+        {"with": "entity.austria", "relation": "alliance"}, {"with": "entity.sweden", "relation": "alliance"}, {"with": "entity.ottoman", "relation": "rivalry"},
+        {"with": "entity.prussia", "relation": "neutral"}, {"with": "entity.russian-america", "relation": "overlord-of"}
+      ],
+      "military": {
+        "starting_forces": "Kutuzov's army marching through Galicia to join the Austrians, Buxhöwden and Bennigsen following, the Guard at Saint Petersburg, an army of the Caucasus at war with Persia, and a Black Sea squadron at Corfu.",
+        "commanders": ["Kutuzov", "Bagration", "Barclay de Tolly", "Bennigsen", "Platov"],
+        "troop_families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+        "distinctive_units": ["unit.russia.cossack", "unit.russia.pavlovsk-grenadier", "unit.russia.licorne"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 2, "manpower": 5, "industry": 3, "naval": 2, "technology": 3, "stability": 4},
+        "recruitment": "Infantry is cheap, stubborn and slow to arrive: new units appear deep in Russia and must march. Cossacks cost almost nothing and cannot hold ground.",
+        "trait": {"name": "Depth", "effect": "Enemy supply falls steeply with each province east of the frontier; winter doubles it.", "tradeoff": "Russian reinforcements take the same long roads west."},
+        "difficulty": "balanced",
+        "strengths": ["Cannot be knocked out by one defeat", "Artillery arm as good as France's", "Light cavalry everywhere"],
+        "weaknesses": ["Armies start far from the war", "Poor treasury without British money", "Three frontiers: French, Ottoman, Persian"],
+        "objectives": ["Join the Austrians before they are beaten", "Hold the Principalities' frontier", "Win the Caucasus war"],
+        "strategies": ["Historical: march to the Danube and fight alongside Austria.", "Patient: let Austria absorb the blow and enter with all three armies together.", "Southern: settle with France early and turn on the Ottomans and Persia."]
+      },
+      "ai": {
+        "priorities": ["Unite field armies before giving battle", "Trade ground for time when outnumbered", "Screen every army with Cossacks"],
+        "examples": ["If a French stack of superior strength is adjacent and a second Russian army is two turns away, retreat one province toward it.", "In winter, on home soil, attack a foreign army that is below half supply."]
+      },
+      "visual": {"flag": "identity.russia.flag", "map_colour": "#3F6B4B", "portraits": ["portraits.alexander.bust", "portraits.kutuzov.bust"],
+                 "units": ["units.russia.line", "units.russia.cossack", "units.russia.pavlovsk-grenadier"], "buildings": ["buildings.russia.city.l1"],
+                 "architecture": "europe-east (timber towns, onion domes, masonry kremlins)", "art_status": "planned"},
+      "history": {"confidence": "high", "adjustments": ["The Septinsular Republic is treated as a Russian naval base, though the protectorate was shared with the Porte."],
+                  "sources": ["source.lieven-russia-against-napoleon", "source.wiki-third-coalition"]}
+    },
+    {
+      "id": "entity.ottoman",
+      "identity": {"name": "Ottoman Empire", "native_name": "Devlet-i ʿAlīye", "form": "sultanate and caliphate", "ruler": "Selim III", "period": "Reign 1789-1807"},
+      "geography": {
+        "capital": "Constantinople",
+        "territory": "The Balkans to the Danube and Sava, Anatolia, Syria, Iraq, with nominal authority over Egypt, the Hejaz, the Barbary regencies and the Danubian principalities.",
+        "cities": ["Constantinople", "Adrianople", "Salonica", "Smyrna", "Damascus", "Aleppo", "Baghdad", "Belgrade"],
+        "ports": ["Constantinople", "Smyrna", "Salonica", "Alexandria (Egypt)", "Trebizond"],
+        "connections": ["Bosphorus and Dardanelles", "Danube fortress line (Vidin, Rusçuk, Silistra)", "The Sava at Belgrade", "Sinai between Syria and Egypt"]
+      },
+      "relationships": [
+        {"with": "entity.russia", "relation": "rivalry"}, {"with": "entity.france", "relation": "neutral"}, {"with": "entity.britain", "relation": "neutral"},
+        {"with": "entity.austria", "relation": "neutral"}, {"with": "entity.serbia", "relation": "war"}, {"with": "entity.diriyah", "relation": "war"},
+        {"with": "entity.egypt", "relation": "overlord-of"}, {"with": "entity.barbary", "relation": "overlord-of"}, {"with": "entity.danubian-principalities", "relation": "overlord-of"},
+        {"with": "entity.persia", "relation": "rivalry"}
+      ],
+      "military": {
+        "starting_forces": "Janissary garrisons in every fortress, provincial cavalry and irregulars raised by governors, the small European-drilled Nizam-ı Cedid corps near the capital, Danube and Black Sea squadrons. Much of the Balkans is held by notables who obey when it suits them.",
+        "commanders": ["Selim III", "Alemdar Mustafa Pasha (Rusçuk)", "Ali Pasha of Ioannina (semi-independent)", "Küçük Hüseyin's rebuilt fleet"],
+        "troop_families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+        "distinctive_units": ["unit.ottoman.janissary", "unit.ottoman.nizam-i-cedid", "unit.ottoman.sipahi", "unit.ottoman.deli"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 3, "manpower": 4, "industry": 2, "naval": 3, "technology": 2, "stability": 2},
+        "recruitment": "Irregular horse and foot are plentiful and cheap. Nizam-ı Cedid infantry matches European line but each new unit lowers stability until the reform track (below) is complete.",
+        "trait": {"name": "The New Order", "effect": "A reform track: each step converts a share of Janissary upkeep into modern units and raises technology.", "tradeoff": "Each step risks a Janissary revolt event in the capital; a failed step ends the track for that sultan."},
+        "difficulty": "hard",
+        "strengths": ["Fortress lines that cost any invader a season", "Great strategic depth", "Neutral at the start: time to choose"],
+        "weaknesses": ["Provinces that act for themselves", "An army that resists its own modernisation", "Three hostile neighbours once Russia is free"],
+        "objectives": ["Keep the Danube line and the Straits", "Restore authority over Serbia, Egypt and the Hejaz, or make use of their rulers", "Complete or abandon reform before the next Russian war"],
+        "strategies": ["Reformer: stay neutral, finish the New Order, then fight.", "Opportunist: join France while Russia is busy in the west and retake the Crimea's approaches.", "Consolidator: crush Serbia and bring Muhammad Ali to heel first."]
+      },
+      "ai": {
+        "priorities": ["Garrison the Danube fortresses and Constantinople before anything else", "Use dependents' armies before its own", "Avoid war with two great powers at once"],
+        "examples": ["If stability is at its lowest step, do not start a reform step this turn.", "If Russia is at war with France and has fewer than two armies on the Dniester, consider declaring war on Russia."]
+      },
+      "visual": {"flag": "identity.ottoman.flag", "map_colour": "#6E7F3A", "portraits": ["portraits.selim-iii.bust"],
+                 "units": ["units.ottoman.janissary", "units.ottoman.nizam", "units.ottoman.sipahi"], "buildings": ["buildings.ottoman.city.l1", "buildings.ottoman.capital.l1"],
+                 "architecture": "levant-ottoman (lead domes, pencil minarets, timber houses, covered markets)", "art_status": "planned"},
+      "history": {"confidence": "medium", "adjustments": ["Provincial notables are folded into the central state except Egypt, Serbia and the Barbary regencies.", "The reform track compresses 1793-1808 into a mechanic."],
+                  "sources": ["source.aksan-ottoman-wars", "source.shaw-between-old-and-new"]}
+    },
+    {
+      "id": "entity.qing",
+      "identity": {"name": "Qing Empire", "native_name": "大清", "form": "empire", "ruler": "The Jiaqing Emperor", "period": "Personal rule from 1799"},
+      "geography": {
+        "capital": "Beijing",
+        "territory": "China proper, Manchuria, Mongolia, Xinjiang and Tibet, with tributary relations to Joseon, Ryukyu, Việt Nam, Siam and Nepal.",
+        "cities": ["Beijing", "Nanjing", "Suzhou", "Guangzhou", "Wuhan", "Chengdu", "Xi'an", "Mukden"],
+        "ports": ["Guangzhou (the only port open to Europeans)", "Xiamen", "Ningbo", "Tianjin"],
+        "connections": ["The Grand Canal", "The Pearl River approach to Guangzhou", "Kyakhta, the single overland trading post with Russia", "Himalayan passes to Nepal"]
+      },
+      "relationships": [
+        {"with": "entity.joseon", "relation": "overlord-of"}, {"with": "entity.vietnam", "relation": "overlord-of"}, {"with": "entity.nepal", "relation": "overlord-of"},
+        {"with": "entity.russia", "relation": "neutral"}, {"with": "entity.britain", "relation": "neutral"}, {"with": "entity.japan", "relation": "neutral"},
+        {"with": "entity.burma", "relation": "truce"}
+      ],
+      "military": {
+        "starting_forces": "The Eight Banners in garrison cities and Manchuria, the far larger Green Standard army scattered in small posts, provincial militias raised against the White Lotus, and coastal war-junk squadrons losing to the pirate confederation off Guangdong.",
+        "commanders": ["Eledengbao", "Yang Yuchun", "Nayancheng (Guangdong)"],
+        "troop_families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+        "distinctive_units": ["unit.qing.banner-cavalry", "unit.qing.green-standard", "unit.qing.tiger-shield", "unit.qing.war-junk"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 4, "manpower": 5, "industry": 3, "naval": 2, "technology": 2, "stability": 3},
+        "recruitment": "Enormous numbers at low cost, slow to concentrate: units are raised in their home province and garrison posts cannot all be emptied. Banner cavalry is limited by the number of banner households.",
+        "trait": {"name": "All under Heaven", "effect": "Tributaries pay and do not attack; internal trade gives a large steady income.", "tradeoff": "Unrest rises when taxes rise or an army is beaten; a rebellion event creates an enemy inside the frontier."},
+        "difficulty": "balanced",
+        "strengths": ["No neighbour can threaten the core in 1805", "Income and population", "Interior lines by river and canal"],
+        "weaknesses": ["Weapons a century behind Europe's", "No sea-going navy", "Rebellion and piracy drain the treasury"],
+        "objectives": ["Destroy the pirate confederation and keep the coast", "Keep unrest below the rebellion threshold", "Decide whether to keep Europe at Guangzhou or open more"],
+        "strategies": ["Guardian: suppress, garrison and keep the system closed.", "Self-strengthening (an early, harder path): buy foreign guns and ships through Guangzhou at the cost of stability.", "Expansive: enforce tributary claims in Nepal and Burma."]
+      },
+      "ai": {
+        "priorities": ["Answer rebellion before foreign threats", "Keep Beijing and the Grand Canal garrisoned", "Stay neutral toward European powers unless attacked"],
+        "examples": ["If a pirate fleet holds a river mouth, move the provincial army to the nearest port city and build junks there.", "Refuse any request for a second trading port while stability is below its middle step."]
+      },
+      "visual": {"flag": "identity.qing.banner", "map_colour": "#C9A227", "portraits": ["portraits.jiaqing.bust"],
+                 "units": ["units.qing.banner-cavalry", "units.qing.green-standard", "units.qing.war-junk"], "buildings": ["buildings.qing.city.l1", "buildings.qing.capital.l1"],
+                 "architecture": "east-asia-han (grey brick walls, gate towers, glazed tile roofs with upturned eaves)", "art_status": "planned"},
+      "history": {"confidence": "medium", "adjustments": ["There was no national flag in 1805; the imperial dragon standard stands in as an identity mark and is an anachronism for flag use.", "Tributary relations are modelled as dependency although they carried little control.", "Self-strengthening is half a century early and is offered as an explicit what-if."],
+                  "sources": ["source.elliott-manchu-way", "source.cambridge-china-10", "source.murray-pirates"]}
+    },
+    {
+      "id": "entity.marathas",
+      "identity": {"name": "Maratha Confederacy", "native_name": "मराठा साम्राज्य", "form": "confederacy of ruling houses under a hereditary chief minister", "ruler": "Peshwa Baji Rao II; Daulat Rao Scindia; Yashwant Rao Holkar; Raghoji II Bhonsle; the Gaekwad", "period": "After the treaties of 1803"},
+      "geography": {
+        "capital": "Poona",
+        "territory": "The Deccan plateau around Poona, Malwa (Scindia at Gwalior, Holkar at Indore), Berar and Nagpur (Bhonsle), Baroda (Gaekwad).",
+        "cities": ["Poona", "Gwalior", "Indore", "Nagpur", "Ujjain", "Baroda"],
+        "ports": ["None of consequence; the Company holds Bombay and Surat"],
+        "connections": ["The Western Ghats passes to Bombay", "The Chambal crossings toward Delhi and Agra", "The Narmada between Hindustan and the Deccan"]
+      },
+      "relationships": [
+        {"with": "entity.east-india-company", "relation": "war"}, {"with": "entity.britain", "relation": "war"},
+        {"with": "entity.indian-princely-states", "relation": "rivalry"}, {"with": "entity.sikh-empire", "relation": "neutral"}, {"with": "entity.france", "relation": "neutral"}
+      ],
+      "military": {
+        "starting_forces": "Holkar's field army of light horse and Pindari auxiliaries, still fighting; Scindia's and Bhonsle's forces reduced and bound by the treaties of December 1803; the Peshwa's troops under a Company subsidiary force at Poona. Scindia's European-drilled infantry brigades were largely destroyed at Assaye and Laswari.",
+        "commanders": ["Yashwant Rao Holkar", "Daulat Rao Scindia", "Amir Khan (Pindari leader)", "Bapu Gokhale"],
+        "troop_families": ["infantry", "cavalry", "artillery", "defensive"],
+        "distinctive_units": ["unit.marathas.silladar-horse", "unit.marathas.pindari", "unit.marathas.campoo-infantry"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 2, "manpower": 4, "industry": 2, "naval": 1, "technology": 3, "stability": 1},
+        "recruitment": "Light cavalry is abundant and nearly free while it can plunder. Drilled infantry and guns are possible and costly, and need foreign officers (a France relation above neutral, or captured Company stores).",
+        "trait": {"name": "Five houses", "effect": "Each house is a separate army with its own upkeep; a 'summons' action unites two or more for one campaign season.", "tradeoff": "A house that is losing may accept a Company treaty and leave the war (it becomes a Company dependent)."},
+        "difficulty": "desperate",
+        "strengths": ["Cavalry that an infantry army cannot catch", "Hill forts", "The Company is over-extended and its directors want peace"],
+        "weaknesses": ["Houses that fight one another", "Two already disarmed by treaty", "No port, no fleet, little money"],
+        "objectives": ["Keep Holkar's army in being until the Company offers terms", "Free the Peshwa from the subsidiary force at Poona", "Reunite the houses"],
+        "strategies": ["Historical: raid, avoid battle, and take the lenient peace London wants.", "Revival: use the peace to rebuild drilled brigades for a second war.", "Northern league: combine with the Sikhs and Afghans against the Company's Delhi frontier."]
+      },
+      "ai": {
+        "priorities": ["Refuse battle against a Company infantry stack unless three to one", "Raid undefended Company revenue provinces", "Accept peace when two houses have treated"],
+        "examples": ["If a Company army enters a province, move the cavalry stack to that army's supply province instead of toward the army.", "Use 'summons' only when the combined force can besiege a subsidiary garrison."]
+      },
+      "visual": {"flag": "identity.marathas.bhagwa", "map_colour": "#D9732A", "portraits": ["portraits.holkar.bust"],
+                 "units": ["units.marathas.silladar-horse", "units.marathas.pindari"], "buildings": ["buildings.deccan.city.l1", "buildings.deccan.hillfort.l1"],
+                 "architecture": "south-asia-deccan (basalt hill forts, wada courtyard houses, temple spires)", "art_status": "planned"},
+      "history": {"confidence": "medium", "adjustments": ["The confederacy is one participant with five armies; in 1805 the houses were not acting together.", "The Peshwa is shown inside the confederacy although bound to the Company by the Treaty of Bassein."],
+                  "sources": ["source.cooper-anglo-maratha", "source.gordon-marathas"]}
+    },
+    {
+      "id": "entity.united-states",
+      "identity": {"name": "United States of America", "form": "federal republic", "ruler": "President Thomas Jefferson (second term)", "period": "Constitution in force from 1789"},
+      "geography": {
+        "capital": "Washington",
+        "territory": "Seventeen states east of the Mississippi and the Louisiana Purchase (1803), most of it unexplored and held by its native nations. The borders with Spanish Florida and Texas are disputed.",
+        "cities": ["New York", "Philadelphia", "Boston", "Baltimore", "Charleston", "New Orleans"],
+        "ports": ["New York", "Boston", "Norfolk", "Charleston", "New Orleans"],
+        "connections": ["The Mississippi to New Orleans", "The Great Lakes and Niagara frontier with Upper Canada", "Lake Champlain toward Montreal", "The Florida frontier"]
+      },
+      "relationships": [
+        {"with": "entity.britain", "relation": "rivalry"}, {"with": "entity.spain", "relation": "rivalry"}, {"with": "entity.france", "relation": "neutral"},
+        {"with": "entity.barbary", "relation": "truce"}, {"with": "entity.haiti", "relation": "neutral"}
+      ],
+      "military": {
+        "starting_forces": "A regular army of about three thousand in frontier posts, state militias of uneven worth, six frigates of the 1794 programme (three of them the heaviest of their class afloat) mostly laid up, and Jefferson's harbour gunboats.",
+        "commanders": ["Henry Dearborn (Secretary of War)", "James Wilkinson", "William Henry Harrison (Indiana Territory)", "Edward Preble", "Stephen Decatur"],
+        "troop_families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+        "distinctive_units": ["unit.united-states.heavy-frigate", "unit.united-states.frontier-rifles", "unit.united-states.militia"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 3, "manpower": 3, "industry": 3, "naval": 2, "technology": 3, "stability": 4},
+        "recruitment": "Militia is cheap, numerous and may not leave the country. Regulars need an act of Congress: a standing cap that rises only while at war or under a tension threshold. Frigates are excellent; ships of the line are not available at the start.",
+        "trait": {"name": "Neutral carrier", "effect": "Trade income rises for every pair of European powers at war while the United States is at peace.", "tradeoff": "Each turn of that trade raises tension with Britain (impressment) and France (seizures); high tension forces a choice between embargo and war."},
+        "difficulty": "balanced",
+        "strengths": ["An ocean away from every great power", "Growing income while Europe fights", "Room to expand west and south"],
+        "weaknesses": ["Almost no army or battle fleet", "Coast open to blockade", "Expansion west means war with the nations who live there"],
+        "objectives": ["Stay out of Europe's war until the army exists", "Secure New Orleans and the Mississippi", "Settle the Florida question with Spain"],
+        "strategies": ["Jeffersonian: trade, embargo when pressed, never fight.", "Continental: take Florida while Spain is tied to France.", "Hawkish: build frigates and an army early and contest Canada when Britain is busiest."]
+      },
+      "ai": {
+        "priorities": ["Remain neutral while trade income exceeds war prospects", "Keep garrisons at New Orleans and the Niagara frontier", "Avoid battle with a British squadron; raid commerce instead"],
+        "examples": ["If tension with Britain passes its upper step and Britain has more than one army in North America, choose embargo; otherwise choose war.", "Send frigates singly to distant trade lanes, never as a line of battle."]
+      },
+      "visual": {"flag": "identity.united-states.flag", "map_colour": "#3B5E8C", "portraits": ["portraits.jefferson.bust"],
+                 "units": ["units.united-states.regular", "units.united-states.frontier-rifles", "units.united-states.heavy-frigate"], "buildings": ["buildings.north-america.city.l1"],
+                 "architecture": "north-america-atlantic (brick and clapboard, courthouse cupolas, wharves)", "art_status": "planned"},
+      "history": {"confidence": "high", "adjustments": ["The flag carried fifteen stars and fifteen stripes on this date.", "Native nations inside claimed territory are handled by the regional system, not as American provinces."],
+                  "sources": ["source.hickey-war-of-1812", "source.toll-six-frigates"]}
+    },
+    {
+      "id": "entity.haiti",
+      "identity": {"name": "Empire of Haiti", "native_name": "Empire d'Haïti / Anpi Ayiti", "form": "empire", "ruler": "Jacques I (Jean-Jacques Dessalines)", "period": "Independence 1 January 1804; empire from September 1804; constitution of 20 May 1805"},
+      "geography": {
+        "capital": "Marchand (Dessalines), in the Artibonite",
+        "territory": "The western third of Hispaniola. The former Spanish east is held by a French garrison under Ferrand at Santo Domingo.",
+        "cities": ["Cap-Haïtien", "Port-au-Prince", "Les Cayes", "Gonaïves", "Jacmel"],
+        "ports": ["Cap-Haïtien", "Port-au-Prince", "Les Cayes"],
+        "connections": ["The Windward Passage toward Cuba and Jamaica", "The mountain roads into the east", "The interior fortress chain begun in 1805"]
+      },
+      "relationships": [
+        {"with": "entity.france", "relation": "war"}, {"with": "entity.britain", "relation": "neutral"}, {"with": "entity.spain", "relation": "rivalry"},
+        {"with": "entity.united-states", "relation": "neutral"}
+      ],
+      "military": {
+        "starting_forces": "A veteran army of the revolution organised in demi-brigades under the generals of each division, large for the population; no navy beyond armed coasters. The siege of Santo Domingo (March 1805) has just failed.",
+        "commanders": ["Jean-Jacques Dessalines", "Henri Christophe (north)", "Alexandre Pétion (west)", "Nicolas Geffrard (south)"],
+        "troop_families": ["infantry", "cavalry", "artillery", "defensive"],
+        "distinctive_units": ["unit.haiti.armee-indigene", "unit.haiti.mountain-fort"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 1, "manpower": 3, "industry": 1, "naval": 1, "technology": 3, "stability": 2},
+        "recruitment": "Veteran infantry is available from the start and cannot be replaced at the same quality. Guns and powder must be bought from neutral traders, so they depend on at least one open trade relation.",
+        "trait": {"name": "Never again", "effect": "On an invasion, coastal towns may be burned and the army withdraws to mountain forts; invaders take fever losses every turn in the wet season.", "tradeoff": "Burned towns give no income until rebuilt, and the plantation economy that pays for the army divides the country."},
+        "difficulty": "hard",
+        "strengths": ["An army that has already beaten France, Spain and Britain", "Terrain and climate that destroy invaders", "No one can afford the expedition while Europe is at war"],
+        "weaknesses": ["No recognition and no allies", "Empty treasury", "North and south divided under rival generals"],
+        "objectives": ["Survive without foreign rule", "Take Santo Domingo and hold the whole island", "Win recognition or a trade treaty from one power"],
+        "strategies": ["Fortress: build the citadels and outlast everyone.", "Unifier: take the east while the French garrison is cut off.", "Trader: buy a relation with Britain or the United States at the price of neutrality."]
+      },
+      "ai": {
+        "priorities": ["Never garrison a coastal town against a superior landing; withdraw and burn", "Keep the generals' loyalty above the plot threshold", "Attack Santo Domingo only when no European fleet is in the Windward Passage"],
+        "examples": ["If an enemy lands with more than twice the local strength, trigger 'Never again' in that province this turn.", "If stability drops to its lowest step, hold all armies in their home divisions."]
+      },
+      "visual": {"flag": "identity.haiti.flag", "map_colour": "#1F1F1F", "portraits": ["portraits.dessalines.bust"],
+                 "units": ["units.haiti.armee-indigene"], "buildings": ["buildings.caribbean.city.l1", "buildings.haiti.citadel.l1"],
+                 "architecture": "caribbean-colonial (galleried timber houses, masonry forts on ridges)", "art_status": "planned"},
+      "history": {"confidence": "medium", "adjustments": ["The imperial flag of 1805 was black and red in vertical bands; the blue and red flag belongs to 1804 and to the later republic.", "The north-south split of 1806 is an event, not a starting condition."],
+                  "sources": ["source.dubois-avengers", "source.girard-slaves-who-defeated-napoleon"]}
+    },
+    {
+      "id": "entity.sokoto",
+      "identity": {"name": "Sokoto jihad", "native_name": "Jama'ar Shehu (the Shehu's community)", "form": "revolutionary religious community becoming a caliphate", "ruler": "Shehu Usman dan Fodio, with Abdullahi dan Fodio and Muhammad Bello", "period": "Hijra to Gudu February 1804; caliphate consolidated by about 1808-09"},
+      "geography": {
+        "capital": "A moving war camp (Gudu, then Sabon Gari); Sokoto is founded in 1809",
+        "territory": "No settled territory on this date: the community holds camps in western Gobir and Kebbi and has supporters in every Hausa kingdom.",
+        "cities": ["Birnin Kebbi (taken April 1805)", "Alkalawa (Gobir's capital, the main objective)", "Kano", "Katsina", "Zaria"],
+        "ports": ["None; trade runs north across the Sahara and south to the coast"],
+        "connections": ["The Sokoto-Rima river valley", "Caravan roads from Kano and Katsina to the Sahara", "The Niger toward Nupe and Oyo"]
+      },
+      "relationships": [
+        {"with": "entity.hausa-states", "relation": "war"}, {"with": "entity.west-african-kingdoms", "relation": "rivalry"}
+      ],
+      "military": {
+        "starting_forces": "A small army of scholars' followers, Fulani herdsmen and Hausa commoners: strong in archers, weak in horse until Hausa cavalry is captured. Victorious at Tabkin Kwotto (1804), badly beaten at Tsuntua (December 1804) and Alwassa (late 1805).",
+        "commanders": ["Abdullahi dan Fodio", "Muhammad Bello", "Aliyu Jedo"],
+        "troop_families": ["infantry", "cavalry", "defensive"],
+        "distinctive_units": ["unit.sokoto.flag-bearer-horse", "unit.sokoto.archers"]
+      },
+      "proposal": {
+        "ratings": {"treasury": 1, "manpower": 3, "industry": 1, "naval": 1, "technology": 1, "stability": 3},
+        "recruitment": "Volunteers arrive with each victory and leave after a defeat. A 'flag' given to a local leader raises a new army in another Hausa kingdom at no cost and outside direct control.",
+        "trait": {"name": "The flags", "effect": "Giving a flag starts an allied rising in a neighbouring kingdom; each kingdom taken becomes an emirate that pays tribute.", "tradeoff": "Emirates are governed by their flag-bearers: they send troops only when the cause is winning."},
+        "difficulty": "hard",
+        "strengths": ["Supporters inside every enemy state", "Motivated infantry", "Enemies who do not combine"],
+        "weaknesses": ["No base, no income and no cavalry at the start", "One lost battle can scatter the army", "No firearms worth the name on either side"],
+        "objectives": ["Take Alkalawa and end Gobir", "Found a capital", "Bring Kano, Katsina and Zaria under emirs"],
+        "strategies": ["Historical: survive 1805, take Kebbi as a base, then Gobir.", "Flags first: raise the eastern kingdoms before fighting Gobir's cavalry.", "Southward: turn toward Nupe and the Niger trade early."]
+      },
+      "ai": {
+        "priorities": ["Avoid open ground against cavalry until it has captured horses", "Give a flag wherever an enemy kingdom has no army at home", "Protect the camp: it is the only province"],
+        "examples": ["If the enemy stack contains twice as many cavalry units, retreat to rough or wooded terrain before accepting battle.", "After any victory, spend the turn recruiting instead of pursuing."]
+      },
+      "visual": {"flag": "identity.sokoto.flag", "map_colour": "#E8E2D0", "portraits": ["portraits.usman-dan-fodio.bust"],
+                 "units": ["units.sokoto.archers", "units.sokoto.flag-bearer-horse"], "buildings": ["buildings.sahel.city.l1"],
+                 "architecture": "sahel-hausa (mud-brick walls with buttresses, flat roofs, great city gates)", "art_status": "planned"},
+      "history": {"confidence": "medium", "adjustments": ["The jihad's white flags are documented; no state flag existed. Usman dan Fodio is known from descriptions, not portraits, and Islamic convention discourages his depiction: the portrait slot should be a calligraphic or emblematic panel, a decision for the Owner.", "Dates of some engagements differ between sources by months."],
+                  "sources": ["source.last-sokoto-caliphate", "source.hiskett-sword-of-truth"]}
+    }
+  ]
+}
