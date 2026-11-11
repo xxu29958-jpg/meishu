@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract_version": {
+      "const": 1
+    },
+    "theme_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+    },
+    "theme": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sources": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+          },
+          "category": {
+            "enum": [
+              "ui",
+              "maps",
+              "units",
+              "portraits",
+              "effects",
+              "buildings",
+              "identity"
+            ]
+          },
+          "file": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_./-]+\\.png$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "size": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2048
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "frame_size": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2048
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "display_size": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 2048
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "anchor": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "directions": {
+            "enum": [
+              "fixed",
+              "mirror-x"
+            ]
+          },
+          "blend": {
+            "enum": [
+              "normal",
+              "add"
+            ]
+          },
+          "clips": {
+            "type": "object",
+            "minProperties": 1,
+            "propertyNames": {
+              "enum": [
+                "normal",
+                "pressed",
+                "selected",
+                "disabled",
+                "still",
+                "damaged",
+                "idle",
+                "move",
+                "attack",
+                "recover",
+                "finish",
+                "play"
+              ]
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "frames": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 1
+                },
+                "fps": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 30
+                },
+                "loop": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "frames",
+                "fps",
+                "loop"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "stretch": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "source_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+          }
+        },
+        "required": [
+          "id",
+          "category",
+          "file",
+          "sha256",
+          "size",
+          "frame_size",
+          "display_size",
+          "anchor",
+          "directions",
+          "blend",
+          "clips",
+          "source_id"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "contract_version",
+    "theme_id",
+    "theme",
+    "sources",
+    "assets"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,25 @@
+{
+  "contract_version": 1,
+  "sources": [
+    {
+      "id": "project.geometry",
+      "author": "项目自研 / Codex",
+      "method": "procedural-original",
+      "license": "项目自有测试内容，供本项目制作、修改与集成使用",
+      "description": "本仓库 generate_samples.py 从空白 RGBA 画布和几何原语原创绘制。人像/制服仅为接口占位，非考证成品。",
+      "references": [],
+      "editable_files": []
+    },
+    {
+      "id": "project.tricolour",
+      "author": "项目自研 / Codex",
+      "method": "procedural-original",
+      "license": "项目自有测试内容，供本项目制作、修改与集成使用",
+      "description": "程序独立绘制三条色带；参考仅用于旗帜史实，不复制网页图像。",
+      "references": [
+        "https://www.elysee.fr/en/french-presidency/the-french-flag"
+      ],
+      "editable_files": []
+    }
+  ]
+}

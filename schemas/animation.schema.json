@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "frames": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minItems": 1
+    },
+    "fps": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 30
+    },
+    "loop": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "frames",
+    "fps",
+    "loop"
+  ],
+  "additionalProperties": false
+}

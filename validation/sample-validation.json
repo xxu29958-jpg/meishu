@@ -1,0 +1,146 @@
+{
+  "status": "passed",
+  "contract_version": 1,
+  "theme_id": "sample.geometry.v1",
+  "manifest_sha256": "96f88a31cd06dae809d002369b160e611d944e8fd60902551d7a70286bb6e493",
+  "asset_count": 27,
+  "decoded_bytes": 10283008,
+  "assets": [
+    {
+      "id": "ui.panel.command",
+      "file": "ui/ui.panel.command.png",
+      "sha256": "b19fe409fde2b469df0bf1fda0cadc55a095dedebf505a0f44c119f01bfa1097"
+    },
+    {
+      "id": "ui.button.primary",
+      "file": "ui/ui.button.primary.png",
+      "sha256": "04ce723be990dcf828c207a87cdbb2cb594e9074c9c6dedcdfffff27cf8e00dc"
+    },
+    {
+      "id": "maps.terrain.plain",
+      "file": "maps/maps.terrain.plain.png",
+      "sha256": "eb1673175b339b231104f00986eb7ab5b951dc0affaddcf387fe2eb69871a773"
+    },
+    {
+      "id": "maps.terrain.forest",
+      "file": "maps/maps.terrain.forest.png",
+      "sha256": "d6534804813f1bac5b62bfebd15dff992e3529257cb4906d5e2641ad571b4512"
+    },
+    {
+      "id": "maps.terrain.mountain",
+      "file": "maps/maps.terrain.mountain.png",
+      "sha256": "dc5ef9499e97b237028bd30a606517313e95d46794aa9db92d554625551321ef"
+    },
+    {
+      "id": "maps.terrain.water",
+      "file": "maps/maps.terrain.water.png",
+      "sha256": "94c0dffadc289b0ca2e820d40d69ff7d818c674f9d5422ccd918bbe3909dc23f"
+    },
+    {
+      "id": "maps.terrain.coast",
+      "file": "maps/maps.terrain.coast.png",
+      "sha256": "9413dfe8ae6848d1a504161cdff5bb2a289e43f8e97e09fed0b19a9349247c38"
+    },
+    {
+      "id": "maps.terrain.river",
+      "file": "maps/maps.terrain.river.png",
+      "sha256": "74756290d3cc699e340eaa8215504855f20022fd57bd185bb114b1acec031d97"
+    },
+    {
+      "id": "maps.terrain.snow",
+      "file": "maps/maps.terrain.snow.png",
+      "sha256": "748b1893cfff9af01f529ed955678e9bca28345036df13e3b8b26954c33c7c97"
+    },
+    {
+      "id": "maps.terrain.desert",
+      "file": "maps/maps.terrain.desert.png",
+      "sha256": "a8067acfdf0d9e3802d02c7891e1f541b762dead491a2909eed62d30c0b91088"
+    },
+    {
+      "id": "maps.terrain.wetland",
+      "file": "maps/maps.terrain.wetland.png",
+      "sha256": "9cfd2ec0766a56153acd1944a08304057b6055028b46914fef5b1ea1b66d50ec"
+    },
+    {
+      "id": "maps.terrain.road",
+      "file": "maps/maps.terrain.road.png",
+      "sha256": "9e2fc353e8cbaf9b1f72742c0f49e933459cdf64acc502cca5ced069b6d077a0"
+    },
+    {
+      "id": "units.infantry.line",
+      "file": "units/units.infantry.line.png",
+      "sha256": "87c4cde6d07e092ba0a3793704eccfcb5b3d3f6f694ddd46da317e78e9606478"
+    },
+    {
+      "id": "units.cavalry.light",
+      "file": "units/units.cavalry.light.png",
+      "sha256": "0a3660c18c0c63016ace8fc68f45a33da93d5a0661685278be71dc1fe973ef1c"
+    },
+    {
+      "id": "units.france.grenadier",
+      "file": "units/units.france.grenadier.png",
+      "sha256": "8d686c2f82ba3825457cd8add55e8ce60dcad9218cd26ab8edcd73d067d406ab"
+    },
+    {
+      "id": "portraits.napoleon.bust",
+      "file": "portraits/portraits.napoleon.bust.png",
+      "sha256": "4ac9f29632b47b16bcb48dd4c67a26af489fd4262fa57583ea59248bf30da561"
+    },
+    {
+      "id": "portraits.napoleon.avatar",
+      "file": "portraits/portraits.napoleon.avatar.png",
+      "sha256": "72ad3305db7d9eb40059717e01777eb160d23c2bc335a3bdec8140b615e4eb7d"
+    },
+    {
+      "id": "buildings.city.l1",
+      "file": "buildings/buildings.city.l1.png",
+      "sha256": "dfd3f6e87a7be4acc6d446c3edff50e95ae7a2a6c95b39799fdcafc57cb6557a"
+    },
+    {
+      "id": "buildings.capital.l1",
+      "file": "buildings/buildings.capital.l1.png",
+      "sha256": "b53e3c33be66ece04d0f71e34c4dcbaa2cb164dac46aa313e3c25caa89f1e8aa"
+    },
+    {
+      "id": "buildings.farm.l1",
+      "file": "buildings/buildings.farm.l1.png",
+      "sha256": "621235f484e64ba80e57d716e45fc23417d009f5f9893fca8aa1ec9eca230ca9"
+    },
+    {
+      "id": "buildings.barracks.l1",
+      "file": "buildings/buildings.barracks.l1.png",
+      "sha256": "1a9bc7aa103231ecd2bd03b23bc31d406c397f5424e2c75ea4f92c7433a4b160"
+    },
+    {
+      "id": "buildings.factory.l1",
+      "file": "buildings/buildings.factory.l1.png",
+      "sha256": "5119cbff8a4f817e2cd5a514be390836cf78527f77ee7be7267d7825d2fda7f9"
+    },
+    {
+      "id": "buildings.port.l1",
+      "file": "buildings/buildings.port.l1.png",
+      "sha256": "0277124959876d6c92da6605c2dc08d9ecf959174d7ff0ea2e42d26a4af22bca"
+    },
+    {
+      "id": "buildings.fort.l1",
+      "file": "buildings/buildings.fort.l1.png",
+      "sha256": "001b2438db16f32f036ce4720437d5386878fdfee67a4447a7bd0a69a1e37763"
+    },
+    {
+      "id": "buildings.regional.l1",
+      "file": "buildings/buildings.regional.l1.png",
+      "sha256": "16a0c585cfa2ac751e3de974796c34f01018357274e90b18c3d97209434345d8"
+    },
+    {
+      "id": "effects.hit.spark",
+      "file": "effects/effects.hit.spark.png",
+      "sha256": "b3fed31d3c71f2f1644f06f219a2f9c65ce60c86b3329cfe6d84d3a75f7bdfca"
+    },
+    {
+      "id": "identity.france.flag",
+      "file": "identity/identity.france.flag.png",
+      "sha256": "4de8146789571c00ba07d13ab1be9a3ccfa1c117df8a59fb79bf4fbb69be871b"
+    }
+  ],
+  "source_review": "Structured provenance checked; final art authorship still requires content review."
+}
