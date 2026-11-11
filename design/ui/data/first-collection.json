@@ -1,0 +1,28 @@
+{
+  "_note": "Representative display data for layout review only: placeholder title, invented prices and counts, and deliberately awkward strings (a very long regiment name, an eight-digit price, an unaffordable row, an empty category). Not game content and not balance.",
+  "game": {"title": "IRON & BLOOD", "subtitle": "1798 — 1815", "version": "ART PREVIEW · CAMPAIGN-ATLAS-01"},
+  "save": {"available": false},
+  "scenario": {
+    "name": "The Third Coalition", "date": "September 1805", "nation": "Empire français", "leader": "Napoléon Ier",
+    "summary": "The Grande Armée breaks camp at Boulogne and turns east. Austria and Russia are in the field, Britain holds the sea, and Prussia watches."
+  },
+  "treasury": {"gold": "12,480", "men": "86,000", "guns": "214"},
+  "units": [
+    {"name": "Line Fusiliers", "arm": "infantry", "sprite": "units.infantry.line", "role": "Line infantry · musket and bayonet",
+     "cost": "1,250", "upkeep": "40", "strength": "720 men", "affordable": true, "note": ""},
+    {"name": "Grenadiers à pied de la Garde", "arm": "infantry", "sprite": "units.france.grenadier", "role": "Guard infantry · elite",
+     "cost": "4,800", "upkeep": "160", "strength": "600 men", "affordable": true, "note": ""},
+    {"name": "Régiment d'infanterie légère de la Grande Armée d'Allemagne", "arm": "infantry", "sprite": "units.infantry.line",
+     "role": "Light infantry · skirmishers", "cost": "1,900", "upkeep": "55", "strength": "640 men", "affordable": true, "note": ""},
+    {"name": "Swiss Line (capitulation)", "arm": "infantry", "sprite": "units.infantry.line", "role": "Foreign line infantry",
+     "cost": "12,345,678", "upkeep": "9,999", "strength": "700 men", "affordable": false, "note": "The treasury cannot bear this: 12,333,198 short."},
+    {"name": "Conscripts of the class of 1806", "arm": "infantry", "sprite": "units.infantry.line", "role": "Raw line infantry",
+     "cost": "600", "upkeep": "25", "strength": "800 men", "affordable": true, "note": ""},
+    {"name": "National Guard", "arm": "infantry", "sprite": "units.infantry.line", "role": "Garrison infantry",
+     "cost": "450", "upkeep": "15", "strength": "500 men", "affordable": true, "note": ""},
+    {"name": "Chasseurs à cheval", "arm": "cavalry", "sprite": "units.cavalry.light", "role": "Light cavalry · sabre",
+     "cost": "2,600", "upkeep": "90", "strength": "320 sabres", "affordable": true, "note": ""},
+    {"name": "Chasseurs à cheval de la Garde", "arm": "cavalry", "sprite": "units.cavalry.light", "role": "Guard light cavalry",
+     "cost": "13,200", "upkeep": "240", "strength": "280 sabres", "affordable": false, "note": "The treasury cannot bear this: 720 short."}
+  ]
+}

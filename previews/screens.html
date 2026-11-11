@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meishu · Screen viewer</title>
+  <link rel="stylesheet" href="screens.css">
+</head>
+<body>
+  <header>
+    <div><small>MEISHU / SCREEN VIEWER</small>
+      <p>Composes a batch's interface art into working screens. Layout comes from a flow file, text from display data; this page holds only the interaction state.</p></div>
+    <a href="index.html">Asset workbench ↗</a>
+  </header>
+  <main>
+    <form id="loader">
+      <label>Batch <input id="manifest" value="submissions/campaign-atlas-01/manifest.json" required></label>
+      <label>Flow <input id="flow" value="design/ui/flows/first-collection.json" required></label>
+      <label>Viewport <select id="viewport"></select></label>
+      <button type="submit">Load</button>
+    </form>
+    <nav id="screens" aria-label="Screens"></nav>
+    <p id="status" role="status">Loading…</p>
+    <div id="frame"><div id="stage"></div></div>
+  </main>
+  <script src="screens.js"></script>
+</body></html>

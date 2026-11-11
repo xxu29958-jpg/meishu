@@ -1,0 +1,64 @@
+/* Viewer chrome, then the type and layout rules that screens rely on.
+   Type sizes are logical pixels on the 720-high design canvas; see design/ui/README.md. */
+:root { color-scheme: dark; font: 14px/1.5 system-ui, sans-serif; color: #d8d2c4; background: #17130f; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header, main { max-width: 1680px; margin: auto; padding: 16px 24px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 24px; border-bottom: 1px solid #3a3027; }
+header p { margin: 4px 0 0; color: #a59b88; max-width: 76ch; }
+small { letter-spacing: .16em; color: #b08a45; }
+a { color: #e4c675; }
+form { display: flex; gap: 14px; align-items: end; flex-wrap: wrap; }
+label { display: grid; gap: 4px; font-size: 12px; color: #a59b88; }
+input, select, button { font: inherit; color: #e9e2d2; background: #241d1a; border: 1px solid #54463a; border-radius: 4px; padding: 8px 10px; min-height: 40px; }
+input { min-width: 330px; }
+button { cursor: pointer; }
+button:hover { background: #33291f; }
+nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 6px; }
+#status { margin: 6px 0 12px; color: #a59b88; }
+#status.error { color: #ff9c8a; white-space: pre-wrap; }
+#frame { overflow: hidden; border: 1px solid #54463a; background: #000; }
+#stage { position: relative; transform-origin: 0 0; overflow: hidden; }
+
+.layer { position: absolute; inset: 0; }
+.layer.enter { animation: enter 220ms ease-out; }
+@keyframes enter { from { opacity: 0; transform: translateY(10px); } }
+.backdrop { position: absolute; left: 50%; top: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; }
+.node { position: absolute; }
+img.node { object-fit: contain; }
+canvas.node { image-rendering: auto; }
+.veil { position: absolute; inset: 0; background: rgba(12, 8, 6, .62); animation: veil 160ms ease-out; }
+.dialog { animation: dialog 200ms cubic-bezier(.2, .9, .3, 1.2); }
+@keyframes veil { from { opacity: 0; } }
+@keyframes dialog { from { opacity: 0; transform: scale(.94); } }
+
+.control { display: flex; align-items: center; justify-content: center; cursor: pointer; user-select: none; touch-action: manipulation; outline: none; }
+.control.disabled { cursor: not-allowed; }
+.control.focus { filter: drop-shadow(0 0 5px #ffd678); }
+.row { position: relative; margin-bottom: 6px; width: calc(100% - 14px); }
+.row-content { position: absolute; }
+.row .node { pointer-events: none; }
+.list { overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; scrollbar-color: #b08a45 transparent; overscroll-behavior: contain; }
+.tabs { display: flex; gap: 4px; }
+
+.text { font-family: "Noto Serif CJK SC", "Noto Serif", "Source Han Serif SC", Georgia, serif; color: #2b2018; line-height: 1.3;
+        overflow-wrap: anywhere; font-variant-numeric: tabular-nums lining-nums; }
+.nowrap { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.clamp { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+.style-title { font-size: 44px; font-weight: 900; letter-spacing: .06em; color: #efe3c4; text-shadow: 0 2px 0 #1a120d, 0 0 18px rgba(0, 0, 0, .7); line-height: 1.12; }
+.style-kicker { font-size: 18px; font-weight: 700; letter-spacing: .34em; color: #e4c675; text-shadow: 0 1px 0 #1a120d; }
+.style-heading { font-size: 26px; font-weight: 900; letter-spacing: .02em; }
+.style-body { font-size: 18px; }
+.style-note { font-size: 15px; color: #5a4636; font-style: italic; }
+.style-button { font-size: 22px; font-weight: 700; letter-spacing: .08em; color: #f4ead2; text-shadow: 0 1px 0 rgba(0, 0, 0, .65); }
+.disabled .style-button, .disabled .style-tab { color: #c9c2b6; text-shadow: none; }
+.style-tab { font-size: 18px; font-weight: 700; letter-spacing: .04em; padding-top: 4px; }
+.style-row { font-size: 20px; font-weight: 700; }
+.selected .style-row, .selected .style-meta, .selected .style-price { color: #f4ead2; }
+.style-meta { font-size: 15px; color: #5a4636; }
+.style-price { font-size: 20px; font-weight: 700; }
+.style-chip { font-size: 19px; font-weight: 700; color: #f1e7cf; }
+.style-stat { font-size: 17px; }
+.style-warn { font-size: 16px; font-weight: 700; color: #8f1d18; }
+.style-empty { font-size: 18px; font-style: italic; color: #5a4636; padding: 48px 24px; position: static; }
+.style-version { font-size: 13px; color: #b7ab94; letter-spacing: .08em; }
