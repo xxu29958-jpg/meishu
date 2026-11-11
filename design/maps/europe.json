@@ -1,7 +1,7 @@
 {
   "record": "region-map",
   "version": 1,
-  "status": "proposal: projection, window and chunk convention await integration; hex scale awaits the Owner",
+  "status": "proposal: projection, window and chunk convention await integration; hex scale decided by the Owner (120 km)",
   "id": "europe",
   "title": "Europe and its approaches, 1798-1815",
   "covers": "Iceland to the Caspian, the North Cape to Cairo: every European theatre of the period, with North Africa, Egypt, the Levant, Anatolia, the Caucasus and north-west Persia.",
@@ -45,31 +45,44 @@
   ],
   "chunks": {
     "placement": "Each chunk is 516 x 516: a 512 inner square with a 2 px skirt that repeats its neighbours' pixels. Anchor is the centre. Chunk (row, column) is drawn with its centre at ((column + 0.5) * 512, (row + 0.5) * 512) in level pixels, times the level's display scale.",
-    "display": "Level 0 is declared at display size 516 (one art pixel per logical unit). If the Owner picks the finer hex scale below, the same chunks are shown at 1032 until level 1 exists.",
+    "display": "Level 0 is declared at display size 516: one art pixel per logical unit, which is the decided hex scale.",
     "higher_levels": "Level n has 2^n times the pixels per km and 4^n times the chunks; the painter renders any level from the same recipe. Not built yet."
   },
   "hex_scale": {
-    "status": "awaiting Owner; not baked into any image",
-    "note": "The grid is laid over the map by the game: hex centre = origin + (64 * (column + (row % 2) / 2), 54 * row) logical units, as in ASSET-SPEC.",
-    "options": [
+    "status": "decided by the Owner, 2026-11-11",
+    "km_per_hex_column": 120,
+    "km_per_hex_row": 101.25,
+    "logical_units_per_km": 0.5333,
+    "feel": "Paris to Vienna 9 hexes, Paris to Moscow 21. A board that fits a phone; Europe is one theatre of a world game.",
+    "considered": [
       {
-        "id": "theatre",
-        "km_per_hex_column": 120,
-        "logical_units_per_km": 0.5333,
-        "grid": "48 x 47 hexes",
-        "art": "level 0 is one art pixel per logical unit; level 1 would double sharpness",
-        "feel": "Paris to Vienna 9 hexes, Paris to Moscow 21. A board that fits a phone; Europe is one theatre of a world game."
-      },
-      {
-        "id": "campaign",
         "km_per_hex_column": 60,
-        "logical_units_per_km": 1.0667,
-        "grid": "96 x 95 hexes",
-        "art": "needs level 1 (four more batches) to match the density of level 0 at the other scale",
-        "feel": "Paris to Vienna 17 hexes, Paris to Moscow 41. Room for manoeuvre between cities; four times the hexes to play and to compute."
+        "grid": "about 95 x 94 hexes",
+        "set_aside_because": "four times the hexes to play and to compute, and it needs four more batches of map before it is as sharp as level 0 is at 120 km"
       }
+    ]
+  },
+  "hex_grid": {
+    "status": "proposal for integration at the decided scale; not baked into any image",
+    "columns": 47,
+    "rows": 47,
+    "origin": [
+      48,
+      38
     ],
-    "recommendation": "theatre"
+    "step": [
+      64,
+      54
+    ],
+    "odd_row_offset": 32,
+    "hex_size": [
+      64,
+      72
+    ],
+    "units": "level-0 pixels, which are logical units at display size 516",
+    "centre": "cell (row, column) is centred at (48 + 64 * column + 32 * (row % 2), 38 + 54 * row), the ASSET-SPEC convention with this origin",
+    "note": "47 x 47 cells lie wholly inside the painted map, with 16 px to spare left and right and 2 px top and bottom. A 48th column would hang a quarter hex over the edge on odd rows.",
+    "table": "design/maps/europe-hexes.json"
   },
   "check_points": [
     {

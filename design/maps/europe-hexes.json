@@ -1,0 +1,740 @@
+{
+  "record": "region-hexes",
+  "version": 1,
+  "status": "derived proposal for integration: physical terrain per hex at the scale the Owner chose; classes and thresholds are open to change",
+  "region": "europe",
+  "level": 0,
+  "derived_by": "python authoring/hexes.py authoring/atlas-europe-01/hexes.json",
+  "grid": {
+    "status": "proposal for integration at the decided scale; not baked into any image",
+    "columns": 47,
+    "rows": 47,
+    "origin": [48, 38],
+    "step": [64, 54],
+    "odd_row_offset": 32,
+    "hex_size": [64, 72],
+    "units": "level-0 pixels, which are logical units at display size 516",
+    "centre": "cell (row, column) is centred at (48 + 64 * column + 32 * (row % 2), 38 + 54 * row), the ASSET-SPEC convention with this origin",
+    "note": "47 x 47 cells lie wholly inside the painted map, with 16 px to spare left and right and 2 px top and bottom. A 48th column would hang a quarter hex over the edge on odd rows.",
+    "table": "design/maps/europe-hexes.json"
+  },
+  "legend": {
+    "~": "sea",
+    "=": "lake",
+    "M": "mountain",
+    "h": "hills",
+    "m": "marsh",
+    "f": "forest",
+    "d": "desert",
+    "t": "tundra",
+    "s": "steppe",
+    ".": "plain"
+  },
+  "terrain": [
+    "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~tttf.ff.f..",
+    "~~~~~~~~t~~~~~~~~~~~~~~~~tt~~~~~~~ttttt.....fff",
+    "~~~~~~~~thtt~~~~~~~~~~~~tttttt~~~~ttttth.fff..f",
+    "~~~~~~~~hhh~~~~~~~~~~~~httttttt~tttttffffff...f",
+    "~~~~~~~~~th~~~~~~~~~~~~htffttttt~ttttfff.f.ffff",
+    "~~~~~~~~~~~~~~~~~~~~~~hffffff..f..f.ffff.ff.f..",
+    "~~~~~~~~~~~~~~~~~~~~~~hfffffff~~f.fffffffff.fff",
+    "~~~~~~~~~~~~~~~~~~~~~hfff~f.ff~fffffffffhff.f..",
+    "~~~~~~~~~~~~~~~~~~~~fhfff~fff.fffffffffffhfff..",
+    "~~~~~~~~~~~~~~~~~~fhhfff~ffffffffffffffffh.....",
+    "~~~~~~~~~~~~~~~~~~hMhf.f~ffffffffffffff.ffhh...",
+    "~~~~~~~~~~~~~~~~~fMhfff~ff.fffffffffff.fffhh...",
+    "~~~~~~~~~~~~~~~~~~hffff~~f..fffffffffffff..h...",
+    "~~~~~~~~~~~hf~~~~hfff..~~~~fffffffff.ffff..h...",
+    "~~~~~~~~~~~.h.~~~~f~fff~~~f.ffffff..ff......h..",
+    "~~~~~~~~~.~..~~~~~~~f.~~~~f.fff.f.fff.....shss.",
+    "~~~~~~~~...~.~~~~~..ffff~f.fffff.ff......ssssss",
+    "~~~~~~~~ff~..~~~~~...~~~.ff.fff.fff....sssssss.",
+    "~~~~~~~~.f~..f~~~~.~~~~~~ff...ff...f.fsssssss..",
+    "~~~~~~~~~~....~~~.f....ff...ff..f....sssss.....",
+    "~~~~~~~~~~....~.......ffff...m.f.....sssss.....",
+    "~~~~~~~~~~~~.~......f..f..mmmm.....sssss.......",
+    "~~~~~~~~~~~~~..........f...mmm.....ssss........",
+    "~~~~~~~~~.ff..............f..f...ssssss...~~...",
+    "~~~~~~~~~~f........f...hhh......ssssssss..~~...",
+    "~~~~~~~~~~f...........hMMhh...ssssssssss.~~~...",
+    "~~~~~~~~~~~......hMMMh...fhM.ssssss~sssss.~~~..",
+    "~~~~~.~~~~..h..MMMMMM....hMM.sssss~sssss..~~~~~",
+    "~~~~~.hhh~...h.Mh.h..ff..hMhMss~~ss~hMMMMMM~~~~",
+    "~~~~....hhh..hMh.h.~hh...Mhhss~~~~~~~MMMMMMM~~~",
+    "~~~~.......Mh~..~~hh~hMMh....s~~~~~~~~~hMhf..~~",
+    "~~~...hhh...~~~~~.hh~hMMM.hhh~~~~~~~~~h.sMM.~~~",
+    "~~~~.....h.~~~~~h~~hh~~hhh.h..~~~.hhhhhhhsss.~~",
+    "~~~..hh...~~.~~~.~~hh~~f.hhh...ff...h.hhsss.hhM",
+    "~~~~~..h..~~~~~~.~~~.h.~h..~~.....hhhshhhhssh..",
+    "~~~~..Mh~~~~~~~~~~~~~.~.h.~~...hhhhhhh...hhshhh",
+    "~~~~~h~~~~~~~~~~~~~~~h~~~h.~~....s.h.......hMh.",
+    "~~~.hhh~hhhhhh~~~~...~~~~..~~..hhhh.........MMh",
+    "~~.hMMMMMMMMMMMMh~~~.~~~~~f~~~~h~~~~f........hh",
+    "hMMMMMMMMMMhhhMM.~~.~~~~~~~~~~~~~.~~...ddd...m.",
+    "~hMMMMMMhh..dd.hh~~~~~~~~~~~.~~~~~~~h.ddddd..mm",
+    "MMMMhhhddddddddd.~~~~~~~~~~~~~~~~~~..dddddddm.d",
+    "hhddddddddddddddd.~~~~~~~~~~~~~~~~~~..ddddddddd",
+    "dddddddddddddddddd..~~~~ddd~~~~~~~~.ddddddddddd",
+    "dddddddddddddddddddd.~~~ddddddd~..ddddddddddddd",
+    "ddddddddddddddddddddddddddddddddddddddddddddddd",
+    "ddddddddddddddddddddddddddddddddddddddddddddddd"
+  ],
+  "counts": {
+    "sea": 806,
+    "plain": 490,
+    "forest": 277,
+    "desert": 217,
+    "hills": 171,
+    "steppe": 106,
+    "mountain": 82,
+    "tundra": 48,
+    "marsh": 12
+  },
+  "land_cells": 1403,
+  "coastal_land_cells": 338,
+  "kept_as_land": [
+    {
+      "name": "Malta",
+      "row": 39,
+      "column": 19,
+      "land_share": 0.02,
+      "forced": true,
+      "why": "Taken by Bonaparte in 1798 and by Britain in 1800; its return was the open quarrel of 1803.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Corfu",
+      "row": 35,
+      "column": 23,
+      "land_share": 0.17,
+      "forced": true,
+      "why": "Key of the Ionian Islands, which changed hands four times in the period.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Minorca",
+      "row": 33,
+      "column": 12,
+      "land_share": 0.05,
+      "forced": true,
+      "why": "Port Mahon, British naval base 1798-1802; stands for the Balearics.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Corsica",
+      "row": 32,
+      "column": 16,
+      "land_share": 0.34,
+      "forced": true,
+      "why": "French since 1768, held by Britain 1794-96.",
+      "terrain": "hills"
+    },
+    {
+      "name": "Palermo",
+      "row": 37,
+      "column": 18,
+      "land_share": 0.39,
+      "forced": true,
+      "why": "Western Sicily: seat of the Bourbon court under British protection, 1806-15.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Crete",
+      "row": 40,
+      "column": 28,
+      "land_share": 0.35,
+      "forced": true,
+      "why": "Ottoman island commanding the southern Aegean.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Cyprus",
+      "row": 39,
+      "column": 33,
+      "land_share": 0.39,
+      "forced": true,
+      "why": "Ottoman island off the Levant coast.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Gotland",
+      "row": 16,
+      "column": 23,
+      "land_share": 0.16,
+      "forced": true,
+      "why": "Occupied by Russia in 1808; the only large island in the open Baltic.",
+      "terrain": "forest"
+    },
+    {
+      "name": "Naples",
+      "row": 34,
+      "column": 20,
+      "land_share": 0.36,
+      "forced": true,
+      "why": "A capital whose hex is mostly bay.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Amsterdam",
+      "row": 20,
+      "column": 15,
+      "land_share": 0.33,
+      "forced": true,
+      "why": "Holland north of the rivers, half Zuiderzee at this scale.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Cádiz",
+      "row": 35,
+      "column": 4,
+      "land_share": 0.26,
+      "forced": true,
+      "why": "Besieged 1810-12 while seat of the Cortes; the hex is mostly gulf.",
+      "terrain": "plain"
+    },
+    {
+      "name": "Acre",
+      "row": 41,
+      "column": 35,
+      "land_share": 0.32,
+      "forced": true,
+      "why": "The siege of 1799; the coastal hex is mostly sea.",
+      "terrain": "plain"
+    }
+  ],
+  "sea_basins": [
+    {
+      "id": 0,
+      "cells": 522,
+      "waters": [
+        "Atlantic",
+        "North Sea"
+      ]
+    },
+    {
+      "id": 1,
+      "cells": 3,
+      "waters": [
+        "White Sea"
+      ]
+    },
+    {
+      "id": 2,
+      "cells": 28,
+      "waters": [
+        "Baltic",
+        "Gulf of Bothnia"
+      ]
+    },
+    {
+      "id": 3,
+      "cells": 29,
+      "waters": [
+        "Caspian"
+      ]
+    },
+    {
+      "id": 4,
+      "cells": 33,
+      "waters": [
+        "Black Sea",
+        "Sea of Azov"
+      ]
+    },
+    {
+      "id": 5,
+      "cells": 191,
+      "waters": [
+        "Western Mediterranean",
+        "Tyrrhenian Sea",
+        "Adriatic",
+        "Ionian Sea",
+        "Aegean",
+        "Eastern Mediterranean"
+      ]
+    }
+  ],
+  "waters_without_a_sea_cell": [
+    "Sea of Marmara"
+  ],
+  "passages": [
+    {
+      "name": "Strait of Dover",
+      "row": 21,
+      "column": 13,
+      "terrain": "sea",
+      "open_sea": true,
+      "basins_touched": [
+        0
+      ]
+    },
+    {
+      "name": "The Sound",
+      "row": 17,
+      "column": 20,
+      "terrain": "plain",
+      "open_sea": false,
+      "basins_touched": [
+        2
+      ]
+    },
+    {
+      "name": "Great Belt",
+      "row": 18,
+      "column": 19,
+      "terrain": "sea",
+      "open_sea": true,
+      "basins_touched": [
+        2
+      ]
+    },
+    {
+      "name": "Strait of Gibraltar",
+      "row": 36,
+      "column": 5,
+      "terrain": "hills",
+      "open_sea": false,
+      "basins_touched": [0, 5]
+    },
+    {
+      "name": "Strait of Bonifacio",
+      "row": 33,
+      "column": 16,
+      "terrain": "plain",
+      "open_sea": false,
+      "basins_touched": [
+        5
+      ]
+    },
+    {
+      "name": "Strait of Messina",
+      "row": 37,
+      "column": 20,
+      "terrain": "plain",
+      "open_sea": false,
+      "basins_touched": [
+        5
+      ]
+    },
+    {
+      "name": "Strait of Otranto",
+      "row": 34,
+      "column": 23,
+      "terrain": "sea",
+      "open_sea": true,
+      "basins_touched": [
+        5
+      ]
+    },
+    {
+      "name": "Dardanelles",
+      "row": 34,
+      "column": 28,
+      "terrain": "sea",
+      "open_sea": true,
+      "basins_touched": [
+        5
+      ]
+    },
+    {
+      "name": "Bosporus",
+      "row": 33,
+      "column": 30,
+      "terrain": "plain",
+      "open_sea": false,
+      "basins_touched": [
+        4
+      ]
+    },
+    {
+      "name": "Strait of Kerch",
+      "row": 27,
+      "column": 34,
+      "terrain": "sea",
+      "open_sea": true,
+      "basins_touched": [
+        4
+      ]
+    }
+  ],
+  "rivers": [
+    {
+      "name": "Damietta Branch",
+      "rank": 1,
+      "cells": [[45, 32], [44, 33], [43, 33]]
+    },
+    {
+      "name": "Nile",
+      "rank": 1,
+      "cells": [[46, 33], [45, 33], [45, 32]]
+    },
+    {
+      "name": "Rosetta Branch",
+      "rank": 1,
+      "cells": [[45, 32], [44, 33], [44, 32], [43, 32]]
+    },
+    {
+      "name": "Borcea",
+      "rank": 2,
+      "cells": [[30, 29], [29, 29]]
+    },
+    {
+      "name": "Bratul Chillia",
+      "rank": 2,
+      "cells": [[28, 30], [29, 29]]
+    },
+    {
+      "name": "Bratul Sfintu Gheorghe",
+      "rank": 2,
+      "cells": [[29, 29], [29, 30]]
+    },
+    {
+      "name": "Bratul Sulina",
+      "rank": 2,
+      "cells": [[29, 29], [28, 30], [29, 30]]
+    },
+    {
+      "name": "Danube",
+      "rank": 2,
+      "cells": [[26, 22], [26, 23], [27, 23], [28, 23], [29, 23], [29, 24], [30, 25], [29, 25], [30, 26], [31, 26], [30, 27], [31, 27], [30, 28], [30, 29], [29, 29], [28, 29], [25, 16], [26, 17], [25, 17], [25, 18], [24, 19], [25, 19], [25, 21], [26, 21], [25, 20]]
+    },
+    {
+      "name": "Irtysh",
+      "rank": 2,
+      "cells": [[5, 46], [6, 46], [6, 45], [3, 43], [3, 44], [4, 45], [5, 45]]
+    },
+    {
+      "name": "Ob",
+      "rank": 2,
+      "cells": [[2, 44], [2, 45], [1, 45], [0, 46], [1, 46], [3, 43], [3, 42], [3, 41], [2, 41], [1, 41], [1, 40], [0, 40]]
+    },
+    {
+      "name": "Euphrates",
+      "rank": 3,
+      "cells": [[37, 37], [34, 37], [37, 38], [38, 39], [38, 40], [36, 37], [40, 44], [41, 44], [40, 45], [40, 46], [38, 41], [39, 41], [39, 42], [40, 43], [41, 43], [35, 37], [32, 39], [33, 38], [32, 38], [33, 37]]
+    },
+    {
+      "name": "Shatt al Arab",
+      "rank": 3,
+      "cells": [[40, 46], [41, 46]]
+    },
+    {
+      "name": "Volga",
+      "rank": 3,
+      "cells": [[20, 39], [19, 38], [18, 39], [14, 39], [15, 38], [16, 39], [16, 40], [14, 36], [14, 35], [15, 32], [14, 33], [14, 34], [13, 32], [24, 41], [23, 41], [24, 42], [21, 38], [22, 39], [23, 38], [23, 39], [23, 40], [25, 41], [17, 39], [15, 36], [14, 37], [14, 38], [15, 30], [16, 31], [15, 31], [13, 34], [13, 33]]
+    },
+    {
+      "name": "Dnieper",
+      "rank": 4,
+      "cells": [[26, 32], [26, 33], [25, 32], [25, 33], [24, 32], [24, 31], [23, 30], [22, 30], [16, 31], [17, 31], [17, 30], [18, 31], [27, 31], [24, 33], [18, 30], [18, 29], [19, 29], [20, 30], [20, 29], [21, 29], [21, 30]]
+    },
+    {
+      "name": "Lek",
+      "rank": 4,
+      "cells": [[21, 15], [20, 15]]
+    },
+    {
+      "name": "Nederrijn",
+      "rank": 4,
+      "cells": [[21, 15]]
+    },
+    {
+      "name": "Northern Dvina",
+      "rank": 4,
+      "cells": [[9, 35], [8, 35], [8, 34], [8, 33], [7, 32], [6, 32]]
+    },
+    {
+      "name": "Oder",
+      "rank": 4,
+      "cells": [[24, 22], [24, 23], [23, 22], [22, 22], [22, 21], [21, 21], [21, 20], [20, 21]]
+    },
+    {
+      "name": "Pechora",
+      "rank": 4,
+      "cells": [[5, 39], [6, 40], [6, 39], [5, 38], [4, 38], [3, 38], [3, 37], [2, 37], [3, 36], [4, 36], [3, 35], [2, 35], [1, 34], [1, 35], [0, 35]]
+    },
+    {
+      "name": "Rhine",
+      "rank": 4,
+      "cells": [[26, 17], [27, 16], [27, 17], [26, 16], [25, 16], [24, 17], [23, 16], [22, 16], [21, 16], [21, 15]]
+    },
+    {
+      "name": "Seine",
+      "rank": 4,
+      "cells": [[25, 14], [24, 14], [24, 13], [23, 13], [23, 12]]
+    },
+    {
+      "name": "Sukhona",
+      "rank": 4,
+      "cells": [[11, 32], [12, 33], [12, 34], [11, 34], [10, 35], [9, 35]]
+    },
+    {
+      "name": "Tigris",
+      "rank": 4,
+      "cells": [[34, 38], [35, 38], [35, 39], [35, 40], [36, 41], [37, 41], [38, 42], [38, 43], [39, 42], [39, 43], [39, 44], [39, 45], [40, 45]]
+    },
+    {
+      "name": "Ural",
+      "rank": 4,
+      "cells": [[15, 44], [15, 45], [16, 45], [16, 44], [16, 43], [17, 42], [17, 41], [18, 42], [18, 41], [19, 41], [19, 42], [20, 42], [20, 43], [21, 42], [22, 43], [12, 44], [13, 43], [13, 44], [14, 44], [14, 45]]
+    },
+    {
+      "name": "Waal",
+      "rank": 4,
+      "cells": [[21, 15], [21, 14]]
+    },
+    {
+      "name": "Ebro",
+      "rank": 5,
+      "cells": [[28, 8], [29, 7], [29, 8], [30, 9], [31, 9], [31, 10], [32, 10], [32, 11]]
+    },
+    {
+      "name": "Elbe",
+      "rank": 5,
+      "cells": [[23, 21], [24, 21], [23, 20], [22, 20], [21, 19], [20, 19], [19, 18]]
+    },
+    {
+      "name": "Loire",
+      "rank": 5,
+      "cells": [[26, 13], [25, 13], [24, 13], [25, 12], [25, 11], [24, 11], [25, 10], [26, 14], [27, 13], [28, 14], [28, 13]]
+    },
+    {
+      "name": "Neva",
+      "rank": 5,
+      "cells": [[12, 29], [13, 28]]
+    },
+    {
+      "name": "Svir’",
+      "rank": 5,
+      "cells": [[12, 29], [11, 29], [12, 30], [11, 30]]
+    },
+    {
+      "name": "Tagus",
+      "rank": 5,
+      "cells": [[31, 5], [32, 6], [31, 6], [31, 8], [31, 4], [32, 8], [32, 7], [31, 3]]
+    },
+    {
+      "name": "Tobol",
+      "rank": 5,
+      "cells": [[14, 46], [13, 45], [13, 46], [12, 46], [11, 46], [10, 46], [9, 45], [8, 46], [7, 45], [6, 45], [6, 46]]
+    },
+    {
+      "name": "Vistula",
+      "rank": 5,
+      "cells": [[24, 23], [24, 24], [23, 24], [22, 25], [21, 24], [21, 23], [20, 23], [19, 23]]
+    },
+    {
+      "name": "Vychegda",
+      "rank": 5,
+      "cells": [[7, 38], [7, 37], [8, 37], [7, 36], [8, 36], [9, 35], [6, 38]]
+    },
+    {
+      "name": "Western Dvina",
+      "rank": 5,
+      "cells": [[16, 30], [17, 29], [18, 29], [17, 28], [17, 27], [16, 27], [17, 26], [16, 26]]
+    },
+    {
+      "name": "Ariège",
+      "rank": 6,
+      "cells": [[30, 12], [29, 11]]
+    },
+    {
+      "name": "Dalälven",
+      "rank": 6,
+      "cells": [[13, 22], [12, 23], [11, 21], [12, 21], [12, 22], [11, 20], [10, 20], [10, 21]]
+    },
+    {
+      "name": "Dniester",
+      "rank": 6,
+      "cells": [[27, 30], [25, 25], [24, 26], [25, 26], [25, 27], [25, 28], [26, 29], [26, 30], [27, 29]]
+    },
+    {
+      "name": "Don",
+      "rank": 6,
+      "cells": [[24, 37], [24, 38], [23, 37], [22, 38], [25, 36], [25, 35], [22, 37], [22, 36], [21, 35], [21, 34], [20, 35], [19, 34], [18, 34]]
+    },
+    {
+      "name": "Douro",
+      "rank": 6,
+      "cells": [[30, 8], [30, 9], [30, 7], [29, 6], [30, 6], [30, 5], [29, 5], [29, 4]]
+    },
+    {
+      "name": "Drava",
+      "rank": 6,
+      "cells": [[27, 19], [27, 20], [26, 21], [27, 21], [28, 22], [29, 22], [28, 23], [29, 23]]
+    },
+    {
+      "name": "Garonne",
+      "rank": 6,
+      "cells": [[29, 11], [28, 11], [27, 10]]
+    },
+    {
+      "name": "Glomma",
+      "rank": 6,
+      "cells": [[10, 20], [11, 19], [11, 20], [12, 20]]
+    },
+    {
+      "name": "Göta älv",
+      "rank": 6,
+      "cells": [[14, 20], [15, 20], [15, 19]]
+    },
+    {
+      "name": "Jordan",
+      "rank": 6,
+      "cells": [[43, 36], [42, 36], [41, 36], [40, 36]]
+    },
+    {
+      "name": "Kama",
+      "rank": 6,
+      "cells": [[13, 39], [14, 40], [14, 39], [10, 40], [10, 39], [9, 38], [8, 39], [7, 39], [8, 40], [9, 40], [10, 41], [11, 40], [12, 40], [12, 41], [13, 40]]
+    },
+    {
+      "name": "Kem",
+      "rank": 6,
+      "cells": [[8, 29], [7, 28], [6, 29], [7, 29]]
+    },
+    {
+      "name": "Kemijoki",
+      "rank": 6,
+      "cells": [[5, 26], [6, 27], [6, 26], [4, 27]]
+    },
+    {
+      "name": "Kokemäenjoki",
+      "rank": 6,
+      "cells": [[12, 25], [11, 24]]
+    },
+    {
+      "name": "Po",
+      "rank": 6,
+      "cells": [[29, 15], [28, 16], [29, 16], [28, 17], [29, 17], [29, 18]]
+    },
+    {
+      "name": "Rhône",
+      "rank": 6,
+      "cells": [[27, 15], [29, 13], [30, 13], [27, 14], [28, 14], [30, 14], [27, 16]]
+    },
+    {
+      "name": "Soroksari Duna",
+      "rank": 6,
+      "cells": [[27, 23]]
+    },
+    {
+      "name": "Thames",
+      "rank": 6,
+      "cells": [[20, 11], [20, 12], [20, 13]]
+    },
+    {
+      "name": "Tisza",
+      "rank": 6,
+      "cells": [[28, 24], [29, 23], [29, 24], [26, 25], [26, 24], [27, 24], [27, 23], [25, 26], [26, 27], [26, 26], [25, 25]]
+    },
+    {
+      "name": "Vorma",
+      "rank": 6,
+      "cells": [[13, 19], [12, 20]]
+    },
+    {
+      "name": "Vuoksi",
+      "rank": 6,
+      "cells": [[12, 29], [12, 28], [11, 27]]
+    }
+  ],
+  "check_points": [
+    {
+      "name": "Paris",
+      "row": 24,
+      "column": 13,
+      "terrain": "plain"
+    },
+    {
+      "name": "Madrid",
+      "row": 31,
+      "column": 7,
+      "terrain": "hills"
+    },
+    {
+      "name": "Vienna",
+      "row": 26,
+      "column": 22,
+      "terrain": "plain"
+    },
+    {
+      "name": "Moscow",
+      "row": 16,
+      "column": 33,
+      "terrain": "forest"
+    },
+    {
+      "name": "Cairo",
+      "row": 45,
+      "column": 32,
+      "terrain": "desert"
+    },
+    {
+      "name": "Stockholm hinterland",
+      "row": 13,
+      "column": 22,
+      "terrain": "plain"
+    },
+    {
+      "name": "Tiflis",
+      "row": 30,
+      "column": 41,
+      "terrain": "hills"
+    },
+    {
+      "name": "Ulm",
+      "row": 25,
+      "column": 17,
+      "terrain": "plain"
+    },
+    {
+      "name": "Mid-Atlantic",
+      "row": 16,
+      "column": 1,
+      "terrain": "sea"
+    },
+    {
+      "name": "Bay of Biscay",
+      "row": 26,
+      "column": 8,
+      "terrain": "sea"
+    },
+    {
+      "name": "North Sea",
+      "row": 16,
+      "column": 15,
+      "terrain": "sea"
+    },
+    {
+      "name": "Baltic",
+      "row": 17,
+      "column": 23,
+      "terrain": "sea"
+    },
+    {
+      "name": "Tyrrhenian Sea",
+      "row": 34,
+      "column": 18,
+      "terrain": "sea"
+    },
+    {
+      "name": "Black Sea",
+      "row": 30,
+      "column": 33,
+      "terrain": "sea"
+    },
+    {
+      "name": "Caspian Sea",
+      "row": 28,
+      "column": 44,
+      "terrain": "sea"
+    },
+    {
+      "name": "Zuiderzee",
+      "row": 20,
+      "column": 16,
+      "terrain": "plain"
+    }
+  ]
+}

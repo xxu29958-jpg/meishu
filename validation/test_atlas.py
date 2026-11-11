@@ -16,7 +16,8 @@ sys.path.insert(0, str(ROOT / 'tools'))
 sys.path.insert(0, str(ROOT / 'authoring'))
 
 import build as builder  # noqa: E402
-from shared.kit import field, geo, maplayout  # noqa: E402
+import hexes  # noqa: E402
+from shared.kit import field, geo, hexgrid, maplayout  # noqa: E402
 from shared.kit.palette import Palette  # noqa: E402
 from shared.painters import atlas  # noqa: E402
 from validate import validate  # noqa: E402
@@ -25,6 +26,7 @@ AUTHORING = ROOT / 'authoring/atlas-europe-01'
 BATCH = ROOT / 'submissions/atlas-europe-01'
 REGION = json.loads((ROOT / 'design/maps/europe.json').read_text(encoding='utf-8'))
 RECIPE = json.loads((AUTHORING / 'europe.json').read_text(encoding='utf-8'))
+TABLE = json.loads((ROOT / 'design/maps/europe-hexes.json').read_text(encoding='utf-8'))
 
 
 class Projection(unittest.TestCase):
@@ -186,7 +188,112 @@ class DeliveredMap(unittest.TestCase):
         scene = maplayout.scene_from_region(REGION, 0)
         self.assertEqual(scene, json.loads((BATCH / 'preview.json').read_text(encoding='utf-8')))
         self.assertEqual(scene['items'][7]['asset'], 'maps.region.europe.z0.r1c1')
-        self.assertEqual(scene['items'][7]['position'], [768.0, 768.0])
+        origin = REGION['hex_grid']['origin']
+        self.assertEqual(scene['origin'], origin)
+        self.assertEqual(scene['items'][7]['position'], [768.0 - origin[0], 768.0 - origin[1]])
+
+
+class HexGrid(unittest.TestCase):
+    grid = REGION['hex_grid']
+
+    def test_grid_lies_wholly_inside_the_painted_map(self):
+        width, height = REGION['levels'][0]['size']
+        for row, column in ((0, 0), (0, self.grid['columns'] - 1), (1, self.grid['columns'] - 1), (self.grid['rows'] - 1, 0),
+                            (self.grid['rows'] - 1, self.grid['columns'] - 1)):
+            for x, y in hexgrid.cell_corners(self.grid, row, column):
+                self.assertTrue(0 <= x <= width and 0 <= y <= height, f'cell {row},{column} leaves the map at {x},{y}')
+
+    def test_scale_is_the_one_the_owner_chose(self):
+        km = self.grid['step'][0] * REGION['levels'][0]['units_per_pixel']
+        self.assertEqual(km, REGION['hex_scale']['km_per_hex_column'])
+        self.assertEqual(km, 120)
+
+    def test_every_pixel_of_the_grid_belongs_to_one_cell(self):
+        small = dict(self.grid, columns=5, rows=4)
+        cells = hexgrid.cell_map(small, 400, 260)
+        counts = np.bincount(cells[cells >= 0], minlength=20)
+        self.assertEqual(len(counts), 20)
+        self.assertLess(counts.max() - counts.min(), 80)              # equal cells up to edge rounding
+        self.assertAlmostEqual(float(counts.mean()), 64 * 54, delta=20)
+        for row in range(4):
+            for column in range(5):
+                x, y = hexgrid.cell_centre(small, row, column)
+                self.assertEqual(int(cells[int(y), int(x)]), row * 5 + column)
+                self.assertEqual(hexgrid.cell_at(small, x + 9, y - 11), (row, column))
+        self.assertIsNone(hexgrid.cell_at(small, -40, -40))
+
+    def test_interior_cells_have_six_neighbours_that_touch(self):
+        for row, column in ((10, 10), (11, 10)):
+            around = hexgrid.neighbours(self.grid, row, column)
+            self.assertEqual(len(around), 6)
+            here = hexgrid.cell_centre(self.grid, row, column)
+            for other in around:
+                there = hexgrid.cell_centre(self.grid, *other)
+                self.assertLess(math.hypot(here[0] - there[0], here[1] - there[1]), 64.01)
+        self.assertEqual(len(hexgrid.neighbours(self.grid, 0, 0)), 2)
+
+
+class HexTable(unittest.TestCase):
+    """The per-hex terrain table must stay in step with the painted map and with the region record."""
+
+    def terrain_at(self, lon, lat):
+        px, py = geo.frame_for(REGION, 0).to_pixels(lon, lat)
+        row, column = hexgrid.cell_at(TABLE['grid'], float(px), float(py))
+        return TABLE['legend'][TABLE['terrain'][row][column]]
+
+    def test_table_uses_the_grid_of_the_region_record(self):
+        self.assertEqual(TABLE['grid'], REGION['hex_grid'])
+        self.assertEqual(len(TABLE['terrain']), TABLE['grid']['rows'])
+        self.assertTrue(all(len(line) == TABLE['grid']['columns'] for line in TABLE['terrain']))
+        self.assertEqual(sum(TABLE['counts'].values()), TABLE['grid']['rows'] * TABLE['grid']['columns'])
+
+    def test_deriving_again_gives_the_committed_table(self):
+        self.assertEqual(hexes.derive(AUTHORING / 'hexes.json'), TABLE)
+
+    def test_known_ground_reads_as_expected(self):
+        expected = {(10.5, 46.9): 'mountain', (43.0, 42.9): 'mountain', (10.0, 30.0): 'desert', (27.5, 52.1): 'marsh', (40.0, 48.0): 'steppe',
+                    (40.0, 62.0): 'forest', (50.0, 67.5): 'tundra', (2.35, 48.86): 'plain', (-20.0, 50.0): 'sea', (34.0, 43.2): 'sea'}
+        for (lon, lat), name in expected.items():
+            self.assertEqual(self.terrain_at(lon, lat), name, f'{lon}, {lat}')
+
+    def test_record_check_points_agree_except_waters_smaller_than_a_hex(self):
+        by_name = {entry['name']: entry['terrain'] for entry in TABLE['check_points']}
+        for point in REGION['check_points']:
+            if point['is'] == 'land':
+                self.assertNotIn(by_name[point['name']], ('sea', 'lake'), point['name'])
+            elif point['name'] != 'Zuiderzee':                         # 5,000 km2 of water in a 12,000 km2 hex
+                self.assertEqual(by_name[point['name']], 'sea', point['name'])
+
+    def test_kept_places_are_land_and_say_why(self):
+        for entry in TABLE['kept_as_land']:
+            self.assertNotIn(entry['terrain'], ('sea', 'lake'), entry['name'])
+            self.assertTrue(entry['why'])
+            self.assertEqual(TABLE['legend'][TABLE['terrain'][entry['row']][entry['column']]], entry['terrain'])
+
+    def test_seas_that_are_landlocked_at_this_scale_are_reported_apart(self):
+        basin_of = {water: basin['id'] for basin in TABLE['sea_basins'] for water in basin['waters']}
+        self.assertEqual(basin_of['Atlantic'], basin_of['North Sea'])
+        self.assertEqual(basin_of['Western Mediterranean'], basin_of['Aegean'])
+        for first, second in (('Atlantic', 'Western Mediterranean'), ('North Sea', 'Baltic'), ('Aegean', 'Black Sea'), ('Black Sea', 'Caspian')):
+            self.assertNotEqual(basin_of[first], basin_of[second], f'{first} and {second}')
+        gibraltar = next(entry for entry in TABLE['passages'] if entry['name'] == 'Strait of Gibraltar')
+        self.assertEqual(sorted(gibraltar['basins_touched']), sorted({basin_of['Atlantic'], basin_of['Western Mediterranean']}))
+
+    def test_rivers_run_through_cells_of_the_grid(self):
+        rivers = {river['name']: river for river in TABLE['rivers']}
+        for name in ('Danube', 'Rhine', 'Vistula', 'Volga', 'Nile', 'Dnieper', 'Elbe', 'Tagus'):
+            self.assertIn(name, rivers)
+        for river in TABLE['rivers']:
+            for row, column in river['cells']:
+                self.assertTrue(0 <= row < TABLE['grid']['rows'] and 0 <= column < TABLE['grid']['columns'], river['name'])
+        px, py = geo.frame_for(REGION, 0).to_pixels(16.37, 48.21)
+        vienna = hexgrid.cell_at(TABLE['grid'], float(px), float(py))
+        near = [list(vienna)] + [list(cell) for cell in hexgrid.neighbours(TABLE['grid'], *vienna)]
+        self.assertTrue(any(cell in near for cell in rivers['Danube']['cells']), 'the Danube should pass Vienna')
+
+    def test_rules_must_end_with_a_catch_all(self):
+        with self.assertRaisesRegex(hexes.HexError, 'No class matched'):
+            hexes.classify([{'terrain': 'sea', 'when': {'ground': [0, 0.4]}}], {'ground': np.array([0.9])}, 0, 'steppe')
 
 
 if __name__ == '__main__':

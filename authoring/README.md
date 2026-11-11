@@ -26,6 +26,7 @@ The Europe map is a batch like any other; its preview scene comes from the regio
 ```sh
 python authoring/build.py authoring/atlas-europe-01
 python authoring/scene.py authoring/atlas-europe-01/scenes/europe.json submissions/atlas-europe-01/preview.json
+python authoring/hexes.py authoring/atlas-europe-01/hexes.json design/maps/europe-hexes.json     # after any change to the map
 ```
 
 `--only <id-prefix>` rebuilds part of a batch. The build writes PNGs, the vector masters in `sources/` and `manifest.json`. It never writes `theme.json` or `sources.json`: those are declarations, kept by hand.
@@ -49,6 +50,7 @@ python authoring/review.py scene <manifest> <scene.json> out.png --ppu 2
 authoring/
   build.py            batch.json -> PNGs, SVGs, manifest
   scene.py            map layout -> preview scene
+  hexes.py            painted map -> per-hex terrain table (design data)
   review.py           headless contact sheets and scenes
   shared/
     formats.json      canvas formats from ASSET-SPEC
@@ -74,7 +76,8 @@ authoring/
 | An avatar's crop | `<batch>/portraits/<name>/character.json` |
 | A screen's layout or its sample text | `design/ui/flows/`, `design/ui/data/` |
 | What a regional map shows: ranges, land cover, period hydrography, straits, every stroke | `<batch>/<region>.json` (the recipe) |
-| A regional map's projection, window, levels | `design/maps/<region>.json` |
+| A regional map's projection, window, levels, hex grid | `design/maps/<region>.json` |
+| What a hex is called, which small places stay land, named straits | `<batch>/hexes.json`, then run `hexes.py` |
 | Add a commander | New `portraits/<name>/` with `illustration.py` and `character.json`, two asset entries |
 | Add a kind of artwork | New module in `shared/painters/`, one line in `shared/painters/__init__.py` |
 

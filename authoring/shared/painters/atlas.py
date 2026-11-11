@@ -255,6 +255,7 @@ class Survey(Sheet):
             inside = field.blur(self.mask(polygons), rule.get('feather', 30.0) / self.unit) * rule.get('strength', 1.0)
             weights *= 1.0 - inside
             weights[grounds.index(rule['ground'])] += inside
+        self.grounds, self.dominant = grounds, weights.argmax(axis=0)
         fields = {'colour': sum(weights[index][..., None] * self.colour(cover['grounds'][name]['colour'])
                                 for index, name in enumerate(grounds))}
         for key in ('woods', 'fir', 'grass', 'sand', 'marsh', 'dry', 'tilled'):
@@ -265,6 +266,12 @@ class Survey(Sheet):
             fields[key] = fields[key] * (1.0 - green)
         fields['tilled'] = np.maximum(fields['tilled'], green * 0.8)
         return fields
+
+    def ground_at(self, x, y):
+        """Name of the dominant ground at a map position (map units)."""
+        column = int(np.clip((x - self.frame.west) / self.unit, 0, self.width - 1))
+        row = int(np.clip((self.frame.north - y) / self.unit, 0, self.height - 1))
+        return self.grounds[int(self.dominant[row, column])]
 
     def over(self, name, plate):
         """A survey field resampled onto a window's pixels (bilinear in map position)."""
@@ -759,6 +766,46 @@ def render(frame, recipe, palette, tile=TILE):
             total[region] = total[region] * (1.0 - share[..., None]) + piece * share[..., None]
     pixels = np.rint(np.clip(total, 0.0, 255.0)).astype(np.uint8)
     return Image.fromarray(np.dstack([pixels, np.full(pixels.shape[:2], 255, dtype=np.uint8)]), 'RGBA')
+
+
+def measure(frame, recipe, palette, cells, count, tile=512):
+    """Average the fields that paint the map over numbered cells (a hex grid, say).
+
+    `cells` gives a cell number (or -1) for every pixel of `frame`. Returns per-cell
+    arrays: 'pixels'; 'land', 'lake' and 'ground' (dry land) as shares of the cell;
+    and 'relief', 'woods', 'marsh', 'sand', 'grass', 'dry' averaged over the cell's
+    dry land. What a cell is called is decided elsewhere, from these numbers; the
+    numbers are the same fields the picture was painted from, so table and
+    picture agree. Also returns the survey, for lookups by position.
+    """
+    margin = math.ceil(near_reach(recipe) / frame.units_per_pixel) + 10
+    survey = Survey(frame, recipe, palette, margin)
+    names = ('land', 'lake', 'ground', 'relief', 'woods', 'marsh', 'sand', 'grass', 'dry')
+    sums = {name: np.zeros(count + 1, dtype=np.float64) for name in names}
+    pixels = np.zeros(count + 1, dtype=np.float64)
+    for top in range(0, frame.height, tile):
+        for left in range(0, frame.width, tile):
+            width, height = min(tile, frame.width - left), min(tile, frame.height - top)
+            plate = Plate(frame.window(left, top, width, height), recipe, palette, survey, margin)
+            inner = (slice(margin, margin + height), slice(margin, margin + width))
+            height_field, _ = relief_field(plate)
+            woods = wood_density(plate, height_field)
+            ground = plate.ground[inner]
+            values = {'land': plate.land[inner], 'lake': plate.lakes[inner], 'ground': ground, 'relief': height_field[inner] * ground,
+                      'woods': woods[inner] * ground}
+            values.update({key: plate.cover[key][inner] * ground for key in ('marsh', 'sand', 'grass', 'dry')})
+            index = (cells[top:top + height, left:left + width] + 1).ravel()
+            pixels += np.bincount(index, minlength=count + 1)
+            for name in names:
+                sums[name] += np.bincount(index, weights=values[name].ravel(), minlength=count + 1)
+    pixels = pixels[1:]
+    dry = np.maximum(sums['ground'][1:], 1e-9)
+    result = {'pixels': pixels}
+    for name in ('land', 'lake', 'ground'):
+        result[name] = sums[name][1:] / np.maximum(pixels, 1.0)
+    for name in ('relief', 'woods', 'marsh', 'sand', 'grass', 'dry'):
+        result[name] = sums[name][1:] / dry
+    return result, survey
 
 
 def level_entry(region, level):

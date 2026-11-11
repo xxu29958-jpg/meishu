@@ -39,7 +39,8 @@ Last updated with batch `atlas-europe-01`.
 | Rivers, mountains, snow, desert, wetland, roads | none | |
 | Regional composition | part | One demonstration coast scene with the terrain kit |
 | Map painter and geography layers | done | `authoring/shared/painters/atlas.py`; Natural Earth 1:50m layers under `authoring/geodata/` |
-| Europe map | part | Level 0 (overview, 3072×2560, 30 chunks) in `atlas-europe-01`. Remaining: level 1 for close zoom (4 batches); more rivers (needs 1:10m data); hex scale decision; per-hex terrain table |
+| Europe map | part | Level 0 (overview, 3072×2560, 30 chunks) in `atlas-europe-01`. Hex scale decided: 120 km. Remaining: level 1 for close zoom (4 batches); more rivers (needs 1:10m data) |
+| Europe hex grid and terrain table | part | 47×47 grid and physical terrain per hex in `design/maps/europe-hexes.json`, with kept places, sea basins, strait passages and rivers. Proposal: classes and lists await integration |
 | Americas map | none | |
 | World map (4096×2048, chunked) | none | |
 | Political overlays | none | Style described in theme; no assets |
@@ -99,7 +100,7 @@ Last updated with batch `atlas-europe-01`.
 | Unit definitions | part | 9 shared families, 28 distinctive units for the slice |
 | Events | part | 6 for 1805-09 |
 | Starting forces as counts and positions | none | In words only |
-| Territory records | none | |
+| Territory records | none | Can now be keyed to hexes of `design/maps/europe-hexes.json` |
 | Rosters and records for the other four dates | none | |
 | Gameplay vocabulary | blocked | None supplied; provisional stand-in in use |
 
@@ -108,5 +109,5 @@ Last updated with batch `atlas-europe-01`.
 | Item | State |
 | --- | --- |
 | Authoring kit, build, review tools | done |
-| Tests for authoring code, map painter and design records | done (78 checks) |
+| Tests for authoring code, map painter, hex table and design records | done (90 checks) |
 | Second, materially different batch for acceptance | none |

@@ -49,20 +49,24 @@ def scene_from_layout(layout):
             'hex': layout['hex'], 'tiles': tiles, 'items': items + features}
 
 
-def scene_from_region(region, level, hex_step=(64, 54), odd_row_offset=32):
+def scene_from_region(region, level):
     """Preview scene that lays out one level of a regional map from its chunks.
 
     Chunks are anchored at their centre: chunk (row, column) sits at
     ((column + 0.5) * chunk, (row + 0.5) * chunk) in the level's pixels, and its
-    skirt overlaps its neighbours.
+    skirt overlaps its neighbours. The scene's origin is the centre of hex
+    (0, 0) of the region's hex grid, so a viewer's cell picking matches the
+    grid the region record proposes.
     """
     entries = {entry['level']: entry for entry in region['levels']}
     if level not in entries:
         raise KeyError(f'Region {region["id"]!r} has no level {level}; known: {sorted(entries)}')
     entry = entries[level]
     chunk = entry['chunk']
+    grid = region.get('hex_grid', {'origin': [0, 0], 'step': [64, 54], 'odd_row_offset': 32})
+    origin = grid['origin']
     items = [{'asset': entry['id_pattern'].format(row=row, column=column), 'clip': 'still',
-              'position': [(column + 0.5) * chunk, (row + 0.5) * chunk], 'scale': 1}
+              'position': [(column + 0.5) * chunk - origin[0], (row + 0.5) * chunk - origin[1]], 'scale': 1}
              for row in range(entry['rows']) for column in range(entry['columns'])]
-    return {'contract_version': 1, 'canvas_size': list(entry['size']), 'origin': [0, 0],
-            'hex': {'step': list(hex_step), 'odd_row_offset': odd_row_offset}, 'tiles': [], 'items': items}
+    return {'contract_version': 1, 'canvas_size': list(entry['size']), 'origin': list(origin),
+            'hex': {'step': list(grid['step']), 'odd_row_offset': grid['odd_row_offset']}, 'tiles': [], 'items': items}

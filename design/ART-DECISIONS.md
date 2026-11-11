@@ -43,6 +43,8 @@ Recipe, formats and the plan for the world map: `design/art/maps.md`.
 - **Crossings are kept visible.** Narrow straits are cut to a minimum drawn width. This is cartographic exaggeration and is listed strait by strait in the recipe.
 - **The sea carries the tone.** Storm-dark deep water, a pale shelf, engraved lining. Land is kept mid-toned so units, towns and territory washes read on top of it.
 - **No graticule on land, no lettering, no compass rose.** A faint graticule on water only gives the chart its period feel without competing with overlays.
+- **Hex scale: 120 km per hex column (Owner, 2026-11-11).** 47 x 47 hexes over the map as delivered; 60 km was set aside as four times the board and four more batches of map. The grid and a per-hex terrain table are design data (`design/maps/`), never paint.
+- **The terrain table follows the picture.** Each hex is measured with the fields that painted it. Where a hex is too coarse (small islands, straits, desert river valleys) the table says so in explicit lists instead of bending the terrain.
 - **Raw data stays out of the repository.** Derived layers live under `authoring/geodata/` with the source pinned by commit and hash.
 
 ## Units
@@ -80,4 +82,4 @@ Research and adjustments by unit: `design/art/units.md`.
 3. **Frame sizes beyond the recommended canvases.** Land pieces are 176×198 and coast aprons 240×270 so they can overlap neighbours. Display sizes keep the 8:9 ratio.
 4. **Region chunks.** ASSET-SPEC describes 516×516 chunks for regional maps but no id, placement or projection convention. `atlas-europe-01` uses `maps.region.<region>.z<level>.r<row>c<column>`, centre anchor, and the record `design/maps/europe.json`. Is that acceptable, and where should the game read the projection from? The manifest and theme schemas have no field for it.
 5. **Levels of detail.** One batch holds 30 chunks. Sharp zoom-in needs level 1 (120 chunks, four batches). How many map pixels can the game afford to ship, and will it convert chunks to a compressed texture format?
-6. **Hex scale** for Europe: 120 km or 60 km per hex column. Options and costs in `design/maps/europe.json`; the Owner decides.
+6. **Hex table.** `design/maps/europe-hexes.json` proposes terrain per hex, twelve small places kept as land, sea basins and ten strait passages. Are the classes the ones the rules need, and how should ships pass a strait whose hex is land (the Sound, the Bosporus, Gibraltar)?

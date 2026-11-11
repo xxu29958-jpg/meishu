@@ -45,7 +45,7 @@ One continuous painting, 3072 x 2560 at 1.875 km per pixel, from Iceland to the 
 **How it is painted** (`authoring/shared/painters/atlas.py`, recipe `authoring/atlas-europe-01/europe.json`):
 
 1. *Sea.* Colour deepens with distance from land; a pale shelf hugs the coast. Nine coast-parallel lines open out to sea, as engravers lined water; beyond them a broken horizontal ruling. Faint meridians and parallels every five degrees, on water only.
-2. *Ground.* Colour by climate belt from interpreted samples (tundra, taiga, mixed and broadleaf forest, forest-steppe, steppe, semi-desert, Mediterranean, highland, desert, delta, marsh), blended by distance and then washed with slow tonal pooling. Dry-country rivers carry a green ribbon: the Nile, the Tigris and Euphrates.
+2. *Ground.* Colour by climate belt from interpreted samples (tundra, taiga, mixed and broadleaf forest, open farmed lowland, forest-steppe, steppe, semi-desert, Mediterranean, highland, desert, delta, marsh), blended by distance and then washed with slow tonal pooling. Dry-country rivers carry a green ribbon: the Nile, the Tigris and Euphrates.
 3. *Relief.* An envelope from range outlines and ridge lines, broken into crests by ridged noise, cut by river valleys, shaded from the upper left and hachured down the slope. Tree, rock and snow lines fall with latitude, so the Scandinavian fells are bare where the Alps are wooded.
 4. *Woods.* Each ground has a wooded share; noise gathers that share into forests with ragged edges, drawn as massed tree marks (round for broadleaf, pointed for conifer) over a dark floor wash.
 5. *Open-country marks.* Stipple on tilled land, grass ticks on steppe, dots and dune crests on sand, reed strokes on marsh.
@@ -53,7 +53,7 @@ One continuous painting, 3072 x 2560 at 1.875 km per pixel, from Iceland to the 
 7. *Coast line*, heavier on shores facing away from the light. Water too narrow to hold two coast lines (an estuary) is drawn as a channel instead of filling with ink.
 8. *Paper.* Grain and slow mottle over everything; one overall tone adjustment.
 
-**What is data and what is interpretation.** Coastlines, lakes, rivers and the outlines of the major ranges, deserts and deltas are Natural Earth 1:50m (`authoring/geodata/`). Everything else is the author's reading, written in the recipe so it can be corrected: 352 land-cover samples for about 1800; 66 ridge lines for ranges the data does not outline, placed from general knowledge and approximate to tens of km; the form of relief inside every outline, which is drawn and not surveyed (no elevation data was used); hydrography as of the period (8 modern reservoirs and 4 later canals left out, the Zuiderzee open and its polders water); and 7 straits cut to a minimum drawn width so crossings stay visible.
+**What is data and what is interpretation.** Coastlines, lakes, rivers and the outlines of the major ranges, deserts and deltas are Natural Earth 1:50m (`authoring/geodata/`). Everything else is the author's reading, written in the recipe so it can be corrected: 374 land-cover samples for about 1800; 66 ridge lines for ranges the data does not outline, placed from general knowledge and approximate to tens of km; the form of relief inside every outline, which is drawn and not surveyed (no elevation data was used); hydrography as of the period (8 modern reservoirs and 4 later canals left out, the Zuiderzee open and its polders water); and 7 straits cut to a minimum drawn width so crossings stay visible.
 
 **Nothing political is in the paint.** No frontiers, towns, roads or names. Those are overlays keyed to the dated records in `design/global-conquest/`.
 
@@ -61,7 +61,13 @@ One continuous painting, 3072 x 2560 at 1.875 km per pixel, from Iceland to the 
 
 **Levels of detail.** Level 0 is the overview. Level n has 2^n times the pixels per km; the painter renders any level from the same recipe (stroke sizes stay in pixels, placement stays in km). One batch holds 30 chunks under the 32 MiB budget, so level 1 is four batches. Not built yet.
 
-**Hexes are derived, not drawn.** The grid is the game's. `design/maps/europe.json` gives two scales for the Owner to choose between: 120 km per hex column (48 x 47 hexes, the map as delivered) or 60 km (96 x 95, needs level 1). A per-hex terrain table can be sampled from the same fields that painted the map and delivered as design data once the scale is fixed.
+**Hexes are derived, not drawn.** The Owner chose 120 km per hex column (2026-11-11). The grid is 47 x 47 cells lying wholly inside the map, origin (48, 38), in `design/maps/europe.json`. `design/maps/europe-hexes.json` gives each hex one terrain word, measured from the same fields that painted the map: 1403 land hexes (490 plain, 277 forest, 217 desert, 171 hills, 106 steppe, 82 mountain, 48 tundra, 12 marsh) and 806 sea.
+
+Three things a 120 km hex cannot show by itself, each listed in the table for integration to rule on:
+
+- *Small places that matter.* Malta is a fiftieth of a hex. Twelve places (Malta, Corfu, Minorca, Corsica, Palermo, Crete, Cyprus, Gotland, Naples, Amsterdam, Cádiz, Acre) are kept as land with a stated reason.
+- *Straits.* The Sound, the Bosporus and Gibraltar are narrower than a hex. Sea hexes fall into separate basins: the Atlantic with the North Sea; the Baltic; the Mediterranean; the Black Sea; the Caspian; the White Sea. Ten named passages say which hex each strait falls in and which basins it touches.
+- *River valleys in desert.* The Nile's green ribbon is a sixth of a hex wide, so Cairo's hex reads as desert. The river list says which hexes a river runs through.
 
 ### The Americas and the world
 
@@ -75,4 +81,4 @@ Not started. The same painter and layers serve both. The world map is equirectan
 
 ## Not done
 
-Snow, desert, wetland, mountain, river and road pieces for the terrain kit; edge variety for coast layers; Europe at level 1; the Americas; the world; territory and frontier overlay styles as assets; the per-hex terrain table.
+Snow, desert, wetland, mountain, river and road pieces for the terrain kit; edge variety for coast layers; Europe at level 1; the Americas; the world; territory and frontier overlay styles as assets.
