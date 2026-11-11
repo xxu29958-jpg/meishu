@@ -213,7 +213,12 @@
       "selected": {
         "unit": {
           "items": "units",
-          "key": "roster"
+          "key": "roster",
+          "filter": {
+            "tab": "arm",
+            "field": "arm",
+            "default": "infantry"
+          }
         }
       },
       "nodes": [
@@ -393,7 +398,8 @@
               "x": 416,
               "y": 26,
               "w": 30,
-              "h": 30
+              "h": 30,
+              "ax": "right"
             },
             {
               "type": "text",
@@ -403,7 +409,8 @@
               "w": 116,
               "align": "right",
               "nowrap": true,
-              "text": "{item.cost}"
+              "text": "{item.cost}",
+              "ax": "right"
             }
           ]
         },
@@ -419,13 +426,25 @@
         },
         {
           "type": "text",
+          "style": "empty",
+          "x": 778,
+          "y": 360,
+          "w": 408,
+          "ax": "right",
+          "align": "center",
+          "when": "!unit",
+          "text": "Choose another arm, or win the battles that open it."
+        },
+        {
+          "type": "text",
           "style": "heading",
           "x": 778,
           "y": 184,
           "w": 408,
           "ax": "right",
           "lines": 2,
-          "text": "{unit.name}"
+          "text": "{unit.name}",
+          "when": "unit"
         },
         {
           "type": "sprite",
@@ -441,7 +460,8 @@
           "y": 262,
           "w": 192,
           "h": 192,
-          "ax": "right"
+          "ax": "right",
+          "when": "unit"
         },
         {
           "type": "text",
@@ -451,7 +471,8 @@
           "w": 200,
           "ax": "right",
           "lines": 2,
-          "text": "{unit.role}"
+          "text": "{unit.role}",
+          "when": "unit"
         },
         {
           "type": "text",
@@ -461,7 +482,8 @@
           "w": 200,
           "ax": "right",
           "nowrap": true,
-          "text": "Strength  {unit.strength}"
+          "text": "Strength  {unit.strength}",
+          "when": "unit"
         },
         {
           "type": "text",
@@ -471,7 +493,8 @@
           "w": 200,
           "ax": "right",
           "nowrap": true,
-          "text": "Cost  {unit.cost}"
+          "text": "Cost  {unit.cost}",
+          "when": "unit"
         },
         {
           "type": "text",
@@ -481,7 +504,8 @@
           "w": 200,
           "ax": "right",
           "nowrap": true,
-          "text": "Upkeep  {unit.upkeep} a turn"
+          "text": "Upkeep  {unit.upkeep} a turn",
+          "when": "unit"
         },
         {
           "type": "text",
@@ -491,7 +515,8 @@
           "w": 408,
           "ax": "right",
           "lines": 2,
-          "text": "{unit.note}"
+          "text": "{unit.note}",
+          "when": "unit"
         },
         {
           "type": "button",
@@ -520,7 +545,8 @@
           "enabled": "unit.affordable",
           "action": {
             "open": "confirm-recruit"
-          }
+          },
+          "when": "unit"
         }
       ]
     },
@@ -530,7 +556,12 @@
       "selected": {
         "unit": {
           "items": "units",
-          "key": "roster"
+          "key": "roster",
+          "filter": {
+            "tab": "arm",
+            "field": "arm",
+            "default": "infantry"
+          }
         }
       },
       "nodes": [

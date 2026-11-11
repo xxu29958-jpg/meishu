@@ -1,12 +1,12 @@
 {
   "contract_version": 1,
   "canvas_size": [
-    640,
-    400
+    608,
+    396
   ],
   "origin": [
-    56,
-    50
+    0,
+    0
   ],
   "hex": {
     "step": [
@@ -71,6 +71,12 @@
       "clip": "still"
     },
     {
+      "row": 0,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
       "row": 1,
       "column": 0,
       "asset": "maps.terrain.water",
@@ -125,6 +131,12 @@
       "clip": "still"
     },
     {
+      "row": 1,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
       "row": 2,
       "column": 0,
       "asset": "maps.terrain.water",
@@ -179,6 +191,12 @@
       "clip": "still"
     },
     {
+      "row": 2,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
       "row": 3,
       "column": 0,
       "asset": "maps.terrain.water",
@@ -233,6 +251,12 @@
       "clip": "still"
     },
     {
+      "row": 3,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
       "row": 4,
       "column": 0,
       "asset": "maps.terrain.water",
@@ -287,6 +311,12 @@
       "clip": "still"
     },
     {
+      "row": 4,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
       "row": 5,
       "column": 0,
       "asset": "maps.terrain.water",
@@ -341,6 +371,12 @@
       "clip": "still"
     },
     {
+      "row": 5,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
       "row": 6,
       "column": 0,
       "asset": "maps.terrain.water",
@@ -391,6 +427,72 @@
     {
       "row": 6,
       "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 6,
+      "column": 9,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 0,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 4,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 5,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 6,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 7,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 8,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 7,
+      "column": 9,
       "asset": "maps.terrain.water",
       "clip": "still"
     }
@@ -400,15 +502,6 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        192,
-        0
-      ],
-      "scale": 1
-    },
-    {
-      "asset": "maps.coast.shallows",
-      "clip": "still",
-      "position": [
         256,
         0
       ],
@@ -454,8 +547,8 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        160,
-        54
+        576,
+        0
       ],
       "scale": 1
     },
@@ -517,8 +610,8 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        192,
-        108
+        608,
+        54
       ],
       "scale": 1
     },
@@ -571,8 +664,8 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        224,
-        162
+        576,
+        108
       ],
       "scale": 1
     },
@@ -625,8 +718,8 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        64,
-        216
+        608,
+        162
       ],
       "scale": 1
     },
@@ -634,7 +727,7 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        256,
+        128,
         216
       ],
       "scale": 1
@@ -679,8 +772,8 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        352,
-        270
+        576,
+        216
       ],
       "scale": 1
     },
@@ -715,6 +808,15 @@
       "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
+        608,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
         384,
         324
       ],
@@ -739,11 +841,38 @@
       "scale": 1
     },
     {
-      "asset": "maps.coast.surf",
+      "asset": "maps.coast.shallows",
       "clip": "still",
       "position": [
-        192,
-        0
+        576,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        480,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        544,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.shallows",
+      "clip": "still",
+      "position": [
+        608,
+        378
       ],
       "scale": 1
     },
@@ -796,8 +925,8 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        160,
-        54
+        576,
+        0
       ],
       "scale": 1
     },
@@ -859,8 +988,8 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        192,
-        108
+        608,
+        54
       ],
       "scale": 1
     },
@@ -913,8 +1042,8 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        224,
-        162
+        576,
+        108
       ],
       "scale": 1
     },
@@ -967,8 +1096,8 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        64,
-        216
+        608,
+        162
       ],
       "scale": 1
     },
@@ -976,7 +1105,7 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        256,
+        128,
         216
       ],
       "scale": 1
@@ -1021,8 +1150,8 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        352,
-        270
+        576,
+        216
       ],
       "scale": 1
     },
@@ -1057,6 +1186,15 @@
       "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
+        608,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
         384,
         324
       ],
@@ -1081,11 +1219,38 @@
       "scale": 1
     },
     {
-      "asset": "maps.coast.sand",
+      "asset": "maps.coast.surf",
       "clip": "still",
       "position": [
-        192,
-        0
+        576,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        480,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        544,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.surf",
+      "clip": "still",
+      "position": [
+        608,
+        378
       ],
       "scale": 1
     },
@@ -1138,8 +1303,8 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
-        160,
-        54
+        576,
+        0
       ],
       "scale": 1
     },
@@ -1201,8 +1366,8 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
-        192,
-        108
+        608,
+        54
       ],
       "scale": 1
     },
@@ -1255,8 +1420,8 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
-        224,
-        162
+        576,
+        108
       ],
       "scale": 1
     },
@@ -1309,8 +1474,8 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
-        64,
-        216
+        608,
+        162
       ],
       "scale": 1
     },
@@ -1318,7 +1483,7 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
-        256,
+        128,
         216
       ],
       "scale": 1
@@ -1363,8 +1528,8 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
-        352,
-        270
+        576,
+        216
       ],
       "scale": 1
     },
@@ -1399,6 +1564,15 @@
       "asset": "maps.coast.sand",
       "clip": "still",
       "position": [
+        608,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
         384,
         324
       ],
@@ -1419,6 +1593,42 @@
       "position": [
         512,
         324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        576,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        480,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        544,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.coast.sand",
+      "clip": "still",
+      "position": [
+        608,
+        378
       ],
       "scale": 1
     },
@@ -1426,7 +1636,7 @@
       "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
-        192,
+        256,
         0
       ],
       "scale": 1
@@ -1435,22 +1645,13 @@
       "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
-        256,
-        0
-      ],
-      "scale": 1
-    },
-    {
-      "asset": "maps.terrain.forest",
-      "clip": "still",
-      "position": [
         320,
         0
       ],
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
         384,
@@ -1480,8 +1681,8 @@
       "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
-        160,
-        54
+        576,
+        0
       ],
       "scale": 1
     },
@@ -1490,6 +1691,15 @@
       "clip": "still",
       "position": [
         224,
+        54
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        288,
         54
       ],
       "scale": 1
@@ -1498,22 +1708,13 @@
       "asset": "maps.terrain.plain.tilled",
       "clip": "still",
       "position": [
-        288,
-        54
-      ],
-      "scale": 1
-    },
-    {
-      "asset": "maps.terrain.forest",
-      "clip": "still",
-      "position": [
         352,
         54
       ],
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
         416,
@@ -1531,7 +1732,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.forest",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         544,
@@ -1540,11 +1741,11 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
-        192,
-        108
+        608,
+        54
       ],
       "scale": 1
     },
@@ -1558,7 +1759,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.forest",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         320,
@@ -1567,7 +1768,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
         384,
@@ -1576,7 +1777,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.forest",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         448,
@@ -1594,16 +1795,16 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
-        224,
-        162
+        576,
+        108
       ],
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain.tilled",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         288,
@@ -1612,7 +1813,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.plain.tilled",
       "clip": "still",
       "position": [
         352,
@@ -1630,7 +1831,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.forest",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         480,
@@ -1639,7 +1840,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
         544,
@@ -1651,8 +1852,8 @@
       "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
-        64,
-        216
+        608,
+        162
       ],
       "scale": 1
     },
@@ -1660,7 +1861,7 @@
       "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
-        256,
+        128,
         216
       ],
       "scale": 1
@@ -1675,7 +1876,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.forest",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         384,
@@ -1693,7 +1894,7 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain",
+      "asset": "maps.terrain.forest",
       "clip": "still",
       "position": [
         512,
@@ -1705,8 +1906,8 @@
       "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
-        352,
-        270
+        576,
+        216
       ],
       "scale": 1
     },
@@ -1729,10 +1930,19 @@
       "scale": 1
     },
     {
-      "asset": "maps.terrain.plain.tilled",
+      "asset": "maps.terrain.plain",
       "clip": "still",
       "position": [
         544,
+        270
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain.tilled",
+      "clip": "still",
+      "position": [
+        608,
         270
       ],
       "scale": 1
@@ -1761,6 +1971,42 @@
       "position": [
         512,
         324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        576,
+        324
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        480,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.plain",
+      "clip": "still",
+      "position": [
+        544,
+        378
+      ],
+      "scale": 1
+    },
+    {
+      "asset": "maps.terrain.forest",
+      "clip": "still",
+      "position": [
+        608,
+        378
       ],
       "scale": 1
     },
@@ -1768,7 +2014,7 @@
       "asset": "buildings.city.l1",
       "clip": "still",
       "position": [
-        224,
+        288,
         54
       ],
       "scale": 1
@@ -1777,7 +2023,7 @@
       "asset": "buildings.capital.l1",
       "clip": "still",
       "position": [
-        384,
+        448,
         108
       ],
       "scale": 1
@@ -1786,7 +2032,7 @@
       "asset": "units.infantry.line",
       "clip": "move",
       "position": [
-        256,
+        320,
         108
       ],
       "scale": 1
@@ -1795,7 +2041,7 @@
       "asset": "effects.hit.spark",
       "clip": "play",
       "position": [
-        426,
+        490,
         144
       ],
       "scale": 1
@@ -1804,7 +2050,7 @@
       "asset": "buildings.port.l1",
       "clip": "still",
       "position": [
-        224,
+        288,
         162
       ],
       "scale": 1
@@ -1813,7 +2059,7 @@
       "asset": "units.france.grenadier",
       "clip": "attack",
       "position": [
-        352,
+        416,
         162
       ],
       "scale": 1
@@ -1822,7 +2068,7 @@
       "asset": "units.cavalry.light",
       "clip": "move",
       "position": [
-        320,
+        384,
         216
       ],
       "scale": 1
@@ -1831,7 +2077,7 @@
       "asset": "buildings.city.l1",
       "clip": "damaged",
       "position": [
-        480,
+        544,
         270
       ],
       "scale": 1

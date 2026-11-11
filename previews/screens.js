@@ -9,7 +9,7 @@
 
 const $ = id => document.getElementById(id);
 const SCROLLBAR = 14;                        // room kept clear at the right of a list for its scroll indicator
-const state = { screen: null, dialog: null, selection: {}, tab: {}, assets: new Map(), frames: new Map(), flow: null, data: null,
+const state = { screen: null, dialog: null, selection: {}, tab: {}, assets: new Map(), flow: null, data: null,
                 viewport: null, started: performance.now(), sprites: [] };
 
 async function getJson(url) {
@@ -33,19 +33,6 @@ const fill = (template, scope) => String(template).replace(/\{([^}]+)\}/g, (whol
   return value === undefined ? `⟨${path}⟩` : value;
 });
 
-/* One data URL per (asset, frame): CSS border-image needs each state as its own image. */
-function frameUrl(asset, frame) {
-  const key = `${asset.id}#${frame}`;
-  if (!state.frames.has(key)) {
-    const [fw, fh] = asset.frame_size;
-    const columns = asset.size[0] / fw;
-    const canvas = document.createElement('canvas');
-    canvas.width = fw; canvas.height = fh;
-    canvas.getContext('2d').drawImage(asset.image, (frame % columns) * fw, Math.floor(frame / columns) * fh, fw, fh, 0, 0, fw, fh);
-    state.frames.set(key, canvas.toDataURL('image/png'));
-  }
-  return state.frames.get(key);
-}
 function asset(id, node) {
   const found = state.assets.get(id);
   if (!found) throw new Error(`Screen "${state.screen}" uses asset ${id}, which this batch does not contain (${node.type})`);
@@ -56,12 +43,45 @@ function stateFrame(item, name) {
   if (!clip) throw new Error(`${item.id} has no "${name}" state`);
   return clip.frames[0];
 }
-/* Nine-slice from the manifest's stretch insets [left, top, right, bottom]. */
+/* A window onto part of one frame, stretched to fill `box`. Pure CSS on the sheet: no pixel read-back,
+   so it behaves the same in every browser and the way an engine samples a sprite. */
+function region(box, item, frame, sx, sy, sw, sh) {
+  const [fw, fh] = item.frame_size, columns = item.size[0] / fw;
+  const x = (frame % columns) * fw + sx, y = Math.floor(frame / columns) * fh + sy;
+  const sheet = document.createElement('img');
+  sheet.alt = ''; sheet.src = item.url; sheet.className = 'sheet';
+  Object.assign(sheet.style, { left: `${-x / sw * 100}%`, top: `${-y / sh * 100}%`,
+                               width: `${item.size[0] / sw * 100}%`, height: `${item.size[1] / sh * 100}%` });
+  box.classList.add('window');
+  box.append(sheet);
+  return box;
+}
+function piece(css, item, frame, sx, sy, sw, sh) {
+  const box = document.createElement('div');
+  box.className = 'piece';
+  Object.assign(box.style, css);
+  return sw > 0 && sh > 0 ? region(box, item, frame, sx, sy, sw, sh) : box;
+}
+/* Nine-slice from the manifest's stretch insets [left, top, right, bottom]: corners keep their size,
+   edges stretch one way, the centre both. */
 function skin(element, item, name) {
-  const [left, top, right, bottom] = item.stretch;
-  element.style.borderStyle = 'solid';
-  element.style.borderWidth = `${top}px ${right}px ${bottom}px ${left}px`;
-  element.style.borderImage = `url(${frameUrl(item, stateFrame(item, name))}) ${top} ${right} ${bottom} ${left} fill stretch`;
+  const [l, t, r, b] = item.stretch, [fw, fh] = item.frame_size, frame = stateFrame(item, name);
+  const cw = fw - l - r, ch = fh - t - b;
+  const inner = `calc(100% - ${l + r}px)`, tall = `calc(100% - ${t + b}px)`;
+  const layer = document.createElement('div');
+  layer.className = 'skin';
+  layer.append(
+    piece({ left: 0, top: 0, width: `${l}px`, height: `${t}px` }, item, frame, 0, 0, l, t),
+    piece({ left: `${l}px`, top: 0, width: inner, height: `${t}px` }, item, frame, l, 0, cw, t),
+    piece({ right: 0, top: 0, width: `${r}px`, height: `${t}px` }, item, frame, fw - r, 0, r, t),
+    piece({ left: 0, top: `${t}px`, width: `${l}px`, height: tall }, item, frame, 0, t, l, ch),
+    piece({ left: `${l}px`, top: `${t}px`, width: inner, height: tall }, item, frame, l, t, cw, ch),
+    piece({ right: 0, top: `${t}px`, width: `${r}px`, height: tall }, item, frame, fw - r, t, r, ch),
+    piece({ left: 0, bottom: 0, width: `${l}px`, height: `${b}px` }, item, frame, 0, fh - b, l, b),
+    piece({ left: `${l}px`, bottom: 0, width: inner, height: `${b}px` }, item, frame, l, fh - b, cw, b),
+    piece({ right: 0, bottom: 0, width: `${r}px`, height: `${b}px` }, item, frame, fw - r, fh - b, r, b));
+  element.querySelector(':scope > .skin')?.remove();
+  element.prepend(layer);
 }
 
 /* Placement: design coordinates on the flow's canvas; ax/ay say which edge a node keeps when the
@@ -122,10 +142,8 @@ const builders = {
   },
   image(node, scope) {
     const item = asset(fill(node.asset, scope), node);
-    const element = document.createElement('img');
-    element.alt = '';
-    element.src = frameUrl(item, item.clips[node.clip || Object.keys(item.clips)[0]].frames[0]);
-    return element;
+    const frame = item.clips[node.clip || Object.keys(item.clips)[0]].frames[0];
+    return region(document.createElement('div'), item, frame, 0, 0, item.frame_size[0], item.frame_size[1]);
   },
   sprite(node, scope) {                       // plays a manifest clip with the contract's frame formula
     const item = asset(fill(node.asset, scope), node);
@@ -161,17 +179,16 @@ const builders = {
     }
     return element;
   },
-  list(node, scope) {
+  list(node, scope, parent) {
     const element = document.createElement('div');
     element.className = 'list';
-    const filter = node.filter ? state.tab[node.filter.tab] ?? node.filter.default : null;
-    const rows = (lookup(node.items, scope) || []).map((item, index) => ({ item, index }))
-      .filter(row => !node.filter || row.item[node.filter.field] === filter);
+    const rows = visibleRows(node, scope);
     if (!rows.length) {                        // empty state is designed, not accidental
       element.append(textNode({ text: node.empty || '—', style: 'empty', align: 'center' }, scope));
       return element;
     }
-    if (!rows.some(row => row.index === state.selection[node.key])) state.selection[node.key] = rows[0].index;
+    selectedRow(node, scope);
+    const width = node.w + (node.ax === 'stretch' ? parent.width - parent.designWidth : 0);
     for (const { item, index } of rows) {
       const rowScope = { ...scope, item, index };
       const row = document.createElement('div');
@@ -185,8 +202,8 @@ const builders = {
       const inner = document.createElement('div');
       inner.className = 'row-content';
       inner.style.left = `${-left}px`; inner.style.top = `${-top}px`;
-      inner.style.width = `${node.w - SCROLLBAR}px`; inner.style.height = `${node.row_h}px`;
-      const box = { width: node.w - SCROLLBAR, height: node.row_h, designWidth: node.w - SCROLLBAR, designHeight: node.row_h };
+      inner.style.width = `${width - SCROLLBAR}px`; inner.style.height = `${node.row_h}px`;
+      const box = { width: width - SCROLLBAR, height: node.row_h, designWidth: node.w - SCROLLBAR, designHeight: node.row_h };
       for (const child of node.row) inner.append(build(child, rowScope, box));
       row.append(inner);
       element.append(row);
@@ -195,10 +212,27 @@ const builders = {
   },
 };
 
+/* Rows a list shows: its items, narrowed by the current tab when it declares a filter. */
+function visibleRows(source, scope) {
+  const filter = source.filter ? state.tab[source.filter.tab] ?? source.filter.default : null;
+  return (lookup(source.items, scope) || []).map((item, index) => ({ item, index }))
+    .filter(row => !source.filter || row.item[source.filter.field] === filter);
+}
+/* Keep a list's selection on a visible row; returns the selected record or null when the list is empty. */
+function selectedRow(source, scope) {
+  const rows = visibleRows(source, scope);
+  if (!rows.length) return null;
+  if (!rows.some(row => row.index === state.selection[source.key])) state.selection[source.key] = rows[0].index;
+  return rows.find(row => row.index === state.selection[source.key]);
+}
+
 function build(node, scope, parent) {
   if (!builders[node.type]) throw new Error(`Unknown node type "${node.type}" in screen "${state.screen}"`);
-  if (node.when !== undefined && !lookup(node.when, scope)) return document.createComment('hidden');
-  const element = builders[node.type](node, scope);
+  if (node.when !== undefined) {                 // "path" shows when truthy, "!path" when falsy
+    const negate = node.when.startsWith('!');
+    if (Boolean(lookup(node.when.replace(/^!/, ''), scope)) === negate) return document.createComment('hidden');
+  }
+  const element = builders[node.type](node, scope, parent);
   element.classList.add('node');
   place(element, node, parent);
   return element;
@@ -207,8 +241,7 @@ function build(node, scope, parent) {
 function scopeFor(screen) {
   const scope = { ...state.data };
   for (const [name, source] of Object.entries(screen.selected || {})) {       // expose each list's selected record
-    const items = lookup(source.items, scope) || [];
-    scope[name] = items[state.selection[source.key] ?? 0] || items[0] || {};
+    scope[name] = selectedRow(source, scope)?.item ?? null;
   }
   return scope;
 }
@@ -219,7 +252,7 @@ function compose(name, layer, parent, extraScope) {
   const scope = { ...scopeFor(screen), ...(extraScope || {}) };
   if (screen.backdrop) {
     const backdrop = builders.image({ asset: screen.backdrop, type: 'image' }, scope);
-    backdrop.className = 'backdrop';
+    backdrop.classList.add('backdrop');
     layer.append(backdrop);
   }
   for (const node of screen.nodes) layer.append(build(node, scope, parent));
@@ -289,12 +322,11 @@ async function load() {
     const base = new URL($('manifest').value, root);
     const loaded = await Promise.all(validated.manifest.assets.map(item => new Promise((resolve, reject) => {
       const image = new Image();
-      image.onload = () => resolve({ ...item, image });
+      image.onload = () => resolve({ ...item, image, url: image.src });
       image.onerror = () => reject(new Error(`Cannot load ${item.file}`));
       image.src = new URL(item.file, base);
     })));
     state.assets = new Map(loaded.map(item => [item.id, item]));
-    state.frames = new Map();
     const flowUrl = new URL($('flow').value, root);
     state.flow = await getJson(flowUrl);
     state.data = await getJson(new URL(state.flow.data, flowUrl));
@@ -318,7 +350,11 @@ const query = new URLSearchParams(location.search);
 if (query.get('manifest')) $('manifest').value = query.get('manifest');
 if (query.get('flow')) $('flow').value = query.get('flow');
 load().then(() => {
-  if (query.get('viewport') && state.flow) { state.viewport = state.flow.viewports[Number(query.get('viewport'))] || state.viewport; $('viewport').value = query.get('viewport'); }
+  if (query.get('viewport') && state.flow) {
+    state.viewport = state.flow.viewports[Number(query.get('viewport'))] || state.viewport;
+    $('viewport').value = query.get('viewport');
+    render(false);
+  }
   if (query.get('screen') && state.flow) run({ goto: query.get('screen') });
   if (query.get('tab') && state.flow) { const [key, value] = query.get('tab').split(':'); run({ tab: key, value }); }
   if (query.get('dialog') && state.flow) run({ open: query.get('dialog') });
