@@ -17,5 +17,5 @@ if __name__ == '__main__':
         with Image.open(file) as image:
             asset['size'] = list(image.size)
         asset['sha256'] = hashlib.sha256(file.read_bytes()).hexdigest()
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print('Updated image facts. Run validate.py to check the complete batch.')

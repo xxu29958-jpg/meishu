@@ -169,7 +169,7 @@ def main():
         parser.exit(1, f'FAIL: {error}\n')
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
-        args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
     print(f'PASS: {report["asset_count"]} assets; {report["decoded_bytes"]:,} decoded bytes; {report["theme_id"]}')
 
 

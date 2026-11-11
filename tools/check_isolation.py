@@ -29,7 +29,7 @@ def check(root, deny_hashes=None):
         require(not path.is_symlink(), f'Symbolic link in repository: {relative}')
         if not path.is_file():
             continue
-        require(path.suffix.lower() in allowed or path.name == '.gitignore', f'Unexpected repository format: {relative}')
+        require(path.suffix.lower() in allowed or path.name in ('.gitignore', '.gitattributes'), f'Unexpected repository format: {relative}')
         content = path.read_bytes()
         require(not content.startswith((b'PK\x03\x04', b'\x7fELF', b'dex\n', b'MZ')), f'Executable/archive signature: {relative}')
         digest = hashlib.sha256(content).hexdigest()
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         deny = json.loads(args.deny_hashes.read_text(encoding='utf-8')) if args.deny_hashes else []
         report = check(args.root, deny)
         if args.report:
-            args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+            args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')
         print(f'PASS: {report["file_count"]} files inspected; {len(deny)} exclusion hashes compared')
     except (ValueError, OSError) as error:
         parser.exit(1, f'FAIL: {error}\n')
