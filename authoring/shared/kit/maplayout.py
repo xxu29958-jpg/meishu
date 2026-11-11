@@ -47,3 +47,22 @@ def scene_from_layout(layout):
     features.sort(key=lambda item: item['position'][1])               # painter's order: far rows first
     return {'contract_version': 1, 'canvas_size': layout['canvas_size'], 'origin': layout['origin'],
             'hex': layout['hex'], 'tiles': tiles, 'items': items + features}
+
+
+def scene_from_region(region, level, hex_step=(64, 54), odd_row_offset=32):
+    """Preview scene that lays out one level of a regional map from its chunks.
+
+    Chunks are anchored at their centre: chunk (row, column) sits at
+    ((column + 0.5) * chunk, (row + 0.5) * chunk) in the level's pixels, and its
+    skirt overlaps its neighbours.
+    """
+    entries = {entry['level']: entry for entry in region['levels']}
+    if level not in entries:
+        raise KeyError(f'Region {region["id"]!r} has no level {level}; known: {sorted(entries)}')
+    entry = entries[level]
+    chunk = entry['chunk']
+    items = [{'asset': entry['id_pattern'].format(row=row, column=column), 'clip': 'still',
+              'position': [(column + 0.5) * chunk, (row + 0.5) * chunk], 'scale': 1}
+             for row in range(entry['rows']) for column in range(entry['columns'])]
+    return {'contract_version': 1, 'canvas_size': list(entry['size']), 'origin': [0, 0],
+            'hex': {'step': list(hex_step), 'odd_row_offset': odd_row_offset}, 'tiles': [], 'items': items}
