@@ -73,12 +73,26 @@ def resolve_format(asset, formats):
 
 
 def build_asset(asset, batch, formats, palette, batch_dir, output):
+    """Paint one batch entry and return its manifest entries.
+
+    Most painters return one Work. A painter may return {suffix: Work} instead,
+    for artwork delivered in pieces (the chunks of a regional map); each piece
+    becomes its own asset, `<id>.<suffix>`, sharing the entry's format and source.
+    """
     identifier = asset['id']
     fmt = resolve_format(asset, formats)
     spec = Spec(id=identifier, category=asset['category'], params=asset.get('params', {}), palette=palette,
                 frame=tuple(fmt['frame']), seed=zlib.crc32(identifier.encode()) ^ batch.get('seed', 0),
                 batch_dir=batch_dir)
-    work = find_painter(asset['painter'])(spec)
+    result = find_painter(asset['painter'])(spec)
+    if isinstance(result, dict) != bool(asset.get('parts', False)):
+        raise BuildError(f'{identifier}: painter {asset["painter"]!r} returns {"parts" if isinstance(result, dict) else "one work"}; '
+                         f'set "parts": {str(isinstance(result, dict)).lower()} on the batch entry')
+    works = {f'{identifier}.{suffix}': work for suffix, work in result.items()} if isinstance(result, dict) else {identifier: result}
+    return [build_work(name, work, asset, fmt, spec, output) for name, work in works.items()]
+
+
+def build_work(identifier, work, asset, fmt, spec, output):
     if not work.frames:
         raise BuildError(f'{identifier}: painter {asset["painter"]!r} returned no frames')
     for index, frame in enumerate(work.frames):
@@ -102,6 +116,13 @@ def build_asset(asset, batch, formats, palette, batch_dir, output):
     return entry
 
 
+def entry_ids(asset, entries):
+    """Manifest entries that belong to a batch entry (its own id, or `<id>.<suffix>` for parts)."""
+    if asset.get('parts', False):
+        return [entry for entry in entries if entry['id'].startswith(asset['id'] + '.')]
+    return [entry for entry in entries if entry['id'] == asset['id']]
+
+
 def build(batch_dir, only=()):
     batch_dir = Path(batch_dir).resolve()
     batch = load_json(batch_dir / 'batch.json')
@@ -114,21 +135,29 @@ def build(batch_dir, only=()):
     duplicates = sorted({item for item in identifiers if identifiers.count(item) > 1})
     if duplicates:
         raise BuildError(f'Duplicate asset ids in batch.json: {duplicates}')
+    for asset in batch['assets']:
+        if asset.get('parts', False):
+            clash = [other for other in identifiers if other.startswith(asset['id'] + '.')]
+            if clash:
+                raise BuildError(f'{asset["id"]} is built in parts; ids under it are reserved: {clash}')
     manifest_path = output / 'manifest.json'
-    previous = {}
+    previous = []
     if only and manifest_path.is_file():
-        previous = {entry['id']: entry for entry in load_json(manifest_path)['assets']}
+        previous = load_json(manifest_path)['assets']
     entries = []
     for asset in batch['assets']:
         selected = not only or any(asset['id'].startswith(prefix) for prefix in only)
         if not selected:
-            if asset['id'] not in previous:
+            kept = entry_ids(asset, previous)
+            if not kept:
                 raise BuildError(f'{asset["id"]} has never been built; run without --only first')
-            entries.append(previous[asset['id']])
+            entries.extend(kept)
             continue
         started = time.perf_counter()
-        entries.append(build_asset(asset, batch, formats, palette, batch_dir, output))
-        print(f'  {asset["id"]:<34} {entries[-1]["size"][0]}x{entries[-1]["size"][1]}'
+        built = build_asset(asset, batch, formats, palette, batch_dir, output)
+        entries.extend(built)
+        label = asset['id'] + (f' ({len(built)} parts)' if asset.get('parts', False) else '')
+        print(f'  {label:<34} {built[0]["size"][0]}x{built[0]["size"][1]}'
               f'  {time.perf_counter() - started:5.1f}s', flush=True)
     manifest = {'contract_version': 1, 'theme_id': batch['theme_id'], 'theme': batch['theme'],
                 'sources': batch['sources'], 'assets': entries}

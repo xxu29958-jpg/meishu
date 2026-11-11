@@ -1,0 +1,1029 @@
+{
+  "contract_version": 1,
+  "theme_id": "campaign-atlas.europe-map",
+  "theme": "theme.json",
+  "sources": "sources.json",
+  "assets": [
+    {
+      "id": "maps.region.europe.z0.r0c0",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r0c0.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "8e39b23ba001b856e87deed1affd5abd664b3afeb19e8f0440af03cbbb0c6595"
+    },
+    {
+      "id": "maps.region.europe.z0.r0c1",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r0c1.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "cae7ccf7a573049b2a2a88330ad5af1d108a856f78c0b0b8b6d36b8d4aa33333"
+    },
+    {
+      "id": "maps.region.europe.z0.r0c2",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r0c2.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "067250e4016d69c687696ebf768c63540ab53323ab7b9fd23ef54eacf690ad5d"
+    },
+    {
+      "id": "maps.region.europe.z0.r0c3",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r0c3.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "3572ca1bd3a886eed256c9a7ccca5996477373bb0e1e7274b3185ead9aad0f32"
+    },
+    {
+      "id": "maps.region.europe.z0.r0c4",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r0c4.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "90c7086c710d35eae2a41262db3b011ce64aaf05012c4ff87c8c39807893fe66"
+    },
+    {
+      "id": "maps.region.europe.z0.r0c5",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r0c5.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "5b8fbf367113f7cc45d985cc04d7f3d97bbf84fb2bf00013fbc06b5dee0f9d82"
+    },
+    {
+      "id": "maps.region.europe.z0.r1c0",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r1c0.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "a75c5e6404ded91a6a2902a2edcc08a75ad2af33ec4b0d24e8bf87a1db1c0558"
+    },
+    {
+      "id": "maps.region.europe.z0.r1c1",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r1c1.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "fbdbb0b757efe5d514fc3e55995660817a7a6d926ea08675b19332866b7d9b05"
+    },
+    {
+      "id": "maps.region.europe.z0.r1c2",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r1c2.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "1ec6424a5c5eb710565d85cad4d4a8705ecbc585dbd697451bce817d5e34f16b"
+    },
+    {
+      "id": "maps.region.europe.z0.r1c3",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r1c3.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "51123f3308533700cfa280d3d133cc832a4a267287afe737d64db6564dbe0d0c"
+    },
+    {
+      "id": "maps.region.europe.z0.r1c4",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r1c4.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "d8dfcd3da988c4ab6fe1fcddb04d4e89c2af04fc6731ff357083be49e848313a"
+    },
+    {
+      "id": "maps.region.europe.z0.r1c5",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r1c5.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "16099486ed3f63549bffbd61aa28a8a50e588c60a11930cf89508d445d099611"
+    },
+    {
+      "id": "maps.region.europe.z0.r2c0",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r2c0.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "c10b24b6bdea5654498e30742ef4b9521f98fe0f1773e9199953fa5c9f3398ad"
+    },
+    {
+      "id": "maps.region.europe.z0.r2c1",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r2c1.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "ff497c79a65e73283d49a302f58f7ec62e50b08fe46f7eb3767faa14d4d552e0"
+    },
+    {
+      "id": "maps.region.europe.z0.r2c2",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r2c2.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "78efb9195dd2e14e7357cda25d185e7015c15fec05c0540ddee3e08b3a111e70"
+    },
+    {
+      "id": "maps.region.europe.z0.r2c3",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r2c3.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "0ba698c582d7006e43f257634c953a6205a14708373d28011fae6b7d559a0fa0"
+    },
+    {
+      "id": "maps.region.europe.z0.r2c4",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r2c4.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "012f496bbeec534bc1f14a81258b3a907cde4a4a3718f44f012ef54a63de8be6"
+    },
+    {
+      "id": "maps.region.europe.z0.r2c5",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r2c5.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "afa8461f45150a12ca83085214bcdb9a7f66ce172ce646e3c79cedcfb8b4be03"
+    },
+    {
+      "id": "maps.region.europe.z0.r3c0",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r3c0.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "8bba662db139785593a6d2b7fe3e548667d8b515a21b68b47b646ab43ce1876c"
+    },
+    {
+      "id": "maps.region.europe.z0.r3c1",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r3c1.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "867ac358a3f0b2d07921a0b537a1552898f0831bec551a262e4eca1ee41725cb"
+    },
+    {
+      "id": "maps.region.europe.z0.r3c2",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r3c2.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "6d0e89011a27a876072dbc807615e15c6aa8fe2ba3b91f993555aa5db1e3b733"
+    },
+    {
+      "id": "maps.region.europe.z0.r3c3",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r3c3.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "f35664b907c113e0cfc3d7c85cdb2f03ee8fd4c0304283e7d5a2b6131a5c7993"
+    },
+    {
+      "id": "maps.region.europe.z0.r3c4",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r3c4.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "dd22db0ea80edb811c4eebd462af06202905d2a9a686e83aa8773f6c3b51f234"
+    },
+    {
+      "id": "maps.region.europe.z0.r3c5",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r3c5.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "fc6de7ef2405d23aaf98b9b129adee567f2678aeb2965f1ef1cdbdf38a1bdca8"
+    },
+    {
+      "id": "maps.region.europe.z0.r4c0",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r4c0.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "073382c7de7d1ce7a20b80cdac7da8db27fc6b2d446b04a88a422bd11c246b42"
+    },
+    {
+      "id": "maps.region.europe.z0.r4c1",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r4c1.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "5c0fe19d7e41b501bf2f083375db93d8a8f3d188884b688946a14a22a16355c8"
+    },
+    {
+      "id": "maps.region.europe.z0.r4c2",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r4c2.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "19545829662709793a4aa7ae019feed56d28988e7b08f8bf8160a2b79c77daa3"
+    },
+    {
+      "id": "maps.region.europe.z0.r4c3",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r4c3.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "a05c5fcdbeb68f6b3dacd3d81fadc590699b721c79159108d91d68dd6331112e"
+    },
+    {
+      "id": "maps.region.europe.z0.r4c4",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r4c4.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "efafb2818159ba0557e76255bffa1e64acdf8fc0d9e167b6ca77eb4d4b09c0c0"
+    },
+    {
+      "id": "maps.region.europe.z0.r4c5",
+      "category": "maps",
+      "file": "maps/maps.region.europe.z0.r4c5.png",
+      "frame_size": [
+        516,
+        516
+      ],
+      "display_size": [
+        516,
+        516
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "still": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "atlas.claude.europe-map",
+      "size": [
+        516,
+        516
+      ],
+      "sha256": "92e286e9eeb1cbb38d022bb853861c6733b44dace1b8e176050ee7d257c09a33"
+    }
+  ],
+  "preview": "preview.json"
+}

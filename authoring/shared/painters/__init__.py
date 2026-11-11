@@ -17,6 +17,7 @@ PAINTERS = {
     'ui': 'shared.painters.ui',
     'illustration': 'shared.painters.illustration',
     'crop': 'shared.painters.illustration:paint_crop',
+    'atlas': 'shared.painters.atlas',
 }
 
 

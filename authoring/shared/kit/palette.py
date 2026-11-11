@@ -11,8 +11,12 @@ class Palette:
 
     @classmethod
     def load(cls, path):
-        data = json.loads(Path(path).read_text(encoding='utf-8'))
-        return cls(data['colours'], str(path))
+        """Read a palette file. `extends` names another palette (relative path) whose roles it inherits."""
+        path = Path(path)
+        data = json.loads(path.read_text(encoding='utf-8'))
+        colours = dict(cls.load(path.parent / data['extends']).colours) if 'extends' in data else {}
+        colours.update(data['colours'])
+        return cls(colours, str(path))
 
     def __call__(self, name, alpha=1.0):
         """Resolve a role name, a literal '#rrggbb', or a role with a tone shift such as 'coat*0.8'."""

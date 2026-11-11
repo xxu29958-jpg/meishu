@@ -1,0 +1,12 @@
+{
+  "contract_version": 1,
+  "id": "campaign-atlas.europe-map",
+  "title": "Campaign Atlas · Europe and its approaches · continuous map, level 0",
+  "era": "Physical geography as of about 1800, for every starting date from 1798 to 1815",
+  "art_direction": "Campaign Atlas: the theatre of war as one continuous hand-coloured engraving. Storm-toned sea with coast lining and ruled swell; land in gouache washes by climate belt; relief shaded from the upper left and hachured; forests as massed tree marks; rivers and lakes in ink and pale water. No hexes, no frontiers, no towns and no lettering are painted in: the hex grid, territory washes, cities and names are overlays the game draws. Full statement in design/ART-DECISIONS.md and design/art/maps.md.",
+  "light_direction": "Upper left (north-west): slopes facing south-east fall into shadow and carry the heavier hachures; coasts facing away from the light are drawn heavier.",
+  "partial": true,
+  "map_regions": [
+    "europe"
+  ]
+}

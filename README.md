@@ -37,6 +37,8 @@ python tools/preview.py
 | [design/ART-DECISIONS.md](design/ART-DECISIONS.md) | 美术方向与决定记录 |
 | [authoring/README.md](authoring/README.md) | 制作、构建与复现 |
 | [design/global-conquest](design/global-conquest) | 全球征服内容设计（提案） |
+| [design/maps](design/maps) | 区域大图记录：投影、范围、分块、六角格比例选项 |
+| [authoring/geodata](authoring/geodata) | 公有领域地理数据派生图层与来源锁定 |
 | [previews/screens.html](previews/screens.html) | 界面合成预览 |
 
 这里只维护美术制作、内容设计提案与交付。游戏逻辑、关卡、存档、平台构建和实体映射由 Codex 在游戏工程维护。全球视觉包使用独立版本身份，不替换现有剧本。

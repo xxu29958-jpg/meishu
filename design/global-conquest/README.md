@@ -99,5 +99,5 @@ Each nation record lists its flag, map colour, portraits, units, buildings and a
 - Rosters and records for the other four scenarios.
 - Full records for the 25 playable entities outside the slice.
 - Starting forces as counts and positions: the slice gives them in words.
-- Territory geometry. Political geography will be dated overlay records over the painted map; it waits on the continuous world map (see `design/art/maps.md`).
+- Territory geometry. Political geography will be dated overlay records over the painted map. Europe now has a hex grid and terrain table to key them to (`design/maps/europe-hexes.json`); the other regions wait on their maps.
 - Verification of every 'recalled' source against the text.

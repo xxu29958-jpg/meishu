@@ -1,0 +1,313 @@
+{
+  "record": "region-map",
+  "version": 1,
+  "status": "proposal: projection, window and chunk convention await integration; hex scale decided by the Owner (120 km)",
+  "id": "europe",
+  "title": "Europe and its approaches, 1798-1815",
+  "covers": "Iceland to the Caspian, the North Cape to Cairo: every European theatre of the period, with North Africa, Egypt, the Levant, Anatolia, the Caucasus and north-west Persia.",
+  "projection": {
+    "type": "lambert-azimuthal-equal-area",
+    "centre": {
+      "lon": 20,
+      "lat": 50
+    },
+    "sphere_radius_km": 6371.0088
+  },
+  "units": "km east (x) and north (y) of the projection centre",
+  "formulas": {
+    "forward": "With R the sphere radius, (l0, p0) the centre and (l, p) a point, all in radians: k = R * sqrt(2 / (1 + sin p0 sin p + cos p0 cos p cos(l - l0))); x = k cos p sin(l - l0); y = k (cos p0 sin p - sin p0 cos p cos(l - l0)).",
+    "inverse": "rho = sqrt(x^2 + y^2); c = 2 asin(rho / (2R)); p = asin(cos c sin p0 + y sin c cos p0 / rho); l = l0 + atan2(x sin c, rho cos p0 cos c - y sin p0 sin c).",
+    "pixel": "At a level with u km per pixel: px = (x - window.west) / u; py = (window.north - y) / u. Pixel (0, 0) has its top-left corner at (west, north).",
+    "why": "Equal-area: every hex laid over the map covers the same amount of ground wherever it is. Shape distortion stays under about 4% across the window."
+  },
+  "window": {
+    "west": -2955,
+    "east": 2805,
+    "south": -2325,
+    "north": 2475
+  },
+  "levels": [
+    {
+      "level": 0,
+      "units_per_pixel": 1.875,
+      "size": [
+        3072,
+        2560
+      ],
+      "chunk": 512,
+      "skirt": 2,
+      "columns": 6,
+      "rows": 5,
+      "id_pattern": "maps.region.europe.z0.r{row}c{column}",
+      "batch": "atlas-europe-01",
+      "status": "delivered"
+    }
+  ],
+  "chunks": {
+    "placement": "Each chunk is 516 x 516: a 512 inner square with a 2 px skirt that repeats its neighbours' pixels. Anchor is the centre. Chunk (row, column) is drawn with its centre at ((column + 0.5) * 512, (row + 0.5) * 512) in level pixels, times the level's display scale.",
+    "display": "Level 0 is declared at display size 516: one art pixel per logical unit, which is the decided hex scale.",
+    "higher_levels": "Level n has 2^n times the pixels per km and 4^n times the chunks; the painter renders any level from the same recipe. Not built yet."
+  },
+  "hex_scale": {
+    "status": "decided by the Owner, 2026-11-11",
+    "km_per_hex_column": 120,
+    "km_per_hex_row": 101.25,
+    "logical_units_per_km": 0.5333,
+    "feel": "Paris to Vienna 9 hexes, Paris to Moscow 21. A board that fits a phone; Europe is one theatre of a world game.",
+    "considered": [
+      {
+        "km_per_hex_column": 60,
+        "grid": "about 95 x 94 hexes",
+        "set_aside_because": "four times the hexes to play and to compute, and it needs four more batches of map before it is as sharp as level 0 is at 120 km"
+      }
+    ]
+  },
+  "hex_grid": {
+    "status": "proposal for integration at the decided scale; not baked into any image",
+    "columns": 47,
+    "rows": 47,
+    "origin": [
+      48,
+      38
+    ],
+    "step": [
+      64,
+      54
+    ],
+    "odd_row_offset": 32,
+    "hex_size": [
+      64,
+      72
+    ],
+    "units": "level-0 pixels, which are logical units at display size 516",
+    "centre": "cell (row, column) is centred at (48 + 64 * column + 32 * (row % 2), 38 + 54 * row), the ASSET-SPEC convention with this origin",
+    "note": "47 x 47 cells lie wholly inside the painted map, with 16 px to spare left and right and 2 px top and bottom. A 48th column would hang a quarter hex over the edge on odd rows.",
+    "table": "design/maps/europe-hexes.json"
+  },
+  "check_points": [
+    {
+      "name": "Paris",
+      "lon": 2.35,
+      "lat": 48.86,
+      "km": [
+        -1277.3,
+        24.52
+      ],
+      "level0_pixel": [
+        894.77,
+        1306.92
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Madrid",
+      "lon": -3.7,
+      "lat": 40.42,
+      "km": [
+        -1977.06,
+        -757.46
+      ],
+      "level0_pixel": [
+        521.57,
+        1723.98
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Vienna",
+      "lon": 16.37,
+      "lat": 48.21,
+      "km": [
+        -268.9,
+        -192.55
+      ],
+      "level0_pixel": [
+        1432.59,
+        1422.69
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Moscow",
+      "lon": 37.62,
+      "lat": 55.75,
+      "km": [
+        1091.4,
+        771.42
+      ],
+      "level0_pixel": [
+        2158.08,
+        908.58
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Cairo",
+      "lon": 31.24,
+      "lat": 30.04,
+      "km": [
+        1094.56,
+        -2131.84
+      ],
+      "level0_pixel": [
+        2159.76,
+        2456.98
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Stockholm hinterland",
+      "lon": 17.0,
+      "lat": 59.9,
+      "km": [
+        -167.86,
+        1102.95
+      ],
+      "level0_pixel": [
+        1486.47,
+        731.76
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Tiflis",
+      "lon": 44.8,
+      "lat": 41.7,
+      "km": [
+        2023.14,
+        -591.79
+      ],
+      "level0_pixel": [
+        2655.01,
+        1635.62
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Ulm",
+      "lon": 9.99,
+      "lat": 48.4,
+      "km": [
+        -736.51,
+        -128.79
+      ],
+      "level0_pixel": [
+        1183.2,
+        1388.69
+      ],
+      "is": "land"
+    },
+    {
+      "name": "Mid-Atlantic",
+      "lon": -20.0,
+      "lat": 50.0,
+      "km": [
+        -2698.36,
+        752.35
+      ],
+      "level0_pixel": [
+        136.87,
+        918.75
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "Bay of Biscay",
+      "lon": -5.0,
+      "lat": 45.5,
+      "km": [
+        -1908.94,
+        -181.43
+      ],
+      "level0_pixel": [
+        557.9,
+        1416.76
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "North Sea",
+      "lon": 3.0,
+      "lat": 56.0,
+      "km": [
+        -1047.17,
+        789.39
+      ],
+      "level0_pixel": [
+        1017.51,
+        898.99
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "Baltic",
+      "lon": 19.0,
+      "lat": 56.5,
+      "km": [
+        -61.47,
+        722.8
+      ],
+      "level0_pixel": [
+        1543.22,
+        934.51
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "Tyrrhenian Sea",
+      "lon": 12.0,
+      "lat": 40.0,
+      "km": [
+        -682.65,
+        -1075.32
+      ],
+      "level0_pixel": [
+        1211.92,
+        1893.5
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "Black Sea",
+      "lon": 34.0,
+      "lat": 43.2,
+      "km": [
+        1129.48,
+        -652.1
+      ],
+      "level0_pixel": [
+        2178.39,
+        1667.79
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "Caspian Sea",
+      "lon": 50.5,
+      "lat": 42.0,
+      "km": [
+        2449.87,
+        -392.33
+      ],
+      "level0_pixel": [
+        2882.6,
+        1529.24
+      ],
+      "is": "sea"
+    },
+    {
+      "name": "Zuiderzee",
+      "lon": 5.3,
+      "lat": 52.75,
+      "km": [
+        -981.99,
+        403.77
+      ],
+      "level0_pixel": [
+        1052.27,
+        1104.66
+      ],
+      "is": "sea"
+    }
+  ]
+}

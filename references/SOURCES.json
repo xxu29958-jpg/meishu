@@ -6,7 +6,7 @@
     {
       "id": "geography.natural-earth",
       "url": "https://www.naturalearthdata.com/about/terms-of-use/",
-      "purpose": "全球底图后续制作的数据路线；此包不包含下载数据",
+      "purpose": "区域与全球底图的地理数据。原始下载不入库；派生图层在 authoring/geodata/natural-earth-50m（版本、提交与各文件 SHA-256 见其 SOURCE.json），Owner 于 2026-11-11 批准下载",
       "license": "Natural Earth 自述地图数据为 public domain",
       "checked": "2026-11-11"
     },
