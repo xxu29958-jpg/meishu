@@ -1,0 +1,104 @@
+{
+  "contract_version": 1,
+  "sources": [
+    {
+      "id": "atlas.claude.terrain",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "Terrain pieces, coast under-layers and optional grid: authoring/shared/painters/terrain.py with parameters in authoring/campaign-atlas-01/batch.json. Land pieces and coast layers are raster-masked and have no vector master; the sea tiles and grid do. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [],
+      "editable_files": [
+        "sources/maps.grid.hex.svg",
+        "sources/maps.terrain.coast.svg",
+        "sources/maps.terrain.water.svg"
+      ]
+    },
+    {
+      "id": "atlas.claude.buildings",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "Western European settlements composed from plan data in authoring/campaign-atlas-01/buildings/europe-west.json by authoring/shared/painters/buildings.py. Generic period architecture (plastered houses under clay tile, stone church with slate spire, domed palace, harbour basin); no specific building is reproduced. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [],
+      "editable_files": [
+        "sources/buildings.capital.l1.svg",
+        "sources/buildings.city.l1.svg",
+        "sources/buildings.port.l1.svg"
+      ]
+    },
+    {
+      "id": "atlas.claude.units",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "French line fusilier, Old Guard grenadier and chasseur à cheval, September 1805: rigs in authoring/shared/painters (figure, infantry, cavalry), uniforms in authoring/campaign-atlas-01/units/france-1805.json, drills in musket-drill.json and sabre-charge.json. References were read for facts of dress only; no plate or photograph was copied. Uniform research and legibility adjustments are recorded in design/art/units.md. No vector master: the editable source is the rig and its data. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [
+        "https://www.napoleonguide.com/infantry_frcol.htm",
+        "https://en.wikipedia.org/wiki/Uniforms_of_La_Grande_Arm%C3%A9e",
+        "https://en.wikipedia.org/wiki/Mounted_Chasseurs_of_the_Imperial_Guard"
+      ],
+      "editable_files": []
+    },
+    {
+      "id": "atlas.claude.portrait-napoleon",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "Napoléon, autumn 1805: original half-length drawing in authoring/campaign-atlas-01/portraits/napoleon/illustration.py; the avatar is the same drawing rendered through the crop box in character.json. Sources were read for facts of dress and appearance; the face is an original construction, not a copy of any portrait. Documented versus interpreted detail is listed in character.json. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [
+        "https://en.wikipedia.org/wiki/Uniforms_of_Napoleon",
+        "https://www.napoleon-series.org/research/napoleon/c_description.html",
+        "https://www.musee-armee.fr/fileadmin/user_upload/Ressources_pedagogiques/2026/FicheObjet_Chapeau_Habit_veste.pdf"
+      ],
+      "editable_files": [
+        "sources/portraits.napoleon.bust.svg"
+      ]
+    },
+    {
+      "id": "atlas.claude.ui",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "Interface chrome and campaign-desk backdrop: authoring/shared/painters/ui.py. The backdrop's coastlines are invented shapes, not geography. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [],
+      "editable_files": [
+        "sources/ui.backdrop.desk.svg",
+        "sources/ui.button.primary.svg",
+        "sources/ui.button.secondary.svg",
+        "sources/ui.chip.resource.svg",
+        "sources/ui.icon.gold.svg",
+        "sources/ui.icon.guns.svg",
+        "sources/ui.icon.men.svg",
+        "sources/ui.list.row.svg",
+        "sources/ui.panel.command.svg",
+        "sources/ui.rule.section.svg",
+        "sources/ui.tab.folio.svg"
+      ]
+    },
+    {
+      "id": "atlas.claude.effects",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "Impact effect from the recipe in authoring/campaign-atlas-01/effects.json, drawn by authoring/shared/painters/effects.py. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [],
+      "editable_files": [
+        "sources/effects.hit.spark.svg"
+      ]
+    },
+    {
+      "id": "atlas.claude.identity",
+      "author": "Claude (Anthropic); authored in one session on claude-opus-5-5 and claude-fable-5-2",
+      "method": "ai-generated-original",
+      "license": "Original work made for this project; the project may use, modify and integrate it.",
+      "description": "French tricolour drawn from the record in authoring/campaign-atlas-01/flags.json by authoring/shared/painters/flags.py. The reference supplies the order of colours only. Drawn by an AI model as Python drawing code (pycairo 1.25 / cairo 1.18, Pillow 12.3, numpy 2.5) under authoring/; no image-generation model and no external image was used as input. Rebuild with: python authoring/build.py authoring/campaign-atlas-01.",
+      "references": [
+        "https://www.elysee.fr/en/french-presidency/the-french-flag"
+      ],
+      "editable_files": [
+        "sources/identity.france.flag.svg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "napoleon",
+  "name": "Napoléon Ier",
+  "depicted": "Emperor of the French, autumn 1805, aged 36",
+  "costume": {
+    "documented": [
+      "Everyday and campaign dress was the undress coat of a colonel of the Chasseurs à cheval of the Imperial Guard: a green coat (Constant's 'green cavalry uniform'; tailor ledgers list 39 such coats, 1804-1815).",
+      "A large plain cocked hat with an army cockade, worn athwart.",
+      "Grand Eagle of the Legion of Honour: the star usually embroidered on the coat, the red sash worn under the coat. From 1805 the Iron Crown of Italy as well.",
+      "The hand-in-waistcoat pose of the David and Lefèvre portraits."
+    ],
+    "interpreted": [
+      "Scarlet collar and cuffs with scarlet piping, gold epaulettes and white waistcoat follow the surviving coats and the Lefèvre/Gérard portraits as generally described; the pages read for this batch did not give cut or trim, so these details are the illustrator's reading and should be checked against the Musée de l'Armée record.",
+      "Hair is painted dark chestnut and eyes grey-blue; contemporary accounts disagree on both.",
+      "Face is an original drawing built from described features (broad forehead, straight fine nose, small firm mouth, strong rounded chin, fuller face by 1805), not a copy of any one portrait.",
+      "Lighting from the upper left with the brim shading the eyes is an art-direction choice."
+    ]
+  },
+  "crops": {
+    "avatar": [
+      66,
+      40,
+      380,
+      380
+    ]
+  }
+}

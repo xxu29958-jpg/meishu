@@ -1,0 +1,87 @@
+{
+  "_note": "Proposed events for scenario.1805-09. Each separates the historical occasion from the rule: 'trigger' is a condition on game state, never a calendar date alone, so the campaign can go another way. 'historical' records what happened and when, for reference and for the player-facing text. Effects use the provisional vocabulary.",
+  "scenario": "scenario.1805-09",
+  "version": "0.1-proposal",
+  "initial_situation": "Relations on 1 September 1805 are the 'relationships' lists in nations-1805-09.json and the overlords in roster-1805-09.json. Those are history. Everything below is a rule that lets the situation change.",
+  "events": [
+    {
+      "id": "event.confederation-of-the-rhine",
+      "title": "The Confederation of the Rhine",
+      "historical": "After Austerlitz and the Peace of Pressburg (26 December 1805), sixteen German states left the Empire for a French protectorate (12 July 1806) and Francis II laid down the imperial crown (6 August 1806).",
+      "start_conditions": ["entity.german-states exists as a regional bloc", "The Holy Roman Empire has not been dissolved"],
+      "trigger": "entity.france holds Vienna, or entity.austria makes peace with entity.france after losing a field battle",
+      "affected": ["entity.france", "entity.austria", "entity.bavaria", "entity.german-states", "entity.prussia"],
+      "effects": ["entity.german-states becomes a dependent of entity.france and contributes line infantry", "entity.bavaria is raised to a kingdom and gains Tyrol if France holds it",
+                  "entity.austria loses its recruitment in western Germany", "entity.prussia's relation with entity.france moves one step toward rivalry"],
+      "presentation": "Turn notice with a map of the Rhine states changing colour; one line of text for each affected participant.",
+      "interactions": ["Enables event.prussia-decides if not already resolved", "Cannot fire if entity.austria holds Munich"],
+      "counterfactual": "If Austria wins, the Empire survives and the German bloc aligns with Austria instead."
+    },
+    {
+      "id": "event.prussia-decides",
+      "title": "Prussia decides",
+      "historical": "French troops crossed Prussian Ansbach in October 1805. Prussia mobilised, signed the Potsdam convention with Russia (3 November), then accepted Hanover from France at Schönbrunn (15 December) and went to war alone in October 1806.",
+      "start_conditions": ["entity.prussia is neutral"],
+      "trigger": "A French or allied army enters Prussian territory, or event.confederation-of-the-rhine fires, or five turns pass with France and Austria still at war",
+      "affected": ["entity.prussia", "entity.france", "entity.russia", "entity.austria", "entity.britain"],
+      "effects": ["If entity.prussia is played: a choice between joining the coalition, armed mediation (both sides must stop for two turns or fight Prussia), or taking Hanover from France (alliance with France, rivalry with Britain).",
+                  "If run by the game: joins the coalition when France has lost a battle since the scenario began, otherwise takes Hanover."],
+      "presentation": "Decision dialog for a Prussian player; turn notice for everyone else.",
+      "interactions": ["Taking Hanover blocks unit.britain.kings-german-legion recruitment from ending", "Joining the coalition makes Berlin a French objective"],
+      "counterfactual": "Prussia can enter the war a year early, beside allies who are still in the field."
+    },
+    {
+      "id": "event.peninsular-crisis",
+      "title": "The Spanish crisis",
+      "historical": "French troops entered Spain in 1807-08; Charles IV and Ferdinand VII abdicated at Bayonne (May 1808); Madrid rose on 2 May; juntas took power in Spain and from 1810 across Spanish America.",
+      "start_conditions": ["entity.spain is allied with or dependent on entity.france"],
+      "trigger": "A French army occupies Madrid, or entity.france demands passage through Spain while entity.spain's stability is at its lowest step",
+      "affected": ["entity.spain", "entity.france", "entity.britain", "entity.portugal", "entity.new-spain", "entity.spanish-south-america"],
+      "effects": ["entity.spain splits: occupied provinces become a French dependent; the rest become a junta at war with France and allied to Britain",
+                  "Guerrilla resistance: French supply in Spain falls each turn",
+                  "Each Spanish American dependency rolls for a junta at the start of every later year: loyalist, autonomous, or independent"],
+      "presentation": "Full-screen event with a divided map of Spain; later yearly notices for each American junta.",
+      "interactions": ["Starts the independence chains that scenario.1810-09 begins with", "event.court-to-brazil becomes more likely"],
+      "counterfactual": "If France never moves against Spain, the empire in America stays whole and Spain remains a French ally."
+    },
+    {
+      "id": "event.court-to-brazil",
+      "title": "The court sails for Brazil",
+      "historical": "As Junot's army neared Lisbon, the Portuguese court embarked under British escort (29 November 1807) and ruled from Rio de Janeiro until 1821.",
+      "start_conditions": ["entity.portugal holds Lisbon and entity.brazil"],
+      "trigger": "An enemy army is within two moves of Lisbon and a friendly or allied fleet is in the port",
+      "affected": ["entity.portugal", "entity.brazil", "entity.britain", "entity.france"],
+      "effects": ["Portugal's capital moves to Rio de Janeiro; Brazil's income and recruitment are no longer reduced as a dependency",
+                  "Portugal survives the loss of its home provinces", "Brazil's ports open to British trade"],
+      "presentation": "Decision dialog for a Portuguese player (sail or stay); turn notice otherwise.",
+      "interactions": ["If Portugal stays and Lisbon falls, Portugal becomes a French dependent and Brazil may declare independence"],
+      "counterfactual": "A Portugal that holds Lisbon never becomes an American empire."
+    },
+    {
+      "id": "event.haiti-divided",
+      "title": "Haiti divided",
+      "historical": "Dessalines was killed at Pont-Rouge on 17 October 1806. Christophe took the north (a kingdom from 1811); Pétion's republic held the south and west.",
+      "start_conditions": ["entity.haiti exists as one state"],
+      "trigger": "entity.haiti's stability is at its lowest step at the start of a turn, or its ruler is lost in battle",
+      "affected": ["entity.haiti"],
+      "effects": ["The state splits into a northern State of Haiti (Christophe, capital Cap-Haïtien) and a southern Republic (Pétion, capital Port-au-Prince), at war with each other",
+                  "A Haitian player continues as the half that holds the capital"],
+      "presentation": "Event panel with the two leaders' portraits and the island divided.",
+      "interactions": ["Reunification is possible by conquest or, after ten turns, by treaty", "Foreign landings become more attractive to game-run powers"],
+      "counterfactual": "A stable empire can take the Spanish east and face the powers as one island."
+    },
+    {
+      "id": "event.sokoto-caliphate",
+      "title": "The Caliphate",
+      "historical": "Alkalawa fell in October 1808, ending Gobir. Sokoto was founded in 1809 and the emirates were organised under Muhammad Bello and Abdullahi.",
+      "start_conditions": ["entity.sokoto holds no capital"],
+      "trigger": "entity.sokoto captures Alkalawa, or holds three Hausa capitals",
+      "affected": ["entity.sokoto", "entity.hausa-states", "entity.west-african-kingdoms"],
+      "effects": ["entity.sokoto founds a capital and gains settled income and stability", "Remaining Hausa kingdoms each test whether to submit as emirates",
+                  "The flags trait may now be used against the west-African-kingdoms bloc (Nupe, Oyo's northern provinces, Bornu)"],
+      "presentation": "Event panel; the participant's name changes to Sokoto Caliphate and its map colour fills the conquered kingdoms.",
+      "interactions": ["Raises the tier of the campaign from minor to medium for later objectives"],
+      "counterfactual": "If Gobir destroys the camp, the movement ends and the Hausa kingdoms continue."
+    }
+  ]
+}

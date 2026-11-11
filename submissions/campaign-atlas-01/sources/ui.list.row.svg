@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1760px" height="72px" viewBox="0 0 1760 72">
+<defs>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 443 3 L 877 3 L 877 13 L 443 13 Z M 443 3 "/>
+</clipPath>
+<clipPath id="clip-1">
+<path clip-rule="nonzero" d="M 873 3 C 875.210938 3 877 4.789062 877 7 L 877 65 C 877 67.210938 875.210938 69 873 69 L 447 69 C 444.789062 69 443 67.210938 443 65 L 443 7 C 443 4.789062 444.789062 3 447 3 Z M 873 3 "/>
+</clipPath>
+<radialGradient id="radial-pattern-0" gradientUnits="userSpaceOnUse" cx="0" cy="0" fx="0" fy="0" r="1" gradientTransform="matrix(264, 0, 0, 10, 660, 3)">
+<stop offset="0" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.4"/>
+<stop offset="0.65" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0.22"/>
+<stop offset="1" stop-color="rgb(13.72549%, 9.803922%, 7.843137%)" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="0" y1="3" x2="0" y2="69">
+<stop offset="0" stop-color="rgb(64.705882%, 19.607843%, 16.862745%)" stop-opacity="0.94"/>
+<stop offset="1" stop-color="rgb(47.843137%, 11.372549%, 10.588235%)" stop-opacity="0.94"/>
+</linearGradient>
+</defs>
+<path fill-rule="nonzero" fill="rgb(62.352941%, 52.54902%, 33.333333%)" fill-opacity="0.26" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(13.72549%, 9.803922%, 7.843137%)" stroke-opacity="0.5" stroke-miterlimit="10" d="M 433 3 C 435.210938 3 437 4.789062 437 7 L 437 65 C 437 67.210938 435.210938 69 433 69 L 7 69 C 4.789062 69 3 67.210938 3 65 L 3 7 C 3 4.789062 4.789062 3 7 3 Z M 433 3 "/>
+<path fill-rule="nonzero" fill="rgb(62.352941%, 52.54902%, 33.333333%)" fill-opacity="0.62" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(13.72549%, 9.803922%, 7.843137%)" stroke-opacity="0.5" stroke-miterlimit="10" d="M 433 3 C 435.210938 3 437 4.789062 437 7 L 437 65 C 437 67.210938 435.210938 69 433 69 L 7 69 C 4.789062 69 3 67.210938 3 65 L 3 7 C 3 4.789062 4.789062 3 7 3 Z M 433 3 " transform="matrix(1, 0, 0, 1, 440, 0)"/>
+<g clip-path="url(#clip-0)">
+<g clip-path="url(#clip-1)">
+<path fill-rule="nonzero" fill="url(#radial-pattern-0)" d="M 924 3 C 924 8.523438 805.804688 13 660 13 C 514.195312 13 396 8.523438 396 3 C 396 -2.523438 514.195312 -7 660 -7 C 805.804688 -7 924 -2.523438 924 3 "/>
+</g>
+</g>
+<path fill-rule="nonzero" fill="url(#linear-pattern-0)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(89.411765%, 77.647059%, 45.882353%)" stroke-opacity="1" stroke-miterlimit="10" d="M 433 3 C 435.210938 3 437 4.789062 437 7 L 437 65 C 437 67.210938 435.210938 69 433 69 L 7 69 C 4.789062 69 3 67.210938 3 65 L 3 7 C 3 4.789062 4.789062 3 7 3 Z M 433 3 " transform="matrix(1, 0, 0, 1, 880, 0)"/>
+<path fill-rule="nonzero" fill="rgb(89.411765%, 77.647059%, 45.882353%)" fill-opacity="1" d="M 887 3 C 888.65625 3 890 4.34375 890 6 L 890 66 C 890 67.65625 888.65625 69 887 69 L 886 69 C 884.34375 69 883 67.65625 883 66 L 883 6 C 883 4.34375 884.34375 3 886 3 Z M 887 3 "/>
+<path fill="none" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(69.019608%, 54.117647%, 27.058824%)" stroke-opacity="0.8" stroke-miterlimit="10" d="M 431 6.5 C 432.378906 6.5 433.5 7.621094 433.5 9 L 433.5 63 C 433.5 64.378906 432.378906 65.5 431 65.5 L 9 65.5 C 7.621094 65.5 6.5 64.378906 6.5 63 L 6.5 9 C 6.5 7.621094 7.621094 6.5 9 6.5 Z M 431 6.5 " transform="matrix(1, 0, 0, 1, 880, 0)"/>
+<path fill-rule="nonzero" fill="rgb(62.352941%, 52.54902%, 33.333333%)" fill-opacity="0.26" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="rgb(13.72549%, 9.803922%, 7.843137%)" stroke-opacity="0.5" stroke-miterlimit="10" d="M 433 3 C 435.210938 3 437 4.789062 437 7 L 437 65 C 437 67.210938 435.210938 69 433 69 L 7 69 C 4.789062 69 3 67.210938 3 65 L 3 7 C 3 4.789062 4.789062 3 7 3 Z M 433 3 " transform="matrix(1, 0, 0, 1, 1320, 0)"/>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "_note": "PROVISIONAL gameplay vocabulary. The handoff asks proposals to use 'the supplied gameplay vocabulary', but none is in this repository, so these terms are a stand-in so that records can be compared. Every rating is relative (1 weakest, 5 strongest, 3 = an ordinary European line unit of 1805), not an engine number. When the integration team supplies the real vocabulary, map these terms to it and delete this file.",
+  "status": "provisional-pending-integration-vocabulary",
+  "unit_ratings": {
+    "fire": "Effect of musketry or gunnery at its normal range.",
+    "shock": "Effect in close assault or a charge.",
+    "defence": "Ability to stand under attack.",
+    "mobility": "Ground covered in a turn, by unit family.",
+    "range": "Reach in hexes relative to a line musket (3 = musket, 4 = rifle or light gun, 5 = heavy gun).",
+    "morale": "Willingness to keep fighting after loss.",
+    "cost": "Price to raise, relative.",
+    "upkeep": "Price to keep, relative."
+  },
+  "unit_tags": ["line", "light", "guard", "irregular", "militia", "mounted", "heavy", "artillery", "horse-artillery", "rocket", "naval", "transport", "garrison", "skirmisher", "rifle", "archer", "matchlock"],
+  "families": ["infantry", "cavalry", "artillery", "naval", "defensive"],
+  "nation_ratings": {
+    "treasury": "Starting money, relative.",
+    "manpower": "Recruits available per turn, relative.",
+    "industry": "Capacity to produce guns, ships and equipment, relative.",
+    "naval": "Starting fleet and dockyards, relative.",
+    "technology": "Access to the scenario's most modern equipment, relative.",
+    "stability": "Resistance to revolt and break-away events, relative."
+  },
+  "difficulty": ["commanding", "balanced", "hard", "desperate"],
+  "relations": ["war", "alliance", "truce", "neutral", "rivalry", "overlord-of", "dependent-of", "tributary-of", "subsidy-from", "protector-of"]
+}

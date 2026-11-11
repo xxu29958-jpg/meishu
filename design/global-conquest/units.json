@@ -1,0 +1,1224 @@
+{
+  "_note": "Unit concepts for the 1805-09 slice: the shared families every European-drilled army uses, then each slice nation's distinctive units. Ratings are relative 1-5 in the provisional vocabulary (3 = ordinary line unit of 1805). 'art.asset' is the manifest id the unit is drawn with; status says whether that art exists. Recruitment and AI text is requirement, not implementation.",
+  "version": "0.1-proposal",
+  "units": [
+    {
+      "id": "unit.shared.line-infantry",
+      "name": "Line infantry",
+      "family": "infantry",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "The musket-and-bayonet battalion of every European-drilled army.",
+      "equipment": "Smoothbore flintlock musket, socket bayonet.",
+      "role": "Holds the line, delivers volleys, takes and keeps ground.",
+      "ratings": {
+        "fire": 3,
+        "shock": 3,
+        "defence": 3,
+        "mobility": 3,
+        "range": 3,
+        "morale": 3,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "line"
+      ],
+      "recruitment": "Any barracks. The cheapest unit that can stand in open battle.",
+      "ai_use": "The default garrison and battle line; keep adjacent to another friendly unit.",
+      "art": {
+        "asset": "units.infantry.line",
+        "status": "delivered (French look); other national looks planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.shared.light-infantry",
+      "name": "Light infantry",
+      "family": "infantry",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Skirmishers fighting in open order ahead of the line: voltigeurs, Jäger, light companies.",
+      "equipment": "Musket, sometimes a shorter fusil; no formed bayonet charge.",
+      "role": "Screens, harasses, fights in woods and broken ground.",
+      "ratings": {
+        "fire": 3,
+        "shock": 2,
+        "defence": 2,
+        "mobility": 4,
+        "range": 3,
+        "morale": 3,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "light",
+        "skirmisher"
+      ],
+      "recruitment": "Barracks, after a first battle has been fought.",
+      "ai_use": "Place in forest or rough hexes in front of the line; never leave alone in the open against cavalry.",
+      "art": {
+        "asset": "units.infantry.light",
+        "status": "planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.shared.light-cavalry",
+      "name": "Light cavalry",
+      "family": "cavalry",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Hussars, chasseurs, light dragoons: scouting, pursuit and raiding.",
+      "equipment": "Curved sabre, carbine, pistols.",
+      "role": "Finds the enemy, runs down broken units, cuts supply.",
+      "ratings": {
+        "fire": 1,
+        "shock": 3,
+        "defence": 2,
+        "mobility": 5,
+        "range": 1,
+        "morale": 3,
+        "cost": 3,
+        "upkeep": 3
+      },
+      "tags": [
+        "mounted",
+        "light"
+      ],
+      "recruitment": "Stables. Limited by horses, not men.",
+      "ai_use": "Send round the flank to attack artillery and retreating units; do not charge formed infantry frontally.",
+      "art": {
+        "asset": "units.cavalry.light",
+        "status": "delivered (French chasseur look)"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.shared.heavy-cavalry",
+      "name": "Heavy cavalry",
+      "family": "cavalry",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Big men on big horses kept for the decisive charge: cuirassiers, heavy dragoons.",
+      "equipment": "Straight sword; breastplate in some services.",
+      "role": "Breaks a shaken line.",
+      "ratings": {
+        "fire": 1,
+        "shock": 5,
+        "defence": 3,
+        "mobility": 4,
+        "range": 1,
+        "morale": 4,
+        "cost": 4,
+        "upkeep": 4
+      },
+      "tags": [
+        "mounted",
+        "heavy"
+      ],
+      "recruitment": "Stables level 2. Slow to replace.",
+      "ai_use": "Hold in reserve until an enemy unit is damaged, then charge it.",
+      "art": {
+        "asset": "units.cavalry.heavy",
+        "status": "planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.shared.foot-artillery",
+      "name": "Foot artillery",
+      "family": "artillery",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Field batteries of 6- to 12-pounders moved by horse teams with gunners on foot.",
+      "equipment": "Bronze smoothbore guns; roundshot and canister.",
+      "role": "Wears down the enemy before the assault; defends against it with canister.",
+      "ratings": {
+        "fire": 5,
+        "shock": 1,
+        "defence": 2,
+        "mobility": 2,
+        "range": 5,
+        "morale": 3,
+        "cost": 4,
+        "upkeep": 3
+      },
+      "tags": [
+        "artillery"
+      ],
+      "recruitment": "Factory or arsenal.",
+      "ai_use": "Deploy behind the infantry line with a clear field; retreat it first.",
+      "art": {
+        "asset": "units.artillery.foot",
+        "status": "planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.shared.ship-of-the-line",
+      "name": "Ship of the line",
+      "family": "naval",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "The two-decked 74 and its larger cousins: the unit of sea power.",
+      "equipment": "Sixty to over a hundred guns on two or three decks.",
+      "role": "Wins and holds command of a sea zone; blockades.",
+      "ratings": {
+        "fire": 5,
+        "shock": 3,
+        "defence": 4,
+        "mobility": 3,
+        "range": 4,
+        "morale": 3,
+        "cost": 5,
+        "upkeep": 5
+      },
+      "tags": [
+        "naval",
+        "heavy"
+      ],
+      "recruitment": "Port level 2 with a dockyard. Takes several turns.",
+      "ai_use": "Keep in squadrons; blockade enemy ports.",
+      "art": {
+        "asset": "units.naval.ship-of-the-line",
+        "status": "planned"
+      },
+      "sources": [
+        "source.rodger-command-of-the-ocean"
+      ]
+    },
+    {
+      "id": "unit.shared.frigate",
+      "name": "Frigate",
+      "family": "naval",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Single-decked cruisers for scouting, convoy and commerce war.",
+      "equipment": "Twenty-eight to forty-four guns.",
+      "role": "Raids and protects trade; scouts for the battle fleet.",
+      "ratings": {
+        "fire": 3,
+        "shock": 2,
+        "defence": 2,
+        "mobility": 5,
+        "range": 3,
+        "morale": 3,
+        "cost": 3,
+        "upkeep": 3
+      },
+      "tags": [
+        "naval",
+        "light"
+      ],
+      "recruitment": "Any port.",
+      "ai_use": "Send singly to trade lanes; avoid ships of the line.",
+      "art": {
+        "asset": "units.naval.frigate",
+        "status": "planned"
+      },
+      "sources": [
+        "source.rodger-command-of-the-ocean"
+      ]
+    },
+    {
+      "id": "unit.shared.transport",
+      "name": "Transport",
+      "family": "naval",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Hired merchantmen carrying troops.",
+      "equipment": "Unarmed or lightly armed.",
+      "role": "Moves land units by sea.",
+      "ratings": {
+        "fire": 1,
+        "shock": 1,
+        "defence": 1,
+        "mobility": 3,
+        "range": 1,
+        "morale": 1,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "naval",
+        "transport"
+      ],
+      "recruitment": "Any port; cheap.",
+      "ai_use": "Move only with an escort or across a controlled sea zone.",
+      "art": {
+        "asset": "units.naval.transport",
+        "status": "planned"
+      },
+      "sources": []
+    },
+    {
+      "id": "unit.shared.militia",
+      "name": "Militia",
+      "family": "infantry",
+      "affiliation": "shared",
+      "period": "1798-1815",
+      "historical_basis": "Part-time local forces: Landwehr, National Guard, provincial levies.",
+      "equipment": "Whatever is in store.",
+      "role": "Garrisons towns so that regulars can march.",
+      "ratings": {
+        "fire": 2,
+        "shock": 1,
+        "defence": 2,
+        "mobility": 2,
+        "range": 3,
+        "morale": 1,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "militia",
+        "garrison"
+      ],
+      "recruitment": "Any city. May not leave home territory.",
+      "ai_use": "Garrison only.",
+      "art": {
+        "asset": "units.infantry.militia",
+        "status": "planned"
+      },
+      "sources": []
+    },
+    {
+      "id": "unit.france.guard-grenadier",
+      "name": "Grenadiers à pied de la Garde",
+      "family": "infantry",
+      "affiliation": "entity.france",
+      "period": "1804-1815",
+      "historical_basis": "The senior regiment of the Imperial Guard, chosen from veterans of long service and kept as the army's last reserve.",
+      "equipment": "Musket and bayonet, short sabre; bearskin cap with brass plate.",
+      "role": "Reserve that does not break; commits last and decides the day.",
+      "ratings": {
+        "fire": 4,
+        "shock": 4,
+        "defence": 5,
+        "mobility": 3,
+        "range": 3,
+        "morale": 5,
+        "cost": 5,
+        "upkeep": 4
+      },
+      "tags": [
+        "guard",
+        "line"
+      ],
+      "recruitment": "Capital only, and only after a set number of victories. One at a time.",
+      "ai_use": "Keep with the army commander; commit when a friendly line unit is about to rout or an enemy one is.",
+      "art": {
+        "asset": "units.france.grenadier",
+        "status": "delivered"
+      },
+      "sources": [
+        "source.wiki-uniforms-grande-armee",
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.france.chasseur-a-cheval",
+      "name": "Chasseurs à cheval",
+      "family": "cavalry",
+      "affiliation": "entity.france",
+      "period": "1798-1815",
+      "historical_basis": "The most numerous French light cavalry, in green, serving with every corps.",
+      "equipment": "Light-cavalry sabre, carbine.",
+      "role": "Corps cavalry: screen and pursuit.",
+      "ratings": {
+        "fire": 1,
+        "shock": 3,
+        "defence": 2,
+        "mobility": 5,
+        "range": 1,
+        "morale": 3,
+        "cost": 3,
+        "upkeep": 3
+      },
+      "tags": [
+        "mounted",
+        "light"
+      ],
+      "recruitment": "Stables.",
+      "ai_use": "As light cavalry; attach one to each army.",
+      "art": {
+        "asset": "units.cavalry.light",
+        "status": "delivered"
+      },
+      "sources": [
+        "source.wiki-uniforms-grande-armee"
+      ],
+      "note": "France's instance of the shared light-cavalry family; same ratings by design."
+    },
+    {
+      "id": "unit.france.cuirassier",
+      "name": "Cuirassiers",
+      "family": "cavalry",
+      "affiliation": "entity.france",
+      "period": "1803-1815",
+      "historical_basis": "Twelve regiments armoured in 1802-04 and massed in a reserve under Murat.",
+      "equipment": "Straight sword, steel cuirass and helmet.",
+      "role": "The battle-winning charge.",
+      "ratings": {
+        "fire": 1,
+        "shock": 5,
+        "defence": 4,
+        "mobility": 4,
+        "range": 1,
+        "morale": 4,
+        "cost": 5,
+        "upkeep": 4
+      },
+      "tags": [
+        "mounted",
+        "heavy"
+      ],
+      "recruitment": "Stables level 2 in France proper.",
+      "ai_use": "Mass two or more and charge a damaged unit together.",
+      "art": {
+        "asset": "units.france.cuirassier",
+        "status": "planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.france.horse-artillery",
+      "name": "Artillerie à cheval",
+      "family": "artillery",
+      "affiliation": "entity.france",
+      "period": "1798-1815",
+      "historical_basis": "Light guns with every gunner mounted, able to keep pace with cavalry.",
+      "equipment": "6-pounders and howitzers.",
+      "role": "Brings guns to the point of decision quickly.",
+      "ratings": {
+        "fire": 4,
+        "shock": 1,
+        "defence": 2,
+        "mobility": 4,
+        "range": 4,
+        "morale": 3,
+        "cost": 5,
+        "upkeep": 4
+      },
+      "tags": [
+        "artillery",
+        "horse-artillery"
+      ],
+      "recruitment": "Arsenal and stables.",
+      "ai_use": "Move with the cavalry reserve; unlimber adjacent to the unit about to be charged.",
+      "art": {
+        "asset": "units.france.horse-artillery",
+        "status": "planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ]
+    },
+    {
+      "id": "unit.britain.ship-of-the-line",
+      "name": "Royal Navy 74",
+      "family": "naval",
+      "affiliation": "entity.britain",
+      "period": "1798-1815",
+      "historical_basis": "The standard British battleship, with crews kept at sea and at gun drill by years of blockade.",
+      "equipment": "Seventy-four guns; carronades on the upper works.",
+      "role": "As ship of the line, with faster and more accurate fire.",
+      "ratings": {
+        "fire": 5,
+        "shock": 4,
+        "defence": 4,
+        "mobility": 3,
+        "range": 4,
+        "morale": 5,
+        "cost": 5,
+        "upkeep": 5
+      },
+      "tags": [
+        "naval",
+        "heavy"
+      ],
+      "recruitment": "Royal dockyards (Portsmouth, Plymouth, Chatham).",
+      "ai_use": "Blockade; accept battle at any odds short of two to one.",
+      "art": {
+        "asset": "units.britain.ship-of-the-line",
+        "status": "planned"
+      },
+      "sources": [
+        "source.rodger-command-of-the-ocean"
+      ]
+    },
+    {
+      "id": "unit.britain.rifles",
+      "name": "95th Rifles",
+      "family": "infantry",
+      "affiliation": "entity.britain",
+      "period": "1800-1815",
+      "historical_basis": "The Experimental Corps of Riflemen of 1800, the 95th from 1803: green-jacketed marksmen with the Baker rifle.",
+      "equipment": "Baker rifle and sword-bayonet.",
+      "role": "Long-range skirmisher that picks off officers and gunners.",
+      "ratings": {
+        "fire": 4,
+        "shock": 2,
+        "defence": 2,
+        "mobility": 4,
+        "range": 4,
+        "morale": 4,
+        "cost": 4,
+        "upkeep": 3
+      },
+      "tags": [
+        "light",
+        "skirmisher",
+        "rifle"
+      ],
+      "recruitment": "Britain only; few at a time.",
+      "ai_use": "Place in cover ahead of the line; target artillery and commanders.",
+      "art": {
+        "asset": "units.britain.rifles",
+        "status": "planned"
+      },
+      "sources": [
+        "source.nafziger-imperial-bayonets"
+      ],
+      "note": "Slow to load: proposed as high fire at range 4, reduced fire when attacked at close quarters."
+    },
+    {
+      "id": "unit.britain.kings-german-legion",
+      "name": "King's German Legion",
+      "family": "infantry",
+      "affiliation": "entity.britain",
+      "period": "1803-1815",
+      "historical_basis": "Hanoverian soldiers who escaped the French occupation of 1803 and served Britain as a complete corps of all arms.",
+      "equipment": "British arms and dress.",
+      "role": "Regular troops Britain can raise without British manpower.",
+      "ratings": {
+        "fire": 3,
+        "shock": 3,
+        "defence": 3,
+        "mobility": 3,
+        "range": 3,
+        "morale": 4,
+        "cost": 3,
+        "upkeep": 2
+      },
+      "tags": [
+        "line"
+      ],
+      "recruitment": "Britain, while Hanover is occupied by an enemy.",
+      "ai_use": "As line infantry.",
+      "art": {
+        "asset": "units.britain.kgl",
+        "status": "planned"
+      },
+      "sources": [
+        "source.esdaile-napoleons-wars"
+      ]
+    },
+    {
+      "id": "unit.russia.cossack",
+      "name": "Don Cossacks",
+      "family": "cavalry",
+      "affiliation": "entity.russia",
+      "period": "1798-1815",
+      "historical_basis": "Irregular hosts owing military service to the Tsar, each man with his own horses.",
+      "equipment": "Lance, sabre, pistol; no uniform drill.",
+      "role": "Scouts, raiders and pursuers; a screen no enemy cavalry can pin.",
+      "ratings": {
+        "fire": 1,
+        "shock": 2,
+        "defence": 1,
+        "mobility": 5,
+        "range": 1,
+        "morale": 2,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "mounted",
+        "irregular",
+        "light"
+      ],
+      "recruitment": "Russian home territory; nearly free.",
+      "ai_use": "Attach to every army; raid enemy supply; never stand against formed troops.",
+      "art": {
+        "asset": "units.russia.cossack",
+        "status": "planned"
+      },
+      "sources": [
+        "source.lieven-russia-against-napoleon"
+      ]
+    },
+    {
+      "id": "unit.russia.pavlovsk-grenadier",
+      "name": "Pavlovsk Grenadiers",
+      "family": "infantry",
+      "affiliation": "entity.russia",
+      "period": "1798-1815",
+      "historical_basis": "A grenadier regiment that kept the brass-fronted mitre cap of the previous century.",
+      "equipment": "Musket and bayonet; mitre cap.",
+      "role": "Assault infantry that takes losses and keeps coming.",
+      "ratings": {
+        "fire": 3,
+        "shock": 4,
+        "defence": 4,
+        "mobility": 3,
+        "range": 3,
+        "morale": 5,
+        "cost": 4,
+        "upkeep": 3
+      },
+      "tags": [
+        "line",
+        "guard"
+      ],
+      "recruitment": "Saint Petersburg or Moscow.",
+      "ai_use": "Lead assaults on towns and fortified hexes.",
+      "art": {
+        "asset": "units.russia.pavlovsk-grenadier",
+        "status": "planned"
+      },
+      "sources": [
+        "source.lieven-russia-against-napoleon"
+      ]
+    },
+    {
+      "id": "unit.russia.licorne",
+      "name": "Licorne battery",
+      "family": "artillery",
+      "affiliation": "entity.russia",
+      "period": "1798-1815",
+      "historical_basis": "The Russian 'unicorn', a long howitzer firing shell on a flatter path than other howitzers.",
+      "equipment": "10- and 20-pounder licornes.",
+      "role": "Artillery that reaches over friendly troops and into cover.",
+      "ratings": {
+        "fire": 5,
+        "shock": 1,
+        "defence": 2,
+        "mobility": 2,
+        "range": 5,
+        "morale": 4,
+        "cost": 4,
+        "upkeep": 3
+      },
+      "tags": [
+        "artillery"
+      ],
+      "recruitment": "Russian arsenals.",
+      "ai_use": "As foot artillery; prefer targets in towns and woods.",
+      "art": {
+        "asset": "units.russia.licorne",
+        "status": "planned"
+      },
+      "sources": [
+        "source.lieven-russia-against-napoleon"
+      ]
+    },
+    {
+      "id": "unit.ottoman.janissary",
+      "name": "Janissaries",
+      "family": "infantry",
+      "affiliation": "entity.ottoman",
+      "period": "1798-1826",
+      "historical_basis": "The old standing infantry of the sultans, by 1805 a hereditary corporation of armed townsmen that resisted drill and reform.",
+      "equipment": "Long musket, yataghan; no bayonet, no formed manoeuvre.",
+      "role": "Formidable behind walls and in a rush; unreliable in open battle.",
+      "ratings": {
+        "fire": 3,
+        "shock": 4,
+        "defence": 2,
+        "mobility": 3,
+        "range": 3,
+        "morale": 2,
+        "cost": 2,
+        "upkeep": 3
+      },
+      "tags": [
+        "irregular"
+      ],
+      "recruitment": "Present from the start in every fortress; cannot be raised anew.",
+      "ai_use": "Garrison fortresses; in the field use for assaults, not for holding a line.",
+      "art": {
+        "asset": "units.ottoman.janissary",
+        "status": "planned"
+      },
+      "sources": [
+        "source.aksan-ottoman-wars"
+      ],
+      "note": "Upkeep is paid whether or not they fight; disbanding them is the reform track's final step."
+    },
+    {
+      "id": "unit.ottoman.nizam-i-cedid",
+      "name": "Nizam-ı Cedid infantry",
+      "family": "infantry",
+      "affiliation": "entity.ottoman",
+      "period": "1794-1807",
+      "historical_basis": "Selim III's 'New Order' corps, drilled and dressed on European lines.",
+      "equipment": "Musket and bayonet; European drill.",
+      "role": "A modern line unit for an army that has few.",
+      "ratings": {
+        "fire": 3,
+        "shock": 3,
+        "defence": 3,
+        "mobility": 3,
+        "range": 3,
+        "morale": 3,
+        "cost": 3,
+        "upkeep": 3
+      },
+      "tags": [
+        "line"
+      ],
+      "recruitment": "Constantinople and Anatolian depots; each new unit costs stability until reform is complete.",
+      "ai_use": "As line infantry; keep near the capital while stability is low.",
+      "art": {
+        "asset": "units.ottoman.nizam",
+        "status": "planned"
+      },
+      "sources": [
+        "source.shaw-between-old-and-new"
+      ]
+    },
+    {
+      "id": "unit.ottoman.sipahi",
+      "name": "Sipahi cavalry",
+      "family": "cavalry",
+      "affiliation": "entity.ottoman",
+      "period": "1798-1815",
+      "historical_basis": "Provincial cavalry holding land in return for service.",
+      "equipment": "Sabre, lance, firearms of their own choosing.",
+      "role": "Numerous medium horse.",
+      "ratings": {
+        "fire": 1,
+        "shock": 3,
+        "defence": 2,
+        "mobility": 4,
+        "range": 1,
+        "morale": 2,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "mounted",
+        "irregular"
+      ],
+      "recruitment": "Any Ottoman province.",
+      "ai_use": "Use in mass on the flanks.",
+      "art": {
+        "asset": "units.ottoman.sipahi",
+        "status": "planned"
+      },
+      "sources": [
+        "source.aksan-ottoman-wars"
+      ]
+    },
+    {
+      "id": "unit.ottoman.deli",
+      "name": "Deli light horse",
+      "family": "cavalry",
+      "affiliation": "entity.ottoman",
+      "period": "1798-1815",
+      "historical_basis": "Balkan irregular horsemen famous for reckless charges, hired by provincial governors.",
+      "equipment": "Sabre, pistols.",
+      "role": "Shock raiders: a fierce first charge and nothing after it.",
+      "ratings": {
+        "fire": 1,
+        "shock": 4,
+        "defence": 1,
+        "mobility": 5,
+        "range": 1,
+        "morale": 2,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "mounted",
+        "irregular",
+        "light"
+      ],
+      "recruitment": "Balkan provinces; cheap.",
+      "ai_use": "Charge once at a damaged unit, then withdraw.",
+      "art": {
+        "asset": "units.ottoman.deli",
+        "status": "planned"
+      },
+      "sources": [
+        "source.aksan-ottoman-wars"
+      ]
+    },
+    {
+      "id": "unit.qing.banner-cavalry",
+      "name": "Banner cavalry",
+      "family": "cavalry",
+      "affiliation": "entity.qing",
+      "period": "1798-1815",
+      "historical_basis": "Hereditary Manchu and Mongol soldiers of the Eight Banners, by training mounted archers.",
+      "equipment": "Composite bow, sabre; some matchlocks.",
+      "role": "Mounted archery: mobile fire without closing.",
+      "ratings": {
+        "fire": 3,
+        "shock": 3,
+        "defence": 2,
+        "mobility": 5,
+        "range": 3,
+        "morale": 3,
+        "cost": 3,
+        "upkeep": 3
+      },
+      "tags": [
+        "mounted",
+        "archer"
+      ],
+      "recruitment": "Beijing, Mukden and banner garrison cities; capped by banner households.",
+      "ai_use": "Shoot and withdraw; close only against broken units.",
+      "art": {
+        "asset": "units.qing.banner-cavalry",
+        "status": "planned"
+      },
+      "sources": [
+        "source.elliott-manchu-way"
+      ]
+    },
+    {
+      "id": "unit.qing.green-standard",
+      "name": "Green Standard infantry",
+      "family": "infantry",
+      "affiliation": "entity.qing",
+      "period": "1798-1815",
+      "historical_basis": "The Han Chinese regular army, most of it dispersed in small posts as a constabulary.",
+      "equipment": "Matchlock, spear, sword.",
+      "role": "Numerous garrison infantry.",
+      "ratings": {
+        "fire": 2,
+        "shock": 2,
+        "defence": 2,
+        "mobility": 3,
+        "range": 2,
+        "morale": 2,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "matchlock",
+        "garrison"
+      ],
+      "recruitment": "Any Qing province; cheap and slow to concentrate.",
+      "ai_use": "Garrison; in battle use numbers, two units to one.",
+      "art": {
+        "asset": "units.qing.green-standard",
+        "status": "planned"
+      },
+      "sources": [
+        "source.cambridge-china-10"
+      ]
+    },
+    {
+      "id": "unit.qing.tiger-shield",
+      "name": "Rattan-shield troops",
+      "family": "infantry",
+      "affiliation": "entity.qing",
+      "period": "1798-1815",
+      "historical_basis": "Shock infantry in striped 'tiger' dress with rattan shields, trained to close under fire.",
+      "equipment": "Sabre and rattan shield.",
+      "role": "Close-assault infantry against irregulars and rebels.",
+      "ratings": {
+        "fire": 1,
+        "shock": 4,
+        "defence": 2,
+        "mobility": 3,
+        "range": 1,
+        "morale": 3,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "irregular"
+      ],
+      "recruitment": "Southern provinces.",
+      "ai_use": "Assault rebel-held hexes; keep away from artillery.",
+      "art": {
+        "asset": "units.qing.tiger-shield",
+        "status": "planned"
+      },
+      "sources": [
+        "source.elliott-manchu-way"
+      ]
+    },
+    {
+      "id": "unit.qing.war-junk",
+      "name": "War junk",
+      "family": "naval",
+      "affiliation": "entity.qing",
+      "period": "1798-1815",
+      "historical_basis": "Coastal fighting junks of the provincial fleets.",
+      "equipment": "A few small guns, boarding crews.",
+      "role": "Coastal defence and anti-piracy.",
+      "ratings": {
+        "fire": 2,
+        "shock": 3,
+        "defence": 2,
+        "mobility": 3,
+        "range": 2,
+        "morale": 2,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "naval",
+        "light"
+      ],
+      "recruitment": "Guangzhou, Xiamen and river ports.",
+      "ai_use": "Stay in coastal zones under shore batteries.",
+      "art": {
+        "asset": "units.qing.war-junk",
+        "status": "planned"
+      },
+      "sources": [
+        "source.murray-pirates"
+      ]
+    },
+    {
+      "id": "unit.marathas.silladar-horse",
+      "name": "Silladar horse",
+      "family": "cavalry",
+      "affiliation": "entity.marathas",
+      "period": "1798-1818",
+      "historical_basis": "Cavalrymen who own their horses and arms and serve under contract to a chief.",
+      "equipment": "Lance or sword, matchlock.",
+      "role": "Fast-moving light horse for raids and envelopment.",
+      "ratings": {
+        "fire": 1,
+        "shock": 3,
+        "defence": 2,
+        "mobility": 5,
+        "range": 1,
+        "morale": 3,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "mounted",
+        "light",
+        "irregular"
+      ],
+      "recruitment": "Any Maratha house.",
+      "ai_use": "Avoid infantry squares; go for the baggage and the guns' flanks.",
+      "art": {
+        "asset": "units.marathas.silladar-horse",
+        "status": "planned"
+      },
+      "sources": [
+        "source.gordon-marathas"
+      ]
+    },
+    {
+      "id": "unit.marathas.pindari",
+      "name": "Pindari raiders",
+      "family": "cavalry",
+      "affiliation": "entity.marathas",
+      "period": "1798-1818",
+      "historical_basis": "Unpaid irregular horsemen attached to Maratha armies and living by plunder.",
+      "equipment": "Whatever they carry.",
+      "role": "Devastation: destroys an enemy province's income.",
+      "ratings": {
+        "fire": 1,
+        "shock": 1,
+        "defence": 1,
+        "mobility": 5,
+        "range": 1,
+        "morale": 1,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "mounted",
+        "irregular"
+      ],
+      "recruitment": "Free; appears while a Maratha army is in enemy territory.",
+      "ai_use": "Never fight; raid undefended revenue provinces.",
+      "art": {
+        "asset": "units.marathas.pindari",
+        "status": "planned"
+      },
+      "sources": [
+        "source.gordon-marathas"
+      ],
+      "note": "Proposed new mechanic: 'raid' action that removes income instead of dealing damage."
+    },
+    {
+      "id": "unit.marathas.campoo-infantry",
+      "name": "Campoo infantry",
+      "family": "infantry",
+      "affiliation": "entity.marathas",
+      "period": "1790-1803, rebuildable",
+      "historical_basis": "Scindia's brigades drilled by de Boigne and Perron, with their own foundries; broken at Assaye and Laswari in 1803.",
+      "equipment": "Flintlock musket and bayonet, excellent artillery train.",
+      "role": "A regular line the Company must respect.",
+      "ratings": {
+        "fire": 3,
+        "shock": 3,
+        "defence": 3,
+        "mobility": 3,
+        "range": 3,
+        "morale": 3,
+        "cost": 4,
+        "upkeep": 4
+      },
+      "tags": [
+        "line"
+      ],
+      "recruitment": "Not available at the start. Needs foreign officers: a French relation above neutral or captured Company stores.",
+      "ai_use": "As line infantry with artillery support.",
+      "art": {
+        "asset": "units.marathas.campoo",
+        "status": "planned"
+      },
+      "sources": [
+        "source.cooper-anglo-maratha"
+      ]
+    },
+    {
+      "id": "unit.united-states.heavy-frigate",
+      "name": "Heavy frigate",
+      "family": "naval",
+      "affiliation": "entity.united-states",
+      "period": "1797-1815",
+      "historical_basis": "Joshua Humphreys' 44s (Constitution, United States, President): frigates built with a battleship's scantlings.",
+      "equipment": "Thirty 24-pounders on the gun deck, carronades above.",
+      "role": "Beats any frigate, outruns any ship of the line.",
+      "ratings": {
+        "fire": 4,
+        "shock": 3,
+        "defence": 4,
+        "mobility": 5,
+        "range": 3,
+        "morale": 4,
+        "cost": 4,
+        "upkeep": 4
+      },
+      "tags": [
+        "naval"
+      ],
+      "recruitment": "Boston, Philadelphia, Norfolk; an act of Congress each.",
+      "ai_use": "Cruise alone against trade and lone frigates; refuse squadron battle.",
+      "art": {
+        "asset": "units.united-states.heavy-frigate",
+        "status": "planned"
+      },
+      "sources": [
+        "source.toll-six-frigates"
+      ]
+    },
+    {
+      "id": "unit.united-states.frontier-rifles",
+      "name": "Frontier riflemen",
+      "family": "infantry",
+      "affiliation": "entity.united-states",
+      "period": "1798-1815",
+      "historical_basis": "Volunteer riflemen of Kentucky, Tennessee and the Ohio country with the long rifle.",
+      "equipment": "American long rifle; tomahawk; no bayonet.",
+      "role": "Accurate fire from cover; cannot stand a charge.",
+      "ratings": {
+        "fire": 4,
+        "shock": 1,
+        "defence": 1,
+        "mobility": 4,
+        "range": 4,
+        "morale": 2,
+        "cost": 2,
+        "upkeep": 1
+      },
+      "tags": [
+        "light",
+        "skirmisher",
+        "rifle",
+        "militia"
+      ],
+      "recruitment": "Western states and territories.",
+      "ai_use": "Defend woods and field works; retreat from open ground.",
+      "art": {
+        "asset": "units.united-states.frontier-rifles",
+        "status": "planned"
+      },
+      "sources": [
+        "source.hickey-war-of-1812"
+      ]
+    },
+    {
+      "id": "unit.united-states.militia",
+      "name": "State militia",
+      "family": "infantry",
+      "affiliation": "entity.united-states",
+      "period": "1798-1815",
+      "historical_basis": "The enrolled militia of the states, called out for short terms.",
+      "equipment": "Muskets of mixed pattern.",
+      "role": "Defends its own state.",
+      "ratings": {
+        "fire": 2,
+        "shock": 1,
+        "defence": 2,
+        "mobility": 2,
+        "range": 3,
+        "morale": 1,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "militia",
+        "garrison"
+      ],
+      "recruitment": "Any state; may not cross the frontier.",
+      "ai_use": "Garrison.",
+      "art": {
+        "asset": "units.infantry.militia",
+        "status": "planned"
+      },
+      "sources": [
+        "source.hickey-war-of-1812"
+      ],
+      "note": "America's instance of the shared militia family."
+    },
+    {
+      "id": "unit.haiti.armee-indigene",
+      "name": "Armée indigène infantry",
+      "family": "infantry",
+      "affiliation": "entity.haiti",
+      "period": "1803-1815",
+      "historical_basis": "The army that defeated Leclerc's expedition: demi-brigades of veterans formed in the colonial and revolutionary wars.",
+      "equipment": "French-pattern musket and bayonet; uniforms as supply allows.",
+      "role": "Veteran line infantry that fights best in hills and on the defence.",
+      "ratings": {
+        "fire": 3,
+        "shock": 3,
+        "defence": 4,
+        "mobility": 3,
+        "range": 3,
+        "morale": 5,
+        "cost": 2,
+        "upkeep": 2
+      },
+      "tags": [
+        "line"
+      ],
+      "recruitment": "Available at the start; replacements arrive as ordinary line infantry.",
+      "ai_use": "Defend rough terrain and forts; counter-attack an invader weakened by fever.",
+      "art": {
+        "asset": "units.haiti.armee-indigene",
+        "status": "planned"
+      },
+      "sources": [
+        "source.dubois-avengers"
+      ]
+    },
+    {
+      "id": "unit.haiti.mountain-fort",
+      "name": "Mountain fort",
+      "family": "defensive",
+      "affiliation": "entity.haiti",
+      "period": "1805-1820",
+      "historical_basis": "The chain of interior forts ordered by Dessalines in 1805, crowned by Christophe's Citadelle.",
+      "equipment": "Masonry works on ridges, heavy guns, cisterns and magazines.",
+      "role": "A refuge the army can hold for a year.",
+      "ratings": {
+        "fire": 4,
+        "shock": 1,
+        "defence": 5,
+        "mobility": 1,
+        "range": 5,
+        "morale": 5,
+        "cost": 4,
+        "upkeep": 2
+      },
+      "tags": [
+        "garrison"
+      ],
+      "recruitment": "Mountain hexes only.",
+      "ai_use": "Hold; never abandon while supplied.",
+      "art": {
+        "asset": "buildings.haiti.citadel.l1",
+        "status": "planned"
+      },
+      "sources": [
+        "source.dubois-avengers"
+      ]
+    },
+    {
+      "id": "unit.sokoto.archers",
+      "name": "Jihadist archers",
+      "family": "infantry",
+      "affiliation": "entity.sokoto",
+      "period": "1804-1815",
+      "historical_basis": "The foot of the Shehu's community: Fulani and Hausa bowmen who won at Tabkin Kwotto fighting in a square.",
+      "equipment": "Bow, spear, sword.",
+      "role": "Steady missile infantry that fights for the cause.",
+      "ratings": {
+        "fire": 3,
+        "shock": 2,
+        "defence": 3,
+        "mobility": 3,
+        "range": 2,
+        "morale": 5,
+        "cost": 1,
+        "upkeep": 1
+      },
+      "tags": [
+        "archer",
+        "irregular"
+      ],
+      "recruitment": "Arrives with each victory; leaves after a defeat.",
+      "ai_use": "Form on rough or wooded ground and let cavalry come.",
+      "art": {
+        "asset": "units.sokoto.archers",
+        "status": "planned"
+      },
+      "sources": [
+        "source.last-sokoto-caliphate"
+      ]
+    },
+    {
+      "id": "unit.sokoto.flag-bearer-horse",
+      "name": "Emirate cavalry",
+      "family": "cavalry",
+      "affiliation": "entity.sokoto",
+      "period": "1805-1815",
+      "historical_basis": "Horsemen in quilted armour of the kind the Hausa kingdoms fielded, brought over or captured as the emirates fell.",
+      "equipment": "Lance, sword, quilted cotton armour for man and horse.",
+      "role": "The heavy cavalry the movement lacks at the start.",
+      "ratings": {
+        "fire": 1,
+        "shock": 4,
+        "defence": 3,
+        "mobility": 4,
+        "range": 1,
+        "morale": 3,
+        "cost": 3,
+        "upkeep": 3
+      },
+      "tags": [
+        "mounted",
+        "heavy"
+      ],
+      "recruitment": "Only from a conquered Hausa capital or an emirate.",
+      "ai_use": "Charge enemy archers and infantry in the open.",
+      "art": {
+        "asset": "units.sokoto.flag-bearer-horse",
+        "status": "planned"
+      },
+      "sources": [
+        "source.last-sokoto-caliphate"
+      ]
+    }
+  ]
+}

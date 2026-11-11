@@ -1,0 +1,45 @@
+{
+  "contract_version": 1,
+  "id": "campaign-atlas.europe-1805",
+  "title": "Campaign Atlas · Europe 1805 · first collection",
+  "era": "French Empire and Third Coalition, September 1805",
+  "art_direction": "Campaign Atlas: a war map and its armies drawn as hand-coloured engraving. Sepia ink line, gouache washes, engraver's hatching for shadow. Maps are continuous painted country; the hex grid places pieces but is never drawn into them. Interface in brass, oxblood, gunmetal and worn parchment on a lamplit desk. Tone: iron and blood, not ornament. Full statement in design/ART-DECISIONS.md.",
+  "light_direction": "Upper left (north-west). Buildings, portraits and interface are lit from there with shadows cast to the lower right. Units and flags use top light only so that mirror-x facing does not reverse their lighting.",
+  "partial": true,
+  "map_regions": [
+    "europe"
+  ],
+  "global_visual": {
+    "id": "global-visual.v1",
+    "start_year": 1805,
+    "projection": "equirectangular",
+    "entities": [
+      {
+        "id": "entity.france",
+        "label": "Empire français · September 1805",
+        "flag_asset": "identity.france.flag",
+        "map_color": "#2B4A8C",
+        "specialty_units": [
+          "units.france.grenadier"
+        ],
+        "historical_portraits": [
+          "portraits.napoleon.bust"
+        ],
+        "building_assets": [
+          "buildings.capital.l1",
+          "buildings.city.l1",
+          "buildings.port.l1"
+        ],
+        "faction_visual": "Imperial blue, white and scarlet; cocked hats and bearskins; plastered towns under clay tile with slate church spires."
+      }
+    ],
+    "relation_styles": {
+      "self": "Solid border in the entity colour with a pale inner glow; territory wash at full strength.",
+      "ally": "Double ruled border in the ally's colour; territory wash at half strength.",
+      "neutral": "Dotted sepia border; no territory wash, the land shows through.",
+      "opponent": "Solid border in oxblood with inward hatching; territory wash at full strength in the opponent's colour.",
+      "unknown": "Broken grey border; land dimmed under a fog wash."
+    },
+    "territory_style": "Translucent watercolour wash over the painted map, strongest along the frontier and fading inland, so terrain stays readable. Borders and washes are separate overlays keyed to dated content records; nothing political is painted into terrain."
+  }
+}

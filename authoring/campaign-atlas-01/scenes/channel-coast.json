@@ -1,0 +1,99 @@
+{
+  "_note": "Demonstration composition, not a level: an invented stretch of Channel coast showing the terrain pieces, coast layers, three settlements and all three units on one continuous map. The hex field overruns the canvas on every side so no outer hex edge is visible. Codes: ~ open sea, s shallows, g grassland, t tilled land, f forest.",
+  "canvas_size": [
+    608,
+    396
+  ],
+  "origin": [
+    0,
+    0
+  ],
+  "hex": {
+    "step": [
+      64,
+      54
+    ],
+    "odd_row_offset": 32
+  },
+  "legend": {
+    "g": "maps.terrain.plain",
+    "t": "maps.terrain.plain.tilled",
+    "f": "maps.terrain.forest",
+    "~": "maps.terrain.water",
+    "s": "maps.terrain.coast"
+  },
+  "sea": [
+    "~",
+    "s"
+  ],
+  "sea_under_land": "maps.terrain.water",
+  "coast_layers": [
+    "maps.coast.shallows",
+    "maps.coast.surf",
+    "maps.coast.sand"
+  ],
+  "rows": [
+    "~~~~gffggg",
+    "~~~ggtfggf",
+    "~~~~ggfgff",
+    "~~~~gtggfg",
+    "~~g~~ggffg",
+    "~~~~~~gggt",
+    "~~~~~~gggg",
+    "~~~~~~~ggf"
+  ],
+  "items": [
+    {
+      "asset": "buildings.city.l1",
+      "clip": "still",
+      "row": 1,
+      "column": 4
+    },
+    {
+      "asset": "buildings.port.l1",
+      "clip": "still",
+      "row": 3,
+      "column": 4
+    },
+    {
+      "asset": "buildings.capital.l1",
+      "clip": "still",
+      "row": 2,
+      "column": 7
+    },
+    {
+      "asset": "buildings.city.l1",
+      "clip": "damaged",
+      "row": 5,
+      "column": 8
+    },
+    {
+      "asset": "units.infantry.line",
+      "clip": "move",
+      "row": 2,
+      "column": 5
+    },
+    {
+      "asset": "units.france.grenadier",
+      "clip": "attack",
+      "row": 3,
+      "column": 6
+    },
+    {
+      "asset": "units.cavalry.light",
+      "clip": "move",
+      "row": 4,
+      "column": 6
+    },
+    {
+      "asset": "effects.hit.spark",
+      "clip": "play",
+      "row": 3,
+      "column": 7,
+      "offset": [
+        10,
+        -18
+      ]
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "_note": "Light cavalry drill. `horse` carries the gait: phase advances through the stride, amount blends standing (0) into full gallop (1); neck and head are degrees. `rider` is a figure pose in the rider's own frame (origin at the saddle seat). `sabre` is the blade direction (0 = toward the enemy, 90 = up); `swoosh` is [from angle, to angle, strength] for the cut's trail.",
+  "poses": {
+    "seat": {
+      "horse": {
+        "phase": 0,
+        "amount": 0,
+        "neck": 40,
+        "head": 58,
+        "tail": 0,
+        "bob": 0
+      },
+      "rider": {
+        "pelvis": [
+          0,
+          -3
+        ],
+        "lean": 4,
+        "head": 0,
+        "near_leg": [
+          52,
+          84
+        ],
+        "far_leg": [
+          52,
+          84
+        ],
+        "near_hand": {
+          "at": [
+            9,
+            -17
+          ]
+        },
+        "far_hand": {
+          "at": [
+            13,
+            -11
+          ]
+        }
+      },
+      "sabre": 80,
+      "swoosh": [
+        0,
+        0,
+        0
+      ]
+    },
+    "seat-breathe": {
+      "pose": "seat",
+      "horse": {
+        "neck": 43,
+        "head": 61,
+        "tail": 0.1,
+        "bob": -0.7
+      },
+      "rider": {
+        "pelvis": [
+          0,
+          -3.5
+        ],
+        "lean": 3,
+        "head": -1
+      },
+      "sabre": 81
+    },
+    "gallop-seat": {
+      "pose": "seat",
+      "horse": {
+        "amount": 1,
+        "neck": 54,
+        "head": 49
+      },
+      "rider": {
+        "pelvis": [
+          0,
+          -3.5
+        ],
+        "lean": 11,
+        "head": -4,
+        "near_hand": {
+          "at": [
+            10,
+            -18
+          ]
+        },
+        "far_hand": {
+          "at": [
+            15,
+            -12
+          ]
+        }
+      },
+      "sabre": 72
+    },
+    "raise": {
+      "pose": "gallop-seat",
+      "rider": {
+        "lean": -3,
+        "head": 2,
+        "near_hand": {
+          "at": [
+            -5,
+            -28
+          ]
+        }
+      },
+      "sabre": 146
+    },
+    "cut": {
+      "pose": "gallop-seat",
+      "rider": {
+        "lean": 15,
+        "head": -2,
+        "near_hand": {
+          "at": [
+            17,
+            -20
+          ]
+        }
+      },
+      "sabre": 8,
+      "swoosh": [
+        146,
+        8,
+        1.0
+      ]
+    },
+    "follow": {
+      "pose": "gallop-seat",
+      "rider": {
+        "lean": 17,
+        "head": 4,
+        "near_hand": {
+          "at": [
+            15,
+            -7
+          ]
+        }
+      },
+      "sabre": -38,
+      "swoosh": [
+        50,
+        -38,
+        0.45
+      ]
+    }
+  },
+  "clips": {
+    "idle": {
+      "type": "keys",
+      "frames": 8,
+      "fps": 8,
+      "loop": true,
+      "keys": [
+        {
+          "t": 0,
+          "pose": "seat"
+        },
+        {
+          "t": 0.5,
+          "pose": "seat-breathe"
+        },
+        {
+          "t": 1,
+          "pose": "seat"
+        }
+      ]
+    },
+    "move": {
+      "type": "gallop",
+      "frames": 8,
+      "fps": 12,
+      "loop": true,
+      "pose": "gallop-seat",
+      "rider_rock": 3
+    },
+    "attack": {
+      "type": "keys",
+      "frames": 7,
+      "fps": 12,
+      "loop": false,
+      "keys": [
+        {
+          "t": 0,
+          "pose": {
+            "pose": "gallop-seat",
+            "horse": {
+              "phase": 0.0
+            }
+          }
+        },
+        {
+          "t": 0.42,
+          "pose": {
+            "pose": "raise",
+            "horse": {
+              "phase": 0.36
+            }
+          },
+          "ease": "out"
+        },
+        {
+          "t": 0.72,
+          "pose": {
+            "pose": "cut",
+            "horse": {
+              "phase": 0.62
+            }
+          },
+          "ease": "in"
+        },
+        {
+          "t": 1,
+          "pose": {
+            "pose": "follow",
+            "horse": {
+              "phase": 0.86
+            }
+          },
+          "ease": "out"
+        }
+      ]
+    },
+    "recover": {
+      "type": "keys",
+      "frames": 6,
+      "fps": 12,
+      "loop": false,
+      "keys": [
+        {
+          "t": 0,
+          "pose": {
+            "pose": "follow",
+            "horse": {
+              "phase": 0.86
+            },
+            "swoosh": [
+              50,
+              -38,
+              0
+            ]
+          }
+        },
+        {
+          "t": 0.5,
+          "pose": {
+            "pose": "gallop-seat",
+            "horse": {
+              "phase": 1.28,
+              "amount": 0.7
+            }
+          }
+        },
+        {
+          "t": 1,
+          "pose": {
+            "pose": "seat",
+            "horse": {
+              "phase": 1.62,
+              "amount": 0.35,
+              "neck": 44
+            }
+          }
+        }
+      ]
+    },
+    "finish": {
+      "type": "keys",
+      "frames": 5,
+      "fps": 12,
+      "loop": false,
+      "keys": [
+        {
+          "t": 0,
+          "pose": {
+            "pose": "seat",
+            "horse": {
+              "phase": 1.62,
+              "amount": 0.35,
+              "neck": 44
+            }
+          }
+        },
+        {
+          "t": 0.6,
+          "pose": {
+            "pose": "seat",
+            "horse": {
+              "phase": 1.78,
+              "amount": 0.05,
+              "neck": 36,
+              "head": 54
+            }
+          },
+          "ease": "out"
+        },
+        {
+          "t": 1,
+          "pose": {
+            "pose": "seat",
+            "horse": {
+              "phase": 1.78,
+              "amount": 0
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "_note": "Musket drill for a foot soldier facing +x. Positions are frame pixels from the ground anchor (y negative is up). Gun angle: 0 = level toward the enemy, 90 = vertical. Hands either grip the musket at a distance from the butt, go to a point, or hang. Change timing here, not in code: each clip's frames and fps become the manifest clip.",
+  "poses": {
+    "shoulder": {
+      "pelvis": [
+        0,
+        -41
+      ],
+      "lean": 1,
+      "head": 0,
+      "near_foot": [
+        -4,
+        0
+      ],
+      "far_foot": [
+        4.5,
+        0
+      ],
+      "gun": {
+        "butt": [
+          2.5,
+          -41.0
+        ],
+        "angle": 110
+      },
+      "near_hand": {
+        "grip": 2.5,
+        "offset": -2.6
+      },
+      "far_hand": {
+        "hang": 3,
+        "reach": 22
+      }
+    },
+    "inhale": {
+      "pose": "shoulder",
+      "pelvis": [
+        0,
+        -41.7
+      ],
+      "lean": 0.2,
+      "head": -1.5,
+      "gun": {
+        "butt": [
+          2.5,
+          -41.8
+        ],
+        "angle": 111
+      },
+      "far_hand": {
+        "hang": 1,
+        "reach": 22
+      }
+    },
+    "march": {
+      "pose": "shoulder",
+      "pelvis": [
+        0,
+        -40.4
+      ],
+      "lean": 4,
+      "gun": {
+        "butt": [
+          3.0,
+          -40.6
+        ],
+        "angle": 111
+      }
+    },
+    "present": {
+      "pelvis": [
+        -1,
+        -40.4
+      ],
+      "lean": 3,
+      "head": 2,
+      "near_foot": [
+        -6,
+        0
+      ],
+      "far_foot": [
+        6.5,
+        0
+      ],
+      "gun": {
+        "butt": [
+          -9,
+          -44
+        ],
+        "angle": 50
+      },
+      "near_hand": {
+        "grip": 11.5,
+        "offset": -1.2
+      },
+      "far_hand": {
+        "grip": 26,
+        "offset": -1.5
+      }
+    },
+    "aim": {
+      "pelvis": [
+        -4,
+        -39.6
+      ],
+      "lean": 5,
+      "head": 11,
+      "near_foot": [
+        -10,
+        0
+      ],
+      "far_foot": [
+        7,
+        0
+      ],
+      "gun": {
+        "butt": [
+          -9.5,
+          -63.0
+        ],
+        "angle": 1
+      },
+      "near_hand": {
+        "grip": 10.0,
+        "offset": -2.6
+      },
+      "far_hand": {
+        "grip": 27,
+        "offset": -2.0
+      }
+    },
+    "fire": {
+      "pose": "aim",
+      "flash": 1.0,
+      "smoke": 0.9,
+      "smoke_age": 0.12,
+      "smoke_at": [
+        34,
+        -66
+      ]
+    },
+    "recoil": {
+      "pose": "aim",
+      "pelvis": [
+        -5.5,
+        -39.9
+      ],
+      "lean": 1.5,
+      "head": 7,
+      "gun": {
+        "butt": [
+          -12,
+          -63.8
+        ],
+        "angle": 9
+      },
+      "flash": 0.0,
+      "smoke": 0.85,
+      "smoke_age": 0.5,
+      "smoke_at": [
+        30,
+        -67
+      ]
+    },
+    "load": {
+      "pelvis": [
+        -1,
+        -40.2
+      ],
+      "lean": 6,
+      "head": 12,
+      "near_foot": [
+        -6,
+        0
+      ],
+      "far_foot": [
+        6.5,
+        0
+      ],
+      "gun": {
+        "butt": [
+          10,
+          -1.5
+        ],
+        "angle": 85
+      },
+      "near_hand": {
+        "at": [
+          -8,
+          -38
+        ]
+      },
+      "far_hand": {
+        "grip": 38,
+        "offset": -1.0
+      },
+      "smoke_at": [
+        26,
+        -69
+      ],
+      "smoke_age": 0.85,
+      "smoke": 0.3
+    },
+    "bite": {
+      "pose": "load",
+      "head": 5,
+      "near_hand": {
+        "at": [
+          6,
+          -67
+        ]
+      },
+      "smoke": 0.0,
+      "smoke_age": 1.0
+    },
+    "pour": {
+      "pose": "load",
+      "near_hand": {
+        "grip": 48,
+        "offset": 1.0
+      },
+      "smoke": 0.0,
+      "smoke_age": 1.0
+    },
+    "ram-up": {
+      "pose": "load",
+      "head": 8,
+      "near_hand": {
+        "grip": 59,
+        "offset": 1.6
+      },
+      "ramrod": 1.0,
+      "smoke": 0.0,
+      "smoke_age": 1.0
+    },
+    "ram-down": {
+      "pose": "load",
+      "head": 13,
+      "near_hand": {
+        "grip": 49.5,
+        "offset": 1.6
+      },
+      "ramrod": 1.0,
+      "smoke": 0.0,
+      "smoke_age": 1.0
+    },
+    "settle": {
+      "pose": "shoulder",
+      "pelvis": [
+        0,
+        -40.2
+      ],
+      "lean": -0.5,
+      "gun": {
+        "butt": [
+          2.5,
+          -37.6
+        ],
+        "angle": 110
+      }
+    }
+  },
+  "clips": {
+    "idle": {
+      "type": "keys",
+      "frames": 8,
+      "fps": 8,
+      "loop": true,
+      "keys": [
+        {
+          "t": 0,
+          "pose": "shoulder"
+        },
+        {
+          "t": 0.5,
+          "pose": "inhale"
+        },
+        {
+          "t": 1,
+          "pose": "shoulder"
+        }
+      ]
+    },
+    "move": {
+      "type": "walk",
+      "frames": 8,
+      "fps": 12,
+      "loop": true,
+      "pose": "march",
+      "stride": 19,
+      "lift": 6,
+      "bob": 1.0,
+      "sway": 0.6,
+      "gun_sway": 1.2,
+      "arm_swing": 20
+    },
+    "attack": {
+      "type": "keys",
+      "frames": 6,
+      "fps": 12,
+      "loop": false,
+      "keys": [
+        {
+          "t": 0,
+          "pose": "shoulder"
+        },
+        {
+          "t": 0.4,
+          "pose": "present",
+          "ease": "out"
+        },
+        {
+          "t": 0.6,
+          "pose": "aim",
+          "ease": "out"
+        },
+        {
+          "t": 0.8,
+          "pose": "fire",
+          "ease": "hold"
+        },
+        {
+          "t": 0.8001,
+          "pose": "fire",
+          "ease": "linear"
+        },
+        {
+          "t": 1,
+          "pose": "recoil",
+          "ease": "snap"
+        }
+      ]
+    },
+    "recover": {
+      "type": "keys",
+      "frames": 10,
+      "fps": 12,
+      "loop": false,
+      "keys": [
+        {
+          "t": 0,
+          "pose": "recoil"
+        },
+        {
+          "t": 0.111,
+          "pose": "load",
+          "ease": "out"
+        },
+        {
+          "t": 0.222,
+          "pose": "bite"
+        },
+        {
+          "t": 0.333,
+          "pose": "pour"
+        },
+        {
+          "t": 0.444,
+          "pose": "ram-up"
+        },
+        {
+          "t": 0.556,
+          "pose": "ram-down",
+          "ease": "in"
+        },
+        {
+          "t": 0.667,
+          "pose": "ram-up"
+        },
+        {
+          "t": 0.778,
+          "pose": "ram-down",
+          "ease": "in"
+        },
+        {
+          "t": 1,
+          "pose": "present",
+          "ease": "inout"
+        }
+      ]
+    },
+    "finish": {
+      "type": "keys",
+      "frames": 5,
+      "fps": 12,
+      "loop": false,
+      "keys": [
+        {
+          "t": 0,
+          "pose": "present"
+        },
+        {
+          "t": 0.6,
+          "pose": "settle",
+          "ease": "out"
+        },
+        {
+          "t": 1,
+          "pose": "shoulder",
+          "ease": "inout"
+        }
+      ]
+    }
+  }
+}

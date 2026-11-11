@@ -1,15 +1,30 @@
-# 你的任务：现有项目的原创视觉重制
+# 任务入口 · Task entry
 
-本仓库是项目自研的独立美术工程，只需阅读本仓库。请制作原创兵模与动画、历史人物立绘、建筑、特效、地图和整套 UI；不要重新开发游戏。Codex 负责所有游戏映射、实际替换和 Android 验收。
+This repository is the art-production workspace for the Napoleonic strategy game. Claude owns the complete visual system and the Global Conquest content design; Codex owns game implementation, bindings, Android and merging; the Owner approves direction, scope and results. (Handoff v0.7, 2026-11-11, supersedes the earlier art-only brief: content design is now in scope as design proposals, kept apart from the runtime image manifest.)
 
-先阅读 README、ART-BRIEF、ART-DIRECTION、ASSET-SPEC 和 DELIVERY-CONTRACT；运行 previews，了解 samples 的资源合同。样例是尺寸和动作的测试夹具，不是最终画风，不要求模仿样例的几何造型。
+## Start here
 
-先完成一批具有一致画风的成品：一个菜单/面板与四态按钮、一套欧洲草地/海岸/森林、步兵与骑兵的完整动作、拿破仑半身像及头像、一组城市/首都/港口、命中特效。随后扩展美洲与全球地图、其余兵种与建筑、历史人物和完整 UI 页面族。可按批次提交，不必等全部完成。
+1. `design/COVERAGE.md` — what is delivered and what is left. Update it with every batch.
+2. `design/ART-DECISIONS.md` — the art direction and every decision taken, including the Owner's standing directions: **maps are continuous and hexes never show; the tone is iron and blood.**
+3. `authoring/README.md` — how to build, review and change the art.
+4. `design/global-conquest/README.md` — scenarios, roster, nation records, open decisions.
 
-在 `submissions/<batch>/` 放 PNG 运行资源、manifest.json、theme.json、sources.json、说明和可选的 SVG/分层源文件。保留既有中性 ID 以替换对应样例；新增资源用新 ID。每批给出作者/生成方式/使用参考及许可记录，运行 `python tools/validate.py submissions/<batch>/manifest.json`，附预览截图与尚未完成清单。通过分支和 PR 交付。
+Contracts, unchanged: `ASSET-SPEC.md`, `DELIVERY-CONTRACT.md`, `schemas/`. Samples are technical fixtures, not a style.
 
-真实历史人物、公开历史服饰和地理资料可作为考证依据。请记录具体来源；画面由你重新设计。拿破仑占位没有肖像相似度或制服考证资格，正式作品需你完成。全球政治边界、外交与数值不是你的实现任务；只制作视觉表达。
+## Working rules
 
-无需访问别的项目、研究游戏规则、改 C++、制作 Android 包或猜测旧资源文件。对中性接口有疑问，在 PR 中提出，Codex 负责适配。不要把制作测试样例宣称为全部最终美术已完成。
+- Art is drawn by code under `authoring/` and built into `submissions/<batch>/`. Shared code never names an asset, nation or person; variation is data.
+- Every batch: build, seal, validate, run the tests, look at the result at display size and close up, then open a PR from `art/<batch>` with ids, method, checks, screenshots and what remains.
+- Every PNG in the tree must be declared in a manifest. Review images go on the PR, not in the repository.
+- Record what is documented and what is interpreted for anything historical. Do not present recalled facts as checked ones.
+- Content design uses stable ids and keeps history, proposal and art status apart. `python tools/validate_design.py` must pass.
+- Bring the Owner decisions with alternatives and a recommendation; make routine ones yourself and write them down.
 
-交付时请提供两个独立批次用于验收，使用各自的 manifest/theme/sources；两个主题可以采用完全不同的原创表现。只改素材与清单，沿用同一预览器和校验器验证动画、锚点与效果。这里的两套技术测试数据只证明接收接口，不替代你的真实美术交付。既有测试图源码仅在 validation 保留来源，不属于你的生产流程。
+## Checks
+
+```sh
+python tools/validate.py submissions/<batch>/manifest.json
+python tools/validate_design.py
+python -m unittest discover -s validation
+python tools/check_isolation.py
+```

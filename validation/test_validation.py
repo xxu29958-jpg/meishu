@@ -7,6 +7,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 from validate import ValidationError, validate
@@ -39,9 +41,14 @@ class SubmissionTests(unittest.TestCase):
                          {'ui', 'maps', 'units', 'portraits', 'buildings', 'effects', 'identity'})
 
     def test_reproducible_without_game(self):
+        # Compare decoded pixels, not file hashes: PNG bytes depend on the platform's zlib build.
         fresh = Path(self.temp.name) / 'fresh'
         make_batch(fresh)
-        self.assertEqual(validate(fresh / 'manifest.json')['assets'], validate(self.path)['assets'])
+        regenerated, committed = validate(fresh / 'manifest.json')['assets'], validate(self.path)['assets']
+        self.assertEqual([item['id'] for item in regenerated], [item['id'] for item in committed])
+        for item in committed:
+            with Image.open(fresh / item['file']) as new, Image.open(self.root / item['file']) as old:
+                self.assertEqual(new.convert('RGBA').tobytes(), old.convert('RGBA').tobytes(), item['id'])
 
     def test_missing_file(self):
         (self.root / self.data['assets'][0]['file']).unlink()

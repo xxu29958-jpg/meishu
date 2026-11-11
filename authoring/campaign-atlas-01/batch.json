@@ -1,0 +1,637 @@
+{
+  "batch": "campaign-atlas-01",
+  "output": "submissions/campaign-atlas-01",
+  "palette": "palette.json",
+  "seed": 1805,
+  "theme_id": "campaign-atlas.europe-1805",
+  "theme": "theme.json",
+  "sources": "sources.json",
+  "assets": [
+    {
+      "id": "maps.terrain.water",
+      "category": "maps",
+      "format": "terrain",
+      "painter": "terrain",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "kind": "water",
+        "waves": 11
+      }
+    },
+    {
+      "id": "maps.terrain.coast",
+      "category": "maps",
+      "format": "terrain",
+      "painter": "terrain",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "kind": "water",
+        "shallow": true,
+        "waves": 10
+      }
+    },
+    {
+      "id": "maps.terrain.plain",
+      "category": "maps",
+      "format": "terrain-piece",
+      "painter": "terrain",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "kind": "plain",
+        "tufts": 8,
+        "fields": 0,
+        "shape_seed": 21
+      },
+      "editable": false
+    },
+    {
+      "id": "maps.terrain.plain.tilled",
+      "category": "maps",
+      "format": "terrain-piece",
+      "painter": "terrain",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "kind": "plain",
+        "tufts": 5,
+        "fields": 2,
+        "shape_seed": 22
+      },
+      "editable": false
+    },
+    {
+      "id": "maps.terrain.forest",
+      "category": "maps",
+      "format": "terrain-piece",
+      "painter": "terrain",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "kind": "forest",
+        "trees": 15,
+        "fir_share": 0.35,
+        "shape_seed": 23
+      },
+      "editable": false
+    },
+    {
+      "id": "maps.coast.shallows",
+      "category": "maps",
+      "format": "terrain-apron",
+      "painter": "coast",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "layer": "shallows",
+        "shape_seed": 31,
+        "wander": 13.0,
+        "reach": 13.0,
+        "wander_cell": 38
+      },
+      "editable": false
+    },
+    {
+      "id": "maps.coast.surf",
+      "category": "maps",
+      "format": "terrain-apron",
+      "painter": "coast",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "layer": "surf",
+        "shape_seed": 31,
+        "wander": 13.0,
+        "reach": 13.0,
+        "wander_cell": 38
+      },
+      "editable": false
+    },
+    {
+      "id": "maps.coast.sand",
+      "category": "maps",
+      "format": "terrain-apron",
+      "painter": "coast",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "layer": "sand",
+        "shape_seed": 31,
+        "wander": 13.0,
+        "reach": 13.0,
+        "wander_cell": 38
+      },
+      "editable": false
+    },
+    {
+      "id": "maps.grid.hex",
+      "category": "maps",
+      "format": "terrain",
+      "painter": "grid",
+      "source_id": "atlas.claude.terrain",
+      "params": {
+        "alpha": 0.42
+      }
+    },
+    {
+      "id": "buildings.city.l1",
+      "category": "buildings",
+      "format": "building",
+      "painter": "building",
+      "source_id": "atlas.claude.buildings",
+      "params": {
+        "plans": "buildings/europe-west.json",
+        "plan": "city.l1"
+      }
+    },
+    {
+      "id": "buildings.capital.l1",
+      "category": "buildings",
+      "format": "building",
+      "painter": "building",
+      "source_id": "atlas.claude.buildings",
+      "params": {
+        "plans": "buildings/europe-west.json",
+        "plan": "capital.l1"
+      }
+    },
+    {
+      "id": "buildings.port.l1",
+      "category": "buildings",
+      "format": "building",
+      "painter": "building",
+      "source_id": "atlas.claude.buildings",
+      "params": {
+        "plans": "buildings/europe-west.json",
+        "plan": "port.l1"
+      }
+    },
+    {
+      "id": "units.infantry.line",
+      "category": "units",
+      "format": "unit",
+      "painter": "infantry",
+      "source_id": "atlas.claude.units",
+      "columns": 8,
+      "params": {
+        "looks": "units/france-1805.json",
+        "look": "line-fusilier",
+        "drill": "units/musket-drill.json",
+        "formation": [
+          {
+            "offset": [
+              -24,
+              -7.5
+            ],
+            "scale": 0.94,
+            "delay": 1,
+            "recede": 0.16
+          },
+          {
+            "offset": [
+              -10.5,
+              -4
+            ],
+            "scale": 0.97,
+            "delay": 0,
+            "recede": 0.07
+          },
+          {
+            "offset": [
+              3,
+              0
+            ],
+            "delay": 0
+          }
+        ]
+      },
+      "editable": false
+    },
+    {
+      "id": "units.france.grenadier",
+      "category": "units",
+      "format": "unit",
+      "painter": "infantry",
+      "source_id": "atlas.claude.units",
+      "columns": 8,
+      "params": {
+        "looks": "units/france-1805.json",
+        "look": "guard-grenadier",
+        "drill": "units/musket-drill.json",
+        "formation": [
+          {
+            "offset": [
+              -24,
+              -7.5
+            ],
+            "scale": 0.94,
+            "delay": 1,
+            "recede": 0.16
+          },
+          {
+            "offset": [
+              -10.5,
+              -4
+            ],
+            "scale": 0.97,
+            "delay": 0,
+            "recede": 0.07
+          },
+          {
+            "offset": [
+              3,
+              0
+            ],
+            "delay": 0
+          }
+        ]
+      },
+      "editable": false
+    },
+    {
+      "id": "units.cavalry.light",
+      "category": "units",
+      "format": "unit",
+      "painter": "cavalry",
+      "source_id": "atlas.claude.units",
+      "columns": 8,
+      "params": {
+        "looks": "units/france-1805.json",
+        "look": "chasseur-a-cheval",
+        "drill": "units/sabre-charge.json",
+        "formation": [
+          {
+            "offset": [
+              -9,
+              -7
+            ],
+            "scale": 0.92,
+            "delay": 1,
+            "recede": 0.18
+          },
+          {
+            "offset": [
+              6,
+              0
+            ]
+          }
+        ]
+      },
+      "editable": false
+    },
+    {
+      "id": "ui.panel.command",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        480,
+        280
+      ],
+      "display": [
+        480,
+        280
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "panel"
+      }
+    },
+    {
+      "id": "ui.button.primary",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        240,
+        72
+      ],
+      "display": [
+        240,
+        72
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        30,
+        24,
+        30,
+        28
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "button",
+        "body": "ui_red"
+      }
+    },
+    {
+      "id": "ui.button.secondary",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        240,
+        72
+      ],
+      "display": [
+        240,
+        72
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        30,
+        24,
+        30,
+        28
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "button",
+        "body": "ui_steel"
+      }
+    },
+    {
+      "id": "ui.tab.folio",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        168,
+        56
+      ],
+      "display": [
+        168,
+        56
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        18,
+        20,
+        18,
+        6
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "tab"
+      }
+    },
+    {
+      "id": "ui.list.row",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        440,
+        72
+      ],
+      "display": [
+        440,
+        72
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        14,
+        12,
+        14,
+        12
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "row"
+      }
+    },
+    {
+      "id": "ui.chip.resource",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        168,
+        44
+      ],
+      "display": [
+        168,
+        44
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        42,
+        14,
+        18,
+        14
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "chip"
+      }
+    },
+    {
+      "id": "ui.rule.section",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        320,
+        20
+      ],
+      "display": [
+        320,
+        20
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        40,
+        0,
+        40,
+        0
+      ],
+      "columns": 1,
+      "params": {
+        "kind": "rule"
+      }
+    },
+    {
+      "id": "ui.icon.gold",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        48,
+        48
+      ],
+      "display": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "icon",
+        "icon": "gold"
+      }
+    },
+    {
+      "id": "ui.icon.men",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        48,
+        48
+      ],
+      "display": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "icon",
+        "icon": "men"
+      }
+    },
+    {
+      "id": "ui.icon.guns",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        48,
+        48
+      ],
+      "display": [
+        48,
+        48
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "columns": 4,
+      "params": {
+        "kind": "icon",
+        "icon": "guns"
+      }
+    },
+    {
+      "id": "ui.backdrop.desk",
+      "category": "ui",
+      "painter": "ui",
+      "source_id": "atlas.claude.ui",
+      "frame": [
+        1600,
+        720
+      ],
+      "display": [
+        1600,
+        720
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "stretch": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "columns": 1,
+      "params": {
+        "kind": "backdrop",
+        "lands": 6,
+        "seed": 1805
+      }
+    },
+    {
+      "id": "effects.hit.spark",
+      "category": "effects",
+      "format": "effect",
+      "painter": "effect",
+      "source_id": "atlas.claude.effects",
+      "params": {
+        "recipes": "effects.json",
+        "recipe": "hit-spark"
+      }
+    },
+    {
+      "id": "identity.france.flag",
+      "category": "identity",
+      "format": "flag",
+      "painter": "flag",
+      "source_id": "atlas.claude.identity",
+      "params": {
+        "flags": "flags.json",
+        "flag": "france"
+      }
+    },
+    {
+      "id": "portraits.napoleon.bust",
+      "category": "portraits",
+      "format": "bust",
+      "painter": "illustration",
+      "source_id": "atlas.claude.portrait-napoleon",
+      "params": {
+        "character": "portraits/napoleon"
+      }
+    },
+    {
+      "id": "portraits.napoleon.avatar",
+      "category": "portraits",
+      "format": "avatar",
+      "painter": "crop",
+      "source_id": "atlas.claude.portrait-napoleon",
+      "params": {
+        "character": "portraits/napoleon",
+        "crop": "avatar"
+      },
+      "editable": false
+    }
+  ],
+  "preview": "preview.json"
+}

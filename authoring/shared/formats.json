@@ -1,0 +1,155 @@
+{
+  "_note": "Canvas formats from ASSET-SPEC.md. Frame sizes are pixels; display sizes are logical units; anchors are normalised. An asset in batch.json names one and may override any key.",
+  "formats": {
+    "terrain": {
+      "frame": [
+        128,
+        144
+      ],
+      "display": [
+        64,
+        72
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed"
+    },
+    "unit": {
+      "frame": [
+        128,
+        128
+      ],
+      "display": [
+        64,
+        64
+      ],
+      "anchor": [
+        0.5,
+        0.875
+      ],
+      "directions": "mirror-x"
+    },
+    "naval": {
+      "frame": [
+        192,
+        128
+      ],
+      "display": [
+        96,
+        64
+      ],
+      "anchor": [
+        0.5,
+        0.75
+      ],
+      "directions": "mirror-x"
+    },
+    "bust": {
+      "frame": [
+        512,
+        640
+      ],
+      "display": [
+        256,
+        320
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "directions": "fixed"
+    },
+    "avatar": {
+      "frame": [
+        192,
+        192
+      ],
+      "display": [
+        96,
+        96
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed"
+    },
+    "building": {
+      "frame": [
+        128,
+        144
+      ],
+      "display": [
+        64,
+        72
+      ],
+      "anchor": [
+        0.5,
+        0.875
+      ],
+      "directions": "fixed"
+    },
+    "effect": {
+      "frame": [
+        128,
+        128
+      ],
+      "display": [
+        64,
+        64
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed"
+    },
+    "flag": {
+      "frame": [
+        96,
+        64
+      ],
+      "display": [
+        48,
+        32
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed"
+    },
+    "terrain-piece": {
+      "frame": [
+        176,
+        198
+      ],
+      "display": [
+        88,
+        99
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed"
+    },
+    "terrain-apron": {
+      "frame": [
+        240,
+        270
+      ],
+      "display": [
+        120,
+        135
+      ],
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "directions": "fixed"
+    }
+  }
+}
