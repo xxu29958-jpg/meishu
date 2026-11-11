@@ -8,7 +8,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from validate import ROOT, ValidationError, require, validate
+from validate import ROOT, local_file, read_json, require, validate
 
 
 def check(root, deny_hashes=None):
@@ -17,9 +17,15 @@ def check(root, deny_hashes=None):
     allowed = {'.md', '.json', '.png', '.py', '.js', '.html', '.css', '.txt', '.svg'}
     manifests = [root / 'samples/manifest.json', *sorted((root / 'submissions').glob('*/manifest.json'))]
     images = set()
+    editable_files = set()
     for manifest in manifests:
         for asset in validate(manifest)['assets']:
             images.add((manifest.parent / asset['file']).resolve())
+        data = read_json(manifest)
+        sources = read_json(local_file(manifest.parent, data['sources']))
+        for source in sources['sources']:
+            for name in source['editable_files']:
+                editable_files.add(local_file(manifest.parent, name).resolve())
     deny = set(deny_hashes or [])
     files = []
     for path in sorted(root.rglob('*')):
@@ -29,14 +35,17 @@ def check(root, deny_hashes=None):
         require(not path.is_symlink(), f'Symbolic link in repository: {relative}')
         if not path.is_file():
             continue
-        require(path.suffix.lower() in allowed or path.name in ('.gitignore', '.gitattributes'), f'Unexpected repository format: {relative}')
+        editable = path.resolve() in editable_files
+        require(path.suffix.lower() in allowed or editable or path.name in ('.gitignore', '.gitattributes'), f'Unexpected repository format: {relative}')
         content = path.read_bytes()
-        require(not content.startswith((b'PK\x03\x04', b'\x7fELF', b'dex\n', b'MZ')), f'Executable/archive signature: {relative}')
+        require(not content.startswith((b'\x7fELF', b'dex\n', b'MZ')), f'Executable signature: {relative}')
+        require(not content.startswith(b'PK\x03\x04') or (editable and path.suffix.lower() in ('.kra', '.ora')),
+                f'Undeclared archive signature: {relative}')
         digest = hashlib.sha256(content).hexdigest()
         require(digest not in deny, f'Image matches excluded source hash: {relative}')
         if path.suffix.lower() == '.png':
             require(path.resolve() in images, f'Image missing from provenance manifest: {relative}')
-        else:
+        elif not editable:
             text = content.decode('utf-8')
             # These identify machine-private dependencies, not ordinary historical words.
             if path.resolve() != (root / 'tools/check_isolation.py').resolve():

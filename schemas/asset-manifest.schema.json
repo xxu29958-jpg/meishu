@@ -175,6 +175,10 @@
         "additionalProperties": false
       },
       "minItems": 1
+    },
+    "preview": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "required": [

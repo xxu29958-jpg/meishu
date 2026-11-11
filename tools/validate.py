@@ -147,6 +147,22 @@ def validate(manifest_path):
             for identifier, category in links:
                 require(identifier in identifiers, f'Global visual references missing asset: {identifier}')
                 require(assets_by_id[identifier]['category'] == category, f'Global visual category mismatch: {identifier}')
+    if 'preview' in manifest:
+        preview_path = local_file(base, manifest['preview'])
+        preview = read_json(preview_path)
+        check_schema(preview, 'preview-scene')
+        declared.add(preview_path.resolve())
+        assets_by_id = {asset['id']: asset for asset in manifest['assets']}
+        occupied = set()
+        for tile in preview['tiles']:
+            coordinate = (tile['row'], tile['column'])
+            require(coordinate not in occupied, f'Duplicate preview tile coordinate: {coordinate}')
+            occupied.add(coordinate)
+        for item in preview['tiles'] + preview['items']:
+            identifier = item['asset']
+            require(identifier in identifiers, f'Preview references missing asset: {identifier}')
+            require(item['clip'] in assets_by_id[identifier]['clips'],
+                    f'Preview references missing clip: {identifier}/{item["clip"]}')
     for path in base.rglob('*'):
         require(not path.is_symlink(), f'Symbolic link in batch: {path.relative_to(base)}')
         if not path.is_file() or path.resolve() in declared:

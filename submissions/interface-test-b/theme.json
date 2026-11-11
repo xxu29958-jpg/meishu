@@ -1,0 +1,12 @@
+{
+  "contract_version": 1,
+  "id": "test.batch-b",
+  "title": "接口测试 B · 任意编号与独立动画参数",
+  "era": "拿破仑时代",
+  "art_direction": "技术测试，不是正式美术方向",
+  "light_direction": "不适用",
+  "partial": true,
+  "map_regions": [
+    "global"
+  ]
+}

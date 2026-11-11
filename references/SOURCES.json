@@ -1,7 +1,7 @@
 {
   "contract_version": 1,
   "authorship": "项目自研接口、规格、制作工具、校验器和预览器；由 Codex 为本项目编写。无外部游戏文件输入。",
-  "samples": "由 tools/generate_samples.py 原创程序绘制，可复现全部 PNG；具体来源见 samples/sources.json。",
+  "samples": "既有测试图由 validation/fixture_source.py 独立绘制并保留来源；不是美术生产工具。具体来源见各批 sources.json。",
   "references": [
     {
       "id": "geography.natural-earth",

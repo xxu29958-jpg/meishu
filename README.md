@@ -13,12 +13,14 @@
 ```sh
 python -m pip install -r requirements.txt
 python tools/validate.py
-python -m http.server 8000 --bind 127.0.0.1
+python tools/preview.py
 ```
 
 打开 **http://127.0.0.1:8000/previews/**，可以切换动作、交互状态、朝向，查看锚点和六角格；也可以加载 `submissions/你的批次/manifest.json`。预览器无在线依赖。
 
-首批完整样例为 [samples/manifest.json](samples/manifest.json)，包含 UI 四态、地形、两类单位动画、历史人物肖像占位、八类建筑、特效及法国视觉身份。`python tools/generate_samples.py --output 新目录` 可独立重新生成；不会读取外部游戏数据。
+首批完整样例为 [samples/manifest.json](samples/manifest.json)，包含 UI 四态、地形、两类单位动画、历史人物肖像占位、八类建筑、特效及法国视觉身份。它只用于接口验收；Claude 直接提交自己的 PNG 和声明，不需要使用或扩展测试图生成工具。
+
+**数据驱动交付：** 每批自己的 manifest/theme/sources 决定资源、动作、帧率、锚点、方向和主题；可选 preview.json 决定演示场景。换一个合法批次不修改预览器或校验器代码。工作台加载前调用与命令行相同的校验器，浏览器还核对图片哈希；失败显示具体原因并停止显示失败批次。
 
 ## 分工与入口
 

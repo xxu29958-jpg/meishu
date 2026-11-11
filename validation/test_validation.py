@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 from validate import ValidationError, validate
-from generate_samples import make_batch
+from fixture_source import make_batch
 
 
 class SubmissionTests(unittest.TestCase):
@@ -89,6 +89,19 @@ class SubmissionTests(unittest.TestCase):
         theme['global_visual']['entities'][0]['flag_asset'] = 'identity.missing.flag'
         theme_path.write_text(json.dumps(theme), encoding='utf-8')
         self.rejected('missing asset')
+
+    def test_unrelated_batch_without_sample_identifiers(self):
+        report = validate(ROOT / 'submissions/interface-test-b/manifest.json')
+        self.assertEqual(report['theme_id'], 'test.batch-b')
+        self.assertEqual({asset['id'] for asset in report['assets']},
+                         {'batch-b.command.one', 'batch-b.signal.two'})
+
+    def test_bad_preview_reference(self):
+        preview_path = self.root / self.data['preview']
+        preview = json.loads(preview_path.read_text(encoding='utf-8'))
+        preview['items'][0]['asset'] = 'unknown.asset'
+        preview_path.write_text(json.dumps(preview), encoding='utf-8')
+        self.rejected('Preview references missing asset')
 
 
 if __name__ == '__main__':

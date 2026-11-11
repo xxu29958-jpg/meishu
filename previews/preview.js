@@ -7,6 +7,7 @@ let playing = true;
 let previous = performance.now();
 let selected = null;
 let generation = 0;
+let scene = null;
 
 function relativeUrl(path, base) {
   if (typeof path !== 'string' || path.includes('..') || !/^[A-Za-z0-9_./-]+$/.test(path) || path.startsWith('/')) {
@@ -16,15 +17,23 @@ function relativeUrl(path, base) {
 }
 async function json(url) {
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`${url.pathname}: HTTP ${response.status}`);
-  return response.json();
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || `${url.pathname}: HTTP ${response.status}`);
+  return data;
 }
-function loadImage(url) {
+async function loadImage(url, expectedHash) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`图片读取失败：${url.pathname} HTTP ${response.status}`);
+  const bytes = await response.arrayBuffer();
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  const hash = [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2,'0')).join('');
+  if (hash !== expectedHash) throw new Error(`图片在校验后发生变化：${url.pathname}`);
+  const objectUrl = URL.createObjectURL(new Blob([bytes], {type:'image/png'}));
   return new Promise((resolve, reject) => {
     const image = new Image();
-    image.onload = () => resolve(image);
-    image.onerror = () => reject(new Error(`无法解码图片：${url.pathname}`));
-    image.src = url;
+    image.onload = () => { URL.revokeObjectURL(objectUrl); resolve(image); };
+    image.onerror = () => { URL.revokeObjectURL(objectUrl); reject(new Error(`无法解码图片：${url.pathname}`)); };
+    image.src = objectUrl;
   });
 }
 function draw(ctx, asset, clipName, time, x, y, scale, mirror, anchors) {
@@ -70,50 +79,84 @@ async function load() {
   try {
     const root = new URL('../', location.href);
     const url = relativeUrl(byId('manifest').value, root);
-    const manifest = await json(url);
-    if (manifest.contract_version !== 1) throw new Error('不支持的合同版本');
-    const theme = await json(relativeUrl(manifest.theme, url));
+    const validationUrl = new URL('api/validate', root);
+    validationUrl.searchParams.set('manifest', byId('manifest').value);
+    const validated = await json(validationUrl);
+    const manifest = validated.manifest;
+    const theme = validated.theme;
+    const previewScene = validated.preview;
     const loaded = await Promise.all(manifest.assets.map(async asset => {
-      const image = await loadImage(relativeUrl(asset.file, url));
+      const image = await loadImage(relativeUrl(asset.file, url), asset.sha256);
       if (image.width !== asset.size[0] || image.height !== asset.size[1]) throw new Error(`${asset.id} 尺寸与清单不同`);
       return {...asset, image};
     }));
     if (current !== generation) return;
     assets = new Map(loaded.map(asset => [asset.id, asset]));
+    const durations = loaded.flatMap(asset => Object.values(asset.clips).map(clip => clip.frames.length * 1000 / clip.fps));
+    byId('time').max = Math.ceil(Math.max(...durations));
+    scene = previewScene;
+    if (scene) {
+      for (const item of [...scene.tiles, ...scene.items]) {
+        if (!assets.has(item.asset)) throw new Error(`场景引用缺失资源：${item.asset}`);
+        if (!assets.get(item.asset).clips[item.clip]) throw new Error(`场景引用缺失动作：${item.asset}/${item.clip}`);
+      }
+      byId('map').width = scene.canvas_size[0];
+      byId('map').height = scene.canvas_size[1];
+    }
+    selected = null;
+    byId('selection').textContent = scene ? '尚未选择地块' : '本批未提供可选场景；所有资产仍可在下方独立预览。';
     byId('gallery').replaceChildren(); cards = loaded.map(card); elapsed = 0;
-    byId('status').textContent = `${theme.title} · ${loaded.length} 项资源已载入。此预览不替代完整格式校验。`;
+    byId('status').textContent = `${theme.title} · ${loaded.length} 项资源已校验并载入 · ${validated.report.decoded_bytes.toLocaleString()} 解码字节`;
     const global = theme.global_visual;
     byId('global').textContent = global ? `${global.id} / ${global.start_year}\n${global.entities.map(entity => `${entity.label}\n特色外观：${entity.specialty_units.join(', ')}`).join('\n')}` : '本批未包含全球视觉描述。';
   } catch (error) {
+    if (current !== generation) return;
+    assets = new Map(); cards = []; scene = null; selected = null;
+    byId('gallery').replaceChildren(); byId('global').textContent = '';
     byId('status').className = 'error';
-    byId('status').textContent = `载入失败：${error.message}\n请使用 README 中的本地 HTTP 服务，确认清单路径，并运行 tools/validate.py。`;
+    byId('status').textContent = `载入失败：${error.message}\n请使用 python tools/preview.py 启动工作台，按错误定位修正数据。`;
   }
 }
 function centers() {
-  const scale = Number(byId('zoom').value) * 1.35;
-  const result = [];
-  for (let row=0; row<3; row++) for (let column=0; column<4; column++) {
-    result.push({row,column,x:100+(column+(row%2)/2)*64*scale,y:65+row*54*scale,scale});
-  }
-  return result;
+  if (!scene) return [];
+  const scale = Number(byId('zoom').value);
+  return scene.tiles.map(tile => ({...tile, scale,
+    x: scene.origin[0] + (tile.column * scene.hex.step[0] + (tile.row % 2) * scene.hex.odd_row_offset) * scale,
+    y: scene.origin[1] + tile.row * scene.hex.step[1] * scale
+  }));
 }
 function renderMap() {
   const canvas = byId('map'), ctx = canvas.getContext('2d'); ctx.clearRect(0,0,canvas.width,canvas.height);
-  const tiles = ['plain','forest','mountain','water'];
   for (const center of centers()) {
-    const tile = assets.get(`maps.terrain.${tiles[(center.row+center.column)%tiles.length]}`);
-    if (tile) draw(ctx,tile,'still',0,center.x,center.y,center.scale,false,false);
+    const tile = assets.get(center.asset);
+    draw(ctx,tile,center.clip,elapsed,center.x,center.y,center.scale,false,false);
     if (selected && center.row === selected.row && center.column === selected.column) {
       ctx.strokeStyle='#e33967'; ctx.lineWidth=3; ctx.strokeRect(center.x-17,center.y-17,34,34);
     }
   }
-  const unit = assets.get('units.infantry.line');
-  if (unit) draw(ctx,unit,'move',elapsed,280,140,1.6,byId('mirror').checked,byId('anchors').checked);
+  if (scene) {
+    const zoom = Number(byId('zoom').value);
+    for (const item of scene.items) {
+      draw(ctx,assets.get(item.asset),item.clip,elapsed,
+        scene.origin[0]+item.position[0]*zoom, scene.origin[1]+item.position[1]*zoom,
+        item.scale*zoom,byId('mirror').checked,byId('anchors').checked);
+    }
+  }
 }
 byId('map').addEventListener('click', event => {
   const rect = event.currentTarget.getBoundingClientRect();
-  const x = (event.clientX-rect.left)*640/rect.width, y = (event.clientY-rect.top)*340/rect.height;
+  const x = (event.clientX-rect.left)*event.currentTarget.width/rect.width;
+  const y = (event.clientY-rect.top)*event.currentTarget.height/rect.height;
   selected = centers().sort((a,b)=>(a.x-x)**2+(a.y-y)**2-(b.x-x)**2-(b.y-y)**2)[0];
+  if (!selected) return;
+  const tile = assets.get(selected.asset);
+  const dx = Math.abs(x-selected.x)/(tile.display_size[0]*selected.scale/2);
+  const dy = Math.abs(y-selected.y)/(tile.display_size[1]*selected.scale/2);
+  if (dx>1 || dy>1 || dy>1-dx/2) {
+    selected = null;
+    byId('selection').textContent = '点击位于格网之外';
+    return;
+  }
   byId('selection').textContent = `选择：row=${selected.row}, column=${selected.column}；屏幕中心 ${selected.x.toFixed(1)}, ${selected.y.toFixed(1)}`;
 });
 byId('loader').addEventListener('submit', event => { event.preventDefault(); load(); });
@@ -122,6 +165,7 @@ byId('restart').onclick = () => { elapsed = 0; };
 byId('time').oninput = event => { playing = false; byId('play').textContent = '播放动画'; elapsed = Number(event.target.value); };
 function tick(now) {
   if (playing) elapsed += Math.min(100, now-previous);
+  if (playing) byId('time').value = Math.min(Number(byId('time').max), elapsed);
   previous = now;
   byId('milliseconds').textContent = `${Math.round(elapsed)} ms`;
   for (const {asset,canvas,select} of cards) {

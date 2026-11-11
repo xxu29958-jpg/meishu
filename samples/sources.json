@@ -6,7 +6,7 @@
       "author": "项目自研 / Codex",
       "method": "procedural-original",
       "license": "项目自有测试内容，供本项目制作、修改与集成使用",
-      "description": "本仓库 generate_samples.py 从空白 RGBA 画布和几何原语原创绘制。人像/制服仅为接口占位，非考证成品。",
+      "description": "本仓库 validation/fixture_source.py 保留既有测试图的独立几何绘制来源；非成品设计或制服考证。",
       "references": [],
       "editable_files": []
     },
