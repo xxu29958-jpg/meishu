@@ -1,0 +1,110 @@
+{
+  "contract_version": 1,
+  "theme_id": "test.batch-b",
+  "theme": "theme.json",
+  "sources": "sources.json",
+  "assets": [
+    {
+      "id": "batch-b.command.one",
+      "category": "ui",
+      "file": "textures/control.png",
+      "frame_size": [
+        240,
+        72
+      ],
+      "display_size": [
+        240,
+        72
+      ],
+      "anchor": [
+        0,
+        0
+      ],
+      "directions": "fixed",
+      "blend": "normal",
+      "clips": {
+        "normal": {
+          "frames": [
+            0
+          ],
+          "fps": 1,
+          "loop": false
+        },
+        "pressed": {
+          "frames": [
+            1
+          ],
+          "fps": 1,
+          "loop": false
+        },
+        "selected": {
+          "frames": [
+            2
+          ],
+          "fps": 1,
+          "loop": false
+        },
+        "disabled": {
+          "frames": [
+            3
+          ],
+          "fps": 1,
+          "loop": false
+        }
+      },
+      "source_id": "test.reused-fixture",
+      "stretch": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "size": [
+        960,
+        72
+      ],
+      "sha256": "04ce723be990dcf828c207a87cdbb2cb594e9074c9c6dedcdfffff27cf8e00dc"
+    },
+    {
+      "id": "batch-b.signal.two",
+      "category": "effects",
+      "file": "textures/pulse.png",
+      "frame_size": [
+        128,
+        128
+      ],
+      "display_size": [
+        64,
+        64
+      ],
+      "anchor": [
+        0.25,
+        0.75
+      ],
+      "directions": "mirror-x",
+      "blend": "normal",
+      "clips": {
+        "play": {
+          "frames": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "fps": 6,
+          "loop": false
+        }
+      },
+      "source_id": "test.reused-fixture",
+      "size": [
+        512,
+        256
+      ],
+      "sha256": "b3fed31d3c71f2f1644f06f219a2f9c65ce60c86b3329cfe6d84d3a75f7bdfca"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "status": "passed",
   "contract_version": 1,
   "theme_id": "sample.geometry.v1",
-  "manifest_sha256": "e7c1f9bbe1492d9988ee4d94822dd643d7291237c9e74d8b2c3ec0def4065614",
+  "manifest_sha256": "9892c6759ea7680af4793e85f2ca3e0534e22fc3be8d61aa27b15d93f32f3278",
   "asset_count": 27,
   "decoded_bytes": 10283008,
   "assets": [

@@ -1,0 +1,103 @@
+{
+  "contract_version": 1,
+  "canvas_size": [
+    640,
+    340
+  ],
+  "origin": [
+    100,
+    65
+  ],
+  "hex": {
+    "step": [
+      64,
+      54
+    ],
+    "odd_row_offset": 32
+  },
+  "tiles": [
+    {
+      "row": 0,
+      "column": 0,
+      "asset": "maps.terrain.plain",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "asset": "maps.terrain.forest",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "asset": "maps.terrain.mountain",
+      "clip": "still"
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "asset": "maps.terrain.forest",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "asset": "maps.terrain.mountain",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "asset": "maps.terrain.plain",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "asset": "maps.terrain.mountain",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "asset": "maps.terrain.water",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "asset": "maps.terrain.plain",
+      "clip": "still"
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "asset": "maps.terrain.forest",
+      "clip": "still"
+    }
+  ],
+  "items": [
+    {
+      "asset": "units.infantry.line",
+      "clip": "move",
+      "position": [
+        180,
+        75
+      ],
+      "scale": 1.6
+    }
+  ]
+}

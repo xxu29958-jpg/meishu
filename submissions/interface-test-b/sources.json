@@ -1,0 +1,14 @@
+{
+  "contract_version": 1,
+  "sources": [
+    {
+      "id": "test.reused-fixture",
+      "author": "项目自研技术测试 / Codex",
+      "method": "procedural-original",
+      "license": "复用本项目自有技术夹具供验收",
+      "description": "复用既有两个 PNG，使用全新文件名/ID、不同数量、不同锚点、反向帧顺序和帧率；不是 Claude 的真实美术交付。",
+      "references": [],
+      "editable_files": []
+    }
+  ]
+}
